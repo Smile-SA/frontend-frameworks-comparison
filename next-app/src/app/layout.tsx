@@ -1,5 +1,3 @@
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import "./globals.css"
 
 export const metadata = {
@@ -15,19 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="path-frontpage page-node-type-page has-glyphicons">
-        <div
-          className="dialog-off-canvas-main-canvas"
-          data-off-canvas-main-canvas=""
-        >
-          <Header />
-          <div
-            role="main"
-            className="main-container container-fluid js-quickedit-main-content"
-          >
-            <div className="row">{children}</div>
-          </div>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );

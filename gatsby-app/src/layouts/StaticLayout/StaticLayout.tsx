@@ -1,11 +1,16 @@
-import React from "react"
+import type { ReactNode } from "react";
 
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import React from "react";
 
-// import "./Layout.css"
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+interface IStaticLayoutProps {
+  children: ReactNode;
+}
+
+function StaticLayout(props: IStaticLayoutProps) {
+  const { children } = props;
   return (
     <div
       className="dialog-off-canvas-main-canvas"
@@ -22,3 +27,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
+export default StaticLayout;

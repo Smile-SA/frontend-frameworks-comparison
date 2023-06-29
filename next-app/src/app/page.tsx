@@ -1,5 +1,10 @@
-import Homepage from './components/Homepage/Homepage'
+import Homepage from "../components/Homepage/Homepage";
+import StaticLayout from "../layouts/StaticLayout/StaticLayout";
 
 export default function Home() {
-  return <Homepage/>
+  return (
+    <StaticLayout>
+      <Homepage />
+    </StaticLayout>
+  );
 }

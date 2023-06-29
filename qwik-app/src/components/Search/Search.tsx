@@ -1,9 +1,6 @@
-// "use client";
+import { component$ } from "@builder.io/qwik";
 
-// import { useState } from "react";
-
-export default function Search() {
-  // const [search, setSearch] = useState("");
+export default component$(() => {
   return (
     <input
       title=""
@@ -13,12 +10,10 @@ export default function Search() {
       type="search"
       id="edit-search-api-fulltext"
       name="search_api_fulltext"
-      // value={search}
       size={150}
       maxLength={128}
       data-toggle="tooltip"
       data-original-title=""
-      // onChange={(e) => setSearch(e.target.value)}
     />
   );
-}
+});

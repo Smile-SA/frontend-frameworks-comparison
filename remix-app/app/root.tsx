@@ -7,8 +7,6 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 
 export const links: LinksFunction = () => [
   {
@@ -44,23 +42,8 @@ export default function App() {
       </head>
       <body className="path-frontpage page-node-type-page has-glyphicons">
         <ScrollRestoration />
-        <Scripts />
         <LiveReload />
-        <div
-          className="dialog-off-canvas-main-canvas"
-          data-off-canvas-main-canvas=""
-        >
-          <Header />
-          <div
-            role="main"
-            className="main-container container-fluid js-quickedit-main-content"
-          >
-            <div className="row">
-              <Outlet />
-            </div>
-          </div>
-          <Footer />
-        </div>
+        <Outlet />
       </body>
     </html>
   );

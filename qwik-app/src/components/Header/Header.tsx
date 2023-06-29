@@ -1,6 +1,8 @@
+import { component$ } from "@builder.io/qwik";
+
 import Search from "../Search/Search";
 
-export default function Header() {
+export default component$(() => {
   return (
     <header class="container-fluid" role="banner">
       <div class="container-fluid" role="heading">
@@ -100,10 +102,7 @@ export default function Header() {
                       data-drupal-link-system-path="node/2204"
                     >
                       {" "}
-                      <span
-                        itemProp="name"
-                        class="hvr-icon-grow btn btn-bleu"
-                      >
+                      <span itemProp="name" class="hvr-icon-grow btn btn-bleu">
                         Contact
                       </span>
                     </a>
@@ -308,9 +307,7 @@ export default function Header() {
                           data-drupal-link-system-path="node/174"
                         >
                           {" "}
-                          <span class="hvr-icon-grow">
-                            Qui sommes-nous ?
-                          </span>
+                          <span class="hvr-icon-grow">Qui sommes-nous ?</span>
                         </a>
                       </li>
                       <li>
@@ -319,9 +316,7 @@ export default function Header() {
                           data-drupal-link-system-path="node/1718"
                         >
                           {" "}
-                          <span class="hvr-icon-grow">
-                            L&apos;Open source
-                          </span>
+                          <span class="hvr-icon-grow">L&apos;Open source</span>
                         </a>
                       </li>
                       <li>
@@ -339,9 +334,7 @@ export default function Header() {
                           data-drupal-link-system-path="node/88"
                         >
                           {" "}
-                          <span class="hvr-icon-grow">
-                            Nos implantations
-                          </span>
+                          <span class="hvr-icon-grow">Nos implantations</span>
                         </a>
                       </li>
                       <li>
@@ -429,9 +422,7 @@ export default function Header() {
                           data-drupal-link-system-path="node/168"
                         >
                           {" "}
-                          <span class="hvr-icon-grow">
-                            Embedded &amp; IoT
-                          </span>
+                          <span class="hvr-icon-grow">Embedded &amp; IoT</span>
                         </a>
                       </li>
                       <li>
@@ -605,10 +596,7 @@ export default function Header() {
                       data-drupal-link-system-path="node/2204"
                     >
                       {" "}
-                      <span
-                        itemProp="name"
-                        class="hvr-icon-grow btn btn-bleu"
-                      >
+                      <span itemProp="name" class="hvr-icon-grow btn btn-bleu">
                         Contact
                       </span>
                     </a>
@@ -679,9 +667,7 @@ export default function Header() {
                             data-drupal-link-system-path="node/174"
                           >
                             {" "}
-                            <span class="hvr-icon-grow">
-                              Qui sommes-nous ?
-                            </span>
+                            <span class="hvr-icon-grow">Qui sommes-nous ?</span>
                           </a>
                         </li>
                         <li>
@@ -710,9 +696,7 @@ export default function Header() {
                             data-drupal-link-system-path="node/88"
                           >
                             {" "}
-                            <span class="hvr-icon-grow">
-                              Nos implantations
-                            </span>
+                            <span class="hvr-icon-grow">Nos implantations</span>
                           </a>
                         </li>
                         <li>
@@ -811,9 +795,7 @@ export default function Header() {
                             data-drupal-link-system-path="node/171"
                           >
                             {" "}
-                            <span class="hvr-icon-grow">
-                              Infrastructure
-                            </span>
+                            <span class="hvr-icon-grow">Infrastructure</span>
                           </a>
                         </li>
                       </ul>
@@ -967,4 +949,4 @@ export default function Header() {
       </div>
     </header>
   );
-}
+});

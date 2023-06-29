@@ -1,5 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+
 import Homepage from "~/components/Homepage/Homepage";
+import StaticLayout from "~/layouts/StaticLayout/StaticLayout";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -9,5 +11,9 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export default function Index() {
-  return <Homepage />;
+  return (
+    <StaticLayout>
+      <Homepage />
+    </StaticLayout>
+  );
 }

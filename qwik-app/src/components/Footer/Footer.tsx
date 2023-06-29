@@ -1,4 +1,6 @@
-export default function Footer() {
+import { component$ } from "@builder.io/qwik";
+
+export default component$(() => {
   return (
     <footer class="footer container-fluid" role="contentinfo">
       <div class="region-footer-top">
@@ -78,10 +80,7 @@ export default function Footer() {
                 class="level0 list-inline"
               >
                 <li class="has-child">
-                  <a
-                    data-drupal-link-system-path="<front>"
-                    class="is-active"
-                  >
+                  <a data-drupal-link-system-path="<front>" class="is-active">
                     {" "}
                     <span class="hvr-icon-grow">Groupe</span>
                   </a>
@@ -156,10 +155,7 @@ export default function Footer() {
                   </ul>
                 </li>
                 <li class="has-child">
-                  <a
-                    data-drupal-link-system-path="<front>"
-                    class="is-active"
-                  >
+                  <a data-drupal-link-system-path="<front>" class="is-active">
                     {" "}
                     <span class="hvr-icon-grow">Offres</span>
                   </a>
@@ -192,9 +188,7 @@ export default function Footer() {
                         data-drupal-link-system-path="node/168"
                       >
                         {" "}
-                        <span class="hvr-icon-grow">
-                          Embedded &amp; IoT
-                        </span>
+                        <span class="hvr-icon-grow">Embedded &amp; IoT</span>
                       </a>
                     </li>
                     <li>
@@ -288,10 +282,7 @@ export default function Footer() {
             aria-labelledby="block-menufooterexternalsites-menu"
             id="block-menufooterexternalsites"
           >
-            <h2
-              class="visually-hidden"
-              id="block-menufooterexternalsites-menu"
-            >
+            <h2 class="visually-hidden" id="block-menufooterexternalsites-menu">
               Menu footer external sites
             </h2>
 
@@ -422,4 +413,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});

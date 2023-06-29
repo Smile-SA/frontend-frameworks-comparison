@@ -1,30 +1,30 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-
-import Homepage from "./components/Homepage/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
+import StaticLayout from "./layouts/StaticLayout/StaticLayout";
+import DynamicLayout from "./layouts/DynamicLayout/DynamicLayout";
 
 function App() {
   return (
     <BrowserRouter>
-      <div
-        className="dialog-off-canvas-main-canvas"
-        data-off-canvas-main-canvas=""
-      >
-        <Header />
-        <div
-          role="main"
-          className="main-container container-fluid js-quickedit-main-content"
-        >
-          <div className="row">
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-            </Routes>
-          </div>
-        </div>
-        <Footer />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <StaticLayout>
+              <Homepage />
+            </StaticLayout>
+          }
+        />
+        <Route
+          path="/layout"
+          element={
+            <DynamicLayout>
+              <Homepage />
+            </DynamicLayout>
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 }
