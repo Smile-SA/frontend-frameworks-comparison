@@ -2,7 +2,7 @@ import Homepage from "@/components/Homepage/Homepage";
 import DynamicLayout from "@/layouts/DynamicLayout/DynamicLayout";
 import Head from "next/head";
 
-export default function Light() {
+export default function Layout() {
   return (
     <>
       <Head>

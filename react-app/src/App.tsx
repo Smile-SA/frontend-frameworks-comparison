@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import StaticLayout from "./layouts/StaticLayout/StaticLayout";
 import DynamicLayout from "./layouts/DynamicLayout/DynamicLayout";
+import DynamicHomepage from "./pages/DynamicHomepage/DynamicHomepage";
 
 function App() {
   return (
@@ -21,6 +22,14 @@ function App() {
           element={
             <DynamicLayout>
               <Homepage />
+            </DynamicLayout>
+          }
+        />
+        <Route
+          path="/dynamic"
+          element={
+            <DynamicLayout>
+              <DynamicHomepage />
             </DynamicLayout>
           }
         />
