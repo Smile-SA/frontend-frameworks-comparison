@@ -1,8 +1,8 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 
-import DynamicLayout from "../layouts/DynamicLayout/DynamicLayout";
-import Homepage from "../components/Homepage/Homepage";
+import DynamicLayout from "../layouts/DynamicLayout";
+import Homepage from "../components/Homepage";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -41,6 +41,11 @@ export const Head: HeadFC = () => (
       rel="stylesheet"
       type="text/css"
       href="/css_iZHYdEhagxtlMnc7tQBGAPpfu3YF-FwbR8QCKEILwYQ.css"
+    />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="https://www.smile.eu/themes/custom/smileeu/favicon.ico"
     />
     <body className="path-frontpage page-node-type-page has-glyphicons" />
   </>

@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Homepage from "./pages/Homepage/Homepage";
-import StaticLayout from "./layouts/StaticLayout/StaticLayout";
-import DynamicLayout from "./layouts/DynamicLayout/DynamicLayout";
-import DynamicHomepage from "./pages/DynamicHomepage/DynamicHomepage";
+import AsyncHomepage from "./pages/AsyncHomepage";
+import Homepage from "./pages/Homepage";
+import StaticLayout from "./layouts/StaticLayout";
+import DynamicLayout from "./layouts/DynamicLayout";
+import DynamicHomepage from "./pages/DynamicHomepage";
 
 function App() {
   return (
@@ -30,6 +31,14 @@ function App() {
           element={
             <DynamicLayout>
               <DynamicHomepage />
+            </DynamicLayout>
+          }
+        />
+        <Route
+          path="/async"
+          element={
+            <DynamicLayout>
+              <AsyncHomepage />
             </DynamicLayout>
           }
         />

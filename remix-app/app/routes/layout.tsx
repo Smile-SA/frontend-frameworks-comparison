@@ -1,7 +1,7 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 
-import Homepage from "~/components/Homepage/Homepage";
-import DynamicLayout from "~/layouts/DynamicLayout/DynamicLayout";
+import Homepage from "~/components/Homepage";
+import DynamicLayout from "~/layouts/DynamicLayout";
 
 export const meta: V2_MetaFunction = () => {
   return [

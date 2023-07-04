@@ -259,11 +259,8 @@
     let boundsLimits = [53.79, -15.05, 32.57, 32.98];
     const zoomDelta = 1;
     let zoomSnap = 1;
-    let taxonomy = drupalSettings.smileeu.map.taxonomy;
     const isFront = drupalSettings.smileeu.map.isFront;
-    let rest = "/" + drupalSettings.path.pathPrefix + "agencies/" + taxonomy;
     const mapUri = "/smileeu_local_map/pictures_map_global/{z}/{x}/{y}.png";
-    let map: Map | null = null;
 
     if (window.innerWidth < 1400 && window.innerWidth > 1200) {
       zoom = 4.8;
@@ -321,7 +318,7 @@
       new window.L.LatLng(boundsLimits[2], boundsLimits[3])
     );
 
-    map = window.L.map("map", {
+    const map = window.L.map("map", {
       zoomDelta: zoomDelta,
       zoomSnap: zoomSnap,
       scrollWheelZoom: false,
@@ -342,16 +339,7 @@
 
     window.L.Icon.Default.imagePath = "/map/";
     if (drupalSettings.smileeu.map.taxonomy[1]) {
-      taxonomy = drupalSettings.smileeu.map.taxonomy;
-      rest = "/" + drupalSettings.path.pathPrefix + "agencies/" + taxonomy;
       if ((window.innerWidth > 480 && isFront) || !isFront) {
-        // jQuery.getJSON(rest, function (data) {
-        //   if (drupalSettings.smileeu.nids) {
-        //     addDataToMap(data, maps[0], drupalSettings, $(window));
-        //   } else {
-        //     addDataToMap(data, map, drupalSettings, $(window));
-        //   }
-        // });
         addDataToMap(agencies, map);
         const controllerContainer = document.getElementById("map-controller");
         const controller = document.querySelector(
@@ -381,7 +369,7 @@
     }
   }
 
-  function addDataToMap(data: typeof agencies, map: Map) {
+  function addDataToMap(data: FeatureCollection<Point>, map: Map) {
     const myIcon = window.L.icon({
       iconUrl: "/map/pin.svg",
       iconSize: [21, 28],

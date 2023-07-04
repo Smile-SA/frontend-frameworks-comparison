@@ -1,8 +1,8 @@
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
 
-import DynamicLayout from "~/Layouts/DynamicLayout/DynamicLayout";
-import Homepage from "~/components/Homepage/Homepage";
+import DynamicLayout from "~/Layouts/DynamicLayout";
+import Homepage from "~/components/Homepage";
 
 export default component$(() => {
   return (

@@ -1,8 +1,8 @@
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
 
-import StaticLayout from "~/Layouts/StaticLayout/StaticLayout";
-import Homepage from "~/components/Homepage/Homepage";
+import StaticLayout from "~/Layouts/StaticLayout";
+import Homepage from "~/components/Homepage";
 
 export default component$(() => {
   return (

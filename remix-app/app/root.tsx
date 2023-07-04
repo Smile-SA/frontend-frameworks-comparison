@@ -4,7 +4,6 @@ import {
   LiveReload,
   Meta,
   Outlet,
-  Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
 
@@ -37,6 +36,11 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link
+          rel="icon"
+          type="image/vnd.microsoft.icon"
+          href="https://www.smile.eu/themes/custom/smileeu/favicon.ico"
+        />
         <Meta />
         <Links />
       </head>

@@ -478,15 +478,15 @@
       content.setAttribute("aria-hidden", "true");
       content.style.display = "none";
     });
-    if (tabs[index]) {
-      tabs[index].setAttribute("aria-selected", "true");
-      tabs[index].setAttribute("aria-expanded", "true");
-      tabs[index].classList.add("ui-tabs-active");
-      tabs[index].classList.add("ui-state-active");
+    if (tabs[solutionsTabIndex]) {
+      tabs[solutionsTabIndex].setAttribute("aria-selected", "true");
+      tabs[solutionsTabIndex].setAttribute("aria-expanded", "true");
+      tabs[solutionsTabIndex].classList.add("ui-tabs-active");
+      tabs[solutionsTabIndex].classList.add("ui-state-active");
     }
-    if (contents[index]) {
-      contents[index].setAttribute("aria-hidden", "false");
-      contents[index].style.display = "block";
+    if (contents[solutionsTabIndex]) {
+      contents[solutionsTabIndex].setAttribute("aria-hidden", "false");
+      contents[solutionsTabIndex].style.display = "block";
     }
   }
 
