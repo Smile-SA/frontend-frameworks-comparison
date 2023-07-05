@@ -361,7 +361,7 @@ function addDataToMap(data: FeatureCollection<Point>, map: Map) {
   });
 
   const dataLayer = window.L.geoJson(data, {
-    pointToLayer: function (feature, latlng) {
+    pointToLayer: function (_, latlng) {
       return window.L.marker(latlng, { icon: myIcon });
     },
     onEachFeature: function (feature, layer) {

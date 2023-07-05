@@ -4,7 +4,7 @@ import cors from "cors";
 const app = express();
 app.use(cors());
 
-const timeout = 400;
+const timeout = 1000;
 function send(res: Response, content: unknown) {
   setTimeout(() => res.send(content), timeout);
 }
