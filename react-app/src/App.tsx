@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy } from "react";
 
-import AsyncHomepage from "./pages/AsyncHomepage";
-import Homepage from "./pages/Homepage";
-import StaticLayout from "./layouts/StaticLayout";
-import DynamicLayout from "./layouts/DynamicLayout";
-import DynamicHomepage from "./pages/DynamicHomepage";
+const AsyncHomepage = lazy(() => import("./pages/AsyncHomepage"));
+const Homepage = lazy(() => import("./pages/Homepage"));
+const StaticLayout = lazy(() => import("./layouts/StaticLayout"));
+const DynamicLayout = lazy(() => import("./layouts/DynamicLayout"));
+const DynamicHomepage = lazy(() => import("./pages/DynamicHomepage"));
 
 function App() {
   return (

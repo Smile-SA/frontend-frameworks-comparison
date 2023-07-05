@@ -25,14 +25,14 @@ const { title } = Astro.props;
   </head>
   <body class="path-frontpage page-node-type-page has-glyphicons">
     <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
-      <DynamicHeader client:load />
+      <DynamicHeader client:visible />
       <div
         role="main"
         class="main-container container-fluid js-quickedit-main-content"
       >
         <div class="row"><slot /></div>
       </div>
-      <DynamicFooter client:load />
+      <DynamicFooter client:visible />
     </div>
   </body>
 </html>

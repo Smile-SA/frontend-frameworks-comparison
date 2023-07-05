@@ -91,11 +91,11 @@ const { cards, openSources, solutions, technologies } = data;
                 </div>
               </div>
             </div>
-            <AsyncMap client:load />
+            <AsyncMap client:visible />
           </div>
         </div>
         <AsyncTabs
-          client:load
+          client:visible
           solutions={solutions}
           technologies={technologies}
         />
