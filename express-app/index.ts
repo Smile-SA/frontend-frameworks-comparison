@@ -204,7 +204,7 @@ app.get("/opensource", function (req, res) {
   ]);
 });
 
-app.get("/last", function (req, res) {
+app.get("/cards", function (req, res) {
   send(res, [
     {
       type: "reference",

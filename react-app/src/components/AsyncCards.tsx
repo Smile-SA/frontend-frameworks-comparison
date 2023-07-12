@@ -252,7 +252,7 @@ function getGroup(card: ICard, i: number) {
 export default function AsyncCards() {
   const [cards, setCards] = useState<ICard[]>([]);
   useEffect(() => {
-    fetch("http://localhost:3333/last")
+    fetch("http://localhost:3333/cards")
       .then((r) => r.json())
       .then((json) => setCards(json));
   }, []);

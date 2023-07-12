@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "NODE_OPTIONS=--max_old_space_size=8192 nuxt build",
+    "dev": "nuxt dev",
+    "generate": "NODE_OPTIONS=--max_old_space_size=8192 nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "serve": "serve .output/public"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@types/leaflet": "^1.9.3",
+    "@types/node": "^18.16.19",
+    "nuxt": "^3.6.2"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "unhead": "^1.1.30"
+  }
+}

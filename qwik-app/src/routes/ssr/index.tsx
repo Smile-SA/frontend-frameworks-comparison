@@ -14,7 +14,7 @@ export const useOpenSources = routeLoader$(async () => {
 });
 
 export const useCards = routeLoader$(async () => {
-  const res = await fetch("http://localhost:3333/last");
+  const res = await fetch("http://localhost:3333/cards");
   const data = await res.json();
   return data as ICard[];
 });

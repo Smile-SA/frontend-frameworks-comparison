@@ -248,7 +248,7 @@ function getGroup(card: ICard, i: number) {
 }
 
 async function getData() {
-  const res = await fetch("http://localhost:3333/last", {
+  const res = await fetch("http://localhost:3333/cards", {
     cache: "no-store",
   });
   if (!res.ok) {

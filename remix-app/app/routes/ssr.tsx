@@ -23,7 +23,7 @@ export default function Index() {
 
 export const loader = async () => {
   const [cards, openSources, solutions, technologies] = await Promise.all([
-    fetch("http://localhost:3333/last").then((r) => r.json()),
+    fetch("http://localhost:3333/cards").then((r) => r.json()),
     fetch("http://localhost:3333/opensource").then((r) => r.json()),
     fetch("http://localhost:3333/solutions").then((r) => r.json()),
     fetch("http://localhost:3333/technologies").then((r) => r.json()),
