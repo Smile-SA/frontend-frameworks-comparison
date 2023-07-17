@@ -395,12 +395,12 @@ function handleToggleMenuChildren(index: number) {
                 <li
                   class="has-child"
                   @click.prevent="handleToggleMenuChildren(1)"
-                  :class="{ opened: menuChildrenOpen === 1 }"
                 >
                   <a
                     href="/fr"
                     data-drupal-link-system-path="<front>"
                     class="is-active"
+                    :class="{ opened: menuChildrenOpen === 1 }"
                   >
                     <span class="hvr-icon-grow">Offres</span>
                   </a>
@@ -490,12 +490,12 @@ function handleToggleMenuChildren(index: number) {
                 <li
                   class="has-child"
                   @click.prevent="handleToggleMenuChildren(2)"
-                  :class="{ opened: menuChildrenOpen === 2 }"
                 >
                   <a
                     href="/fr/innovation"
                     item-prop="url"
                     data-drupal-link-system-path="node/157"
+                    :class="{ opened: menuChildrenOpen === 2 }"
                   >
                     <span item-prop="name" class="hvr-icon-grow">
                       Innovation

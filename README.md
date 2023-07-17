@@ -133,69 +133,6 @@ Statistics per page:
 | ssr     | 76       | 13.6k/71.2k | 179k/609k  | 80          | 1.0s | 3.4s | 0ms | 0.001 | 1.0s |
 | ssg     | 76       | 12.4k/70.4k | 180k/609k  | 79          | 1.0s | 3.5s | 0ms | 0.001 | 1.0s |
 
-# Nuxt app
-
-### Using server file
-
-- npm run build
-- node .output/server/index.mjs
-
-Common statistics:
-
-| CSS size   | Image size | font size |
-| ---------- | ---------- | --------- |
-| 32.6k/181k | 3.5M       | 979k/977k |
-
-Statistics per page:
-
-| Pages   | Requests | Doc size  | JS size   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
-| ------- | -------- | --------- | --------- | ----------- | ---- | ---- | --- | ----- | ---- |
-| static  | 71       | 754k/754k | 205k/203k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
-| layout  | 71       | 755k/754k | 207k/205k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
-| dynamic | 70       | 744k/744k | 261k/362k | 66          | 2.2s | 4.5s | 0ms | 0.004 | 2.2s |
-| ssr     | 71       | 751k/750k | 266k/367k | 66          | 2.1s | 4.4s | 0ms | 0.004 | 2.1s |
-| ssg     | 71       | 751k/750k | 266k/367k | 66          | 2.1s | 4.4s | 0ms | 0.004 | 2.1s |
-
-### Using vite preview
-
-- npm run build
-- npm run preview
-
-Common statistics:
-
-| CSS size   | Image size | font size |
-| ---------- | ---------- | --------- |
-| 32.6k/181k | 3.5M       | 979k/977k |
-
-Statistics per page:
-
-| Pages   | Requests | Doc size  | JS size   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
-| ------- | -------- | --------- | --------- | ----------- | ---- | ---- | --- | ----- | ---- |
-| static  | 71       | 754k/754k | 205k/203k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
-| layout  | 71       | 755k/754k | 207k/205k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
-| dynamic | 70       | 744k/744k | 261k/362k | 66          | 2.1s | 4.5s | 0ms | 0.004 | 2.1s |
-| ssg     | 71       | 751k/750k | 266k/367k | 66          | 2.2s | 4.5s | 0ms | 0.004 | 2.2s |
-
-### Using `serve`
-
-- npm run generate
-- npm run serve
-
-Common statistics:
-
-| CSS size   | Image size | font size |
-| ---------- | ---------- | --------- |
-| 32.6k/181k | 3.5M       | 438k/977k |
-
-Statistics per page:
-
-| Pages   | Requests | Doc size   | JS size    | Performance | FCP  | LCP  | TBT | CLS   | SI   |
-| ------- | -------- | ---------- | ---------- | ----------- | ---- | ---- | --- | ----- | ---- |
-| static  | 71       | 89.8k/754k | 66.5k/204k | 80          | 1.1s | 3.1s | 0ms | 0.004 | 1.1s |
-| layout  | 71       | 89.8k/754k | 67.7k/206k | 80          | 1.1s | 3.1s | 0ms | 0.004 | 1.1s |
-| dynamic | 70       | 88.7k/744k | 116k/362k  | 79          | 1.2s | 3.4s | 0ms | 0.004 | 1.2s |
-| ssg     | 71       | 89.5k/750k | 120k/368k  | 79          | 1.1s | 3.4s | 0ms | 0.004 | 1.1s |
-
 ## Remix app
 
 - npm run build
@@ -384,3 +321,109 @@ Statistics per page:
 | layout   | 64       | 11.6k/62.3k | 0          | 82          | 0.9s | 3.1s | 0ms | 0.001 | 0.9s |
 | dynamic  | 66       | 10.6k/52.8k | 44.2k/214k | 82          | 0.8s | 3.2s | 0ms | 0.001 | 0.8s |
 | ssr(ssg) | 68       | 10.8k/53.8k | 44.2k/198k | 81          | 0.9s | 3.2s | 0ms | 0.001 | 0.9s |
+
+## Nuxt app
+
+### Using server file
+
+- npm run build
+- node .output/server/index.mjs
+
+Common statistics:
+
+| CSS size   | Image size | font size |
+| ---------- | ---------- | --------- |
+| 32.6k/181k | 3.5M       | 979k/977k |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size  | JS size   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | --------- | --------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 71       | 754k/754k | 205k/203k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
+| layout  | 71       | 755k/754k | 207k/205k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
+| dynamic | 70       | 744k/744k | 261k/362k | 66          | 2.2s | 4.5s | 0ms | 0.004 | 2.2s |
+| ssr     | 71       | 751k/750k | 266k/367k | 66          | 2.1s | 4.4s | 0ms | 0.004 | 2.1s |
+| ssg     | 71       | 751k/750k | 266k/367k | 66          | 2.1s | 4.4s | 0ms | 0.004 | 2.1s |
+
+### Using vite preview
+
+- npm run build
+- npm run preview
+
+Common statistics:
+
+| CSS size   | Image size | font size |
+| ---------- | ---------- | --------- |
+| 32.6k/181k | 3.5M       | 979k/977k |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size  | JS size   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | --------- | --------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 71       | 754k/754k | 205k/203k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
+| layout  | 71       | 755k/754k | 207k/205k | 67          | 2.1s | 4.2s | 0ms | 0.004 | 2.1s |
+| dynamic | 70       | 744k/744k | 261k/362k | 66          | 2.1s | 4.5s | 0ms | 0.004 | 2.1s |
+| ssg     | 71       | 751k/750k | 266k/367k | 66          | 2.2s | 4.5s | 0ms | 0.004 | 2.2s |
+
+### Using `serve`
+
+- npm run generate
+- npm run serve
+
+Common statistics:
+
+| CSS size   | Image size | font size |
+| ---------- | ---------- | --------- |
+| 32.6k/181k | 3.5M       | 438k/977k |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size   | JS size    | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ---------- | ---------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 71       | 89.8k/754k | 66.5k/204k | 80          | 1.1s | 3.1s | 0ms | 0.004 | 1.1s |
+| layout  | 71       | 89.8k/754k | 67.7k/206k | 80          | 1.1s | 3.1s | 0ms | 0.004 | 1.1s |
+| dynamic | 70       | 88.7k/744k | 116k/362k  | 79          | 1.2s | 3.4s | 0ms | 0.004 | 1.2s |
+| ssg     | 71       | 89.5k/750k | 120k/368k  | 79          | 1.1s | 3.4s | 0ms | 0.004 | 1.1s |
+
+## Sveltekit app
+
+### Using vite preview
+
+- npm run build
+- npm run preview
+
+Common statistics:
+
+| CSS size  | Image size | font size |
+| --------- | ---------- | --------- |
+| 118k/908k | 3.5M       | 979k/977k |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size   | JS size    | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ---------- | ---------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 65       | 9.5k/61.6k | 0          | 76          | 1.4s | 3.5s | 0ms | 0.004 | 1.4s |
+| layout  | 76       | 9.9k/63.0k | 52.2k/161k | 73          | 1.6s | 3.6s | 0ms | 0.004 | 1.6s |
+| dynamic | 75       | 8.6k/52.0k | 100k/320k  | 72          | 1.6s | 3.9s | 0ms | 0.004 | 1.6s |
+| ssr     | 80       | 9.1k/50.9k | 102k/322k  | 71          | 1.7s | 3.7s | 0ms | 0.014 | 1.9s |
+| ssg     | 80       | 8.5k/51.8k | 102k/322k  | 72          | 1.7s | 3.7s | 0ms | 0.004 | 1.7s |
+
+### Using `@sveltejs/adapter-static` + `serve`
+
+- npm run build
+- npm run serve
+
+Common statistics:
+
+| CSS size  | Image size | font size |
+| --------- | ---------- | --------- |
+| 119k/908k | 3.5M       | 438k/977k |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size    | JS size    | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ----------- | ---------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 65       | 9.6k/61.6k  | 0          | 81          | 1.1s | 3.0s | 0ms | 0.001 | 1.1s |
+| layout  | 76       | 10.0k/63.0k | 52.8k/161k | 79          | 1.2s | 3.2s | 0ms | 0.001 | 1.2s |
+| dynamic | 75       | 8.7k/52.0k  | 101k/321k  | 78          | 1.2s | 3.4s | 0ms | 0.004 | 1.2s |
+| ssg     | 80       | 8.6k/51.8k  | 102k/322k  | 78          | 1.3s | 3.2s | 0ms | 0.004 | 1.3s |
