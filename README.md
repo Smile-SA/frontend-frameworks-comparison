@@ -439,3 +439,65 @@ Statistics per page:
 | layout  | 77       | 10.1kB/63.1kB | 53.5kB/161kB | 76          | 1.5s | 3.3s | 0ms | 0.001 | 1.5s |
 | dynamic | 75       | 8.6kB/51.7kB  | 100kB/322kB  | 74          | 1.5s | 3.7s | 0ms | 0.001 | 1.5s |
 | ssg     | 80       | 9.0kB/58.3kB  | 99.5kB/307kB | 78          | 1.2s | 3.4s | 0ms | 0.001 | 1.2s |
+
+## Vue app
+
+### Using vite preview
+
+- npm run build
+- npm run preview
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/895kB | 3.5MB      | 979kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size  | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | --------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 64       | 878B/583B | 51.6kB/219kB | 73          | 1.6s | 3.8s | 0ms | 0.014 | 1.6s |
+| layout  | 64       | 878B/583B | 51.6kB/219kB | 74          | 1.6s | 3.6s | 0ms | 0.004 | 1.6s |
+| dynamic | 63       | 878B/583B | 95.5kB/369kB | 72          | 1.6s | 4.1s | 0ms | 0.004 | 1.6s |
+| async   | 67       | 878B/583B | 95.5kB/369kB | 74          | 1.4s | 3.8s | 0ms | 0.004 | 1.4s |
+
+### Using `serve`
+
+- npm run build
+- npm run serve
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/895kB | 3.5MB      | 438kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size  | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | --------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 64       | 894B/583B | 51.6kB/219kB | 80          | 1.1s | 3.2s | 0ms | 0.004 | 1.1s |
+| layout  | 64       | 894B/583B | 51.6kB/219kB | 80          | 1.1s | 3.1s | 0ms | 0.014 | 1.1s |
+| dynamic | 63       | 894B/583B | 95.6kB/369kB | 78          | 1.1s | 3.6s | 0ms | 0.004 | 1.1s |
+| async   | 67       | 894B/583B | 95.6kB/369kB | 80          | 1.0s | 3.3s | 0ms | 0.004 | 1.0s |
+
+### Using `serve` + async components
+
+- npm run build
+- npm run serve
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/895kB | 3.5MB      | 438kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size  | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | --------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 67       | 894B/583B | 41.3kB/136kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
+| layout  | 68       | 894B/583B | 43.3kB/138kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
+| dynamic | 67       | 894B/583B | 90.7kB/298kB | 77          | 1.2s | 3.7s | 0ms | 0.004 | 1.2s |
+| async   | 71       | 894B/583B | 89.9kB/291kB | 80          | 1.1s | 3.3s | 0ms | 0.004 | 1.1s |
