@@ -49,8 +49,6 @@ function handleSolutionsTabIndex(index: number) {
             class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"
             aria-controls="tab-expertise-2"
             aria-labelledby="ui-id-2"
-            aria-selected="false"
-            aria-expanded="false"
             :class="{
               'ui-tabs-active ui-state-active': solutionsTabIndex === 1,
             }"

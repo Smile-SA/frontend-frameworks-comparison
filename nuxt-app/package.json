@@ -16,7 +16,6 @@
     "nuxt": "^3.6.2"
   },
   "dependencies": {
-    "leaflet": "^1.9.4",
-    "unhead": "^1.1.30"
+    "leaflet": "^1.9.4"
   }
 }

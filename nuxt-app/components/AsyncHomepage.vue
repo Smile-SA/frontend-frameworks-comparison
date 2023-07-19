@@ -88,7 +88,7 @@
                   </div>
                 </div>
               </div>
-              <DynamicMap />
+              <AsyncMap />
             </div>
           </div>
           <AsyncTabs />

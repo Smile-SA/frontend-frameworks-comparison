@@ -3,7 +3,7 @@
 	import type { IOpenSource } from '../types/openSource';
 	import type { ISolution } from '../types/tabs';
 
-	import DynamicMap from './DynamicMap.svelte';
+	import AsyncMap from './AsyncMap.svelte';
 	import AsyncTabs from './AsyncTabs.svelte';
 	import AsyncCards from './AsyncCards.svelte';
 	import AsyncOpenSource from './AsyncOpenSource.svelte';
@@ -95,7 +95,7 @@
 								</div>
 							</div>
 						</div>
-						<DynamicMap />
+						<AsyncMap />
 					</div>
 				</div>
 				<AsyncTabs {solutions} {technologies} />

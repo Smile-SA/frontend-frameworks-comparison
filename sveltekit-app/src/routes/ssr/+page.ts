@@ -4,7 +4,7 @@ import type { IData } from '../../types/data';
 
 export const prerender = false;
 
-export const load: PageLoad<IData> = async () => {
+export const load: PageLoad<IData> = async ({ fetch }) => {
 	const [cards, openSources, solutions, technologies] = await Promise.all([
 		fetch('http://localhost:3333/cards').then((r) => r.json()),
 		fetch('http://localhost:3333/opensource').then((r) => r.json()),

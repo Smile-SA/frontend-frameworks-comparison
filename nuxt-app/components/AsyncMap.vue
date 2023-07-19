@@ -1,9 +1,8 @@
-"use client";
-
+<script setup lang="ts">
 import type { FeatureCollection, Point } from "geojson";
 import type { LatLngTuple, Map } from "leaflet";
 
-import React, { useEffect } from "react";
+import { onMounted } from "vue";
 
 const drupalSettings = {
   path: {
@@ -213,7 +212,7 @@ function addDataToMap(L: any, data: FeatureCollection<Point>, map: Map) {
       }
 
       layer.on("click", function clickZoom(e: any) {
-        // @ts-expect-error null
+        // @ts-expect-error ignore
         map.setMaxBounds(null);
         map.setView(e.target.getLatLng(), map.getZoom());
       });
@@ -222,26 +221,22 @@ function addDataToMap(L: any, data: FeatureCollection<Point>, map: Map) {
   dataLayer.addTo(map);
 }
 
-export default function AsyncMap() {
-  useEffect(() => {
-    try {
-      if (typeof window !== "undefined") {
-        import("leaflet").then(attach);
-      }
-    } catch (e) {
-      console.error(e);
+onMounted(() => {
+  try {
+    if (typeof window !== "undefined") {
+      import("leaflet").then(attach);
     }
-  }, []);
-
-  return (
-    <>
-      <div
-        id="map"
-        className="map--front"
-        style={{ position: "relative" }}
-        tabIndex={0}
-      ></div>
-      <div id="map-controller"></div>
-    </>
-  );
-}
+  } catch (e) {
+    console.error(e);
+  }
+});
+</script>
+<template>
+  <div
+    id="map"
+    class="map--front leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+    :style="{ position: 'relative' }"
+    tab-index="0"
+  ></div>
+  <div id="map-controller"></div>
+</template>

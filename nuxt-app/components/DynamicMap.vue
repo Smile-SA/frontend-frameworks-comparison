@@ -3,13 +3,6 @@ import type { FeatureCollection, Point } from "geojson";
 import type { LatLngTuple, Map } from "leaflet";
 
 import { onMounted } from "vue";
-import * as Leaflet from "leaflet";
-
-declare global {
-  interface Window {
-    L: Leaflet.something;
-  }
-}
 
 const drupalSettings = {
   path: {
@@ -241,7 +234,7 @@ const agencies: FeatureCollection<Point> = {
   ],
 };
 
-function attach() {
+function attach(L: any) {
   let origin: LatLngTuple = [45.48, 20];
   let zoom = 5;
   let minZoom = 3.5;
@@ -303,12 +296,12 @@ function attach() {
     boundsLimits = [68.8, -25.53, -12.15, 137.94];
   }
 
-  const bounds = new window.L.LatLngBounds(
-    new window.L.LatLng(boundsLimits[0], boundsLimits[1]),
-    new window.L.LatLng(boundsLimits[2], boundsLimits[3])
+  const bounds = new L.LatLngBounds(
+    new L.LatLng(boundsLimits[0], boundsLimits[1]),
+    new L.LatLng(boundsLimits[2], boundsLimits[3])
   );
 
-  const map = window.L.map("map", {
+  const map = L.map("map", {
     zoomDelta: zoomDelta,
     zoomSnap: zoomSnap,
     scrollWheelZoom: false,
@@ -321,16 +314,16 @@ function attach() {
     maxBounds: bounds,
     maxBoundsViscosity: 1,
   });
-  map.addLayer(window.L.tileLayer(mapUri));
+  map.addLayer(L.tileLayer(mapUri));
 
   if (zoomControl) {
     map.zoomControl.setPosition("topright");
   }
 
-  window.L.Icon.Default.imagePath = "/map/";
+  L.Icon.Default.imagePath = "/map/";
   if (drupalSettings.smileeu.map.taxonomy[1]) {
     if ((window.innerWidth > 480 && isFront) || !isFront) {
-      addDataToMap(agencies, map);
+      addDataToMap(L, agencies, map);
       const controllerContainer = document.getElementById("map-controller");
       const controller = document.querySelector(
         "#map>.leaflet-control-container"
@@ -359,18 +352,18 @@ function disableControl(map: Map) {
   }
 }
 
-function addDataToMap(data: FeatureCollection<Point>, map: Map) {
-  const myIcon = window.L.icon({
+function addDataToMap(L: any, data: FeatureCollection<Point>, map: Map) {
+  const myIcon = L.icon({
     iconUrl: "/map/pin.svg",
     iconSize: [21, 28],
     iconAnchor: [10, 28],
   });
 
-  const dataLayer = window.L.geoJson(data, {
-    pointToLayer: function (feature, latlng) {
-      return window.L.marker(latlng, { icon: myIcon });
+  const dataLayer = L.geoJson(data, {
+    pointToLayer: function (feature: any, latlng: any) {
+      return L.marker(latlng, { icon: myIcon });
     },
-    onEachFeature: function (feature, layer) {
+    onEachFeature: function (feature: any, layer: any) {
       const popupText = feature.properties.description;
 
       if (window.innerWidth <= 480) {
@@ -384,7 +377,8 @@ function addDataToMap(data: FeatureCollection<Point>, map: Map) {
         });
       }
 
-      layer.on("click", function clickZoom(e) {
+      layer.on("click", function clickZoom(e: any) {
+        // @ts-expect-error ignore
         map.setMaxBounds(null);
         map.setView(e.target.getLatLng(), map.getZoom());
       });
@@ -396,7 +390,7 @@ function addDataToMap(data: FeatureCollection<Point>, map: Map) {
 onMounted(() => {
   try {
     if (typeof window !== "undefined") {
-      attach();
+      import("leaflet").then(attach);
     }
   } catch (e) {
     console.error(e);
