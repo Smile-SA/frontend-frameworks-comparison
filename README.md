@@ -1,4 +1,4 @@
-# Framework performance comparison
+# Frontend framework performance comparison
 
 ## Introduction
 
@@ -7,9 +7,9 @@ The tests were made using Lighthouse in Chrome 114.0.5735.198 with following con
 - Mode: "Navigation"
 - Device: "Desktop"
 
-In the result when there is two number separated by a <key>/</key> it means than:
+In the result when there is two numbers separated by a <key>/</key> it means than:
 
-- the first one in the size transferred over network (sometimes with gzip compression which makes the size smaller)
+- the first one in the size transferred over network (sometimes with gzip compression which makes it smaller)
 - the second one in the size of the resource
 
 ## Glossary
@@ -19,6 +19,26 @@ In the result when there is two number separated by a <key>/</key> it means than
 - TBT: Total Blocking Time - Sum of all time periods between FCP and Time to Interactive, when taskB length exceeded 50ms, expressed in milliseconds.
 - CLS: Cumulative Layout Shift - Cumulative Layout Shift measures the movement of visible elements within the viewport.
 - SI: Speed Index - Speed Index shows how quickly the contents of a page are visibly populated.
+
+## Angular app
+
+- npm run build
+- npm run serve
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/884kB | 3.5MB      | 438kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size    | JS size     | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ----------- | ----------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 66       | 1.0kB/1.2kB | 111kB/404kB | 81          | 1.0s | 3.1s | 0ms | 0.004 | 1.0s |
+| layout  | 66       | 1.0kB/1.2kB | 111kB/404kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
+| dynamic | 65       | 1.0kB/1.2kB | 154kB/553kB | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
+| async   | 70       | 1.0kB/1.2kB | 154kB/553kB | 78          | 1.2s | 3.4s | 0ms | 0.014 | 1.2s |
 
 ## Astro app (Without React Components)
 

@@ -645,4 +645,3 @@ import Search from './Search.vue'
     </div>
   </header>
 </template>
-;
