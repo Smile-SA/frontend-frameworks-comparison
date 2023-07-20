@@ -417,6 +417,68 @@ Statistics per page:
 | dynamic | 72       | 16.1kB/46.0kB | 144kB/490kB  | 75          | 1.4s | 3.7s | 0ms | 0.001 | 1.4s |
 | ssr     | 74       | 18.1kB/52.1kB | 140kB/464kB  | 77          | 1.2s | 3.4s | 0ms | 0.001 | 1.5s |
 
+## Solid app
+
+### Using vite preview
+
+- npm run build
+- npm run serve
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/895kB | 3.5MB      | 979kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 64       | 1.0kB/706B | 33kB/174kB   | 74          | 1.6s | 3.7s | 0ms | 0.014 | 1.6s |
+| layout  | 64       | 1.0kB/706B | 33kB/174kB   | 74          | 1.6s | 3.6s | 0ms | 0.004 | 1.6s |
+| dynamic | 63       | 1.0kB/706B | 77.7kB/324kB | 72          | 1.6s | 4.0s | 0ms | 0.004 | 1.6s |
+| async   | 69       | 1.0kB/706B | 77.7kB/324kB | 75          | 1.4s | 3.7s | 0ms | 0.004 | 1.4s |
+
+### Using `serve`
+
+- npm run build
+- npm run realserve
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/895kB | 3.5MB      | 438kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 64       | 1.0kB/706B | 33.8kB/174kB | 80          | 1.0s | 3.2s | 0ms | 0.014 | 1.0s |
+| layout  | 64       | 1.0kB/706B | 33.8kB/174kB | 81          | 1.1s | 3.1s | 0ms | 0.004 | 1.1s |
+| dynamic | 63       | 1.0kB/706B | 77.7kB/324kB | 79          | 1.1s | 3.5s | 0ms | 0.004 | 1.1s |
+| async   | 69       | 1.0kB/706B | 77.7kB/324kB | 80          | 1.0s | 3.2s | 0ms | 0.004 | 1.0s |
+
+### Using `serve` + async components
+
+- npm run build
+- npm run realserve
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 116kB/895kB | 3.5MB      | 438kB/977kB |
+
+Statistics per page:
+
+| Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 67       | 1.0kB/706B | 20.8kB/83.9kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
+| layout  | 68       | 1.0kB/706B | 22.7kB/88.3kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
+| dynamic | 66       | 1.0kB/706B | 69.7kB/249kB | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
+| async   | 72       | 1.0kB/706B | 67.1kB/227kB | 80          | 1.0s | 3.3s | 0ms | 0.004 | 1.1s |
+
 ## Sveltekit app
 
 ### Using vite preview
