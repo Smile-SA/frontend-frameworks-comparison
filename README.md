@@ -4,19 +4,14 @@
 
 The goal is to compare the loading performances of 11 different frameworks (13 if we take into account 2 different implementations for the same framework).
 
-To effectively compare them, I integrated the https://www.smile.eu/fr page into all those frameworks to base the comparison on a real use case (and not on a dummy blank page).
-The page itself is clearly not perfect and, as the time I am writing this, scores 75 in lighthouse.
-Because of the assets used...etc, the goal is not to try to achieve a 100 score, but only to compare the frameworks to each others.
+To effectively compare them, I integrated the https://www.smile.eu/fr page into all those frameworks to base the comparison on a real use case (and not on a dummy blank page).  
+The page itself is clearly not perfect and, at the time I am writing this, it scores 75 in lighthouse.  
+The goal is not to try to achieve a 100 score, nor to say that something is bad or good, but only to compare the frameworks to each others, with the same imperfect base scenario.
 
-The tests were made using Lighthouse in Chrome 114.0.5735.198 with following configuration:
+Also for some frameworks you will notice multiple tests:  
 
-- Mode: "Navigation"
-- Device: "Desktop"
-
-In the result when there is two numbers separated by a <key>/</key> it means than:
-
-- the first one in the size transferred over network (sometimes with gzip compression which makes it smaller)
-- the second one in the size of the resource
+- to try different options for the same framework (using async components for example)
+- or to try to find the optimal way to serve the content for the comparison to be fair (using `serve` for example that use compression for CSS, JS, HTML and fonts)
 
 ## Structure
 
@@ -46,6 +41,18 @@ For all those cases, the response time of the express app has been delayed by 1 
 - TBT: Total Blocking Time - Sum of all time periods between FCP and Time to Interactive, when taskB length exceeded 50ms, expressed in milliseconds.
 - CLS: Cumulative Layout Shift - Cumulative Layout Shift measures the movement of visible elements within the viewport.
 - SI: Speed Index - Speed Index shows how quickly the contents of a page are visibly populated.
+
+## Tests
+
+The tests were made using Lighthouse in Chrome 114.0.5735.198 with following configuration:
+
+- Mode: "Navigation"
+- Device: "Desktop"
+
+In the result when there is two numbers separated by a <key>/</key> it means than:
+
+- the first one in the size transferred over network (sometimes with gzip compression which makes it smaller)
+- the second one in the size of the resource
 
 ## Results
 
@@ -681,8 +688,9 @@ To have some way to measure and compare, the idea was to create a counter that i
 
 But the tricky part is that it should not be a basic `for` loop for example, because we want the framework to render the value between each increments.
 
-Also I wanted to use a solution that was almost the same for each frameworks so I ended up using `MessageChannel` to dispatch a message to increment the counter.
-This technique is quite similar to the node JS `setImmediate` function but for browsers, and has the following result:
+Also I wanted to use a solution that was almost the same for each frameworks so I ended up using `MessageChannel` to dispatch a message to increment the counter.  
+This technique is quite similar to the node JS `setImmediate` function but for browsers, and gives the following result:
+
 ![Increment counter animation](framework-comparison.gif)
 
 To try it yourself you can go to the `/counter` page for the following frameworks:
@@ -695,8 +703,17 @@ To try it yourself you can go to the `/counter` page for the following framework
 - Svelte (`sveltekit-app`)
 - Vue (`vue-app`)
 
-The `/counter` was not implemented in Next, Nuxt, Remix or Gatsby because all those frameworks either use React or Vue in the frontend part.
+The `/counter` was not implemented in Next, Nuxt, Remix or Gatsby because all those frameworks either use React or Vue in the frontend part.  
 The result should be similar to the corresponding frontend technology used.
+
+## Tests
+
+The tests were made on my system which has the following characteristic:
+
+* OS: Linux 5.19 Ubuntu 22.04.2 LTS 22.04.2 LTS (Jammy Jellyfish)
+* CPU: (8) x64 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
+* Memory: 32 GB
+* Chrome: 114.0.5735.198
 
 ## Results
 
@@ -715,8 +732,10 @@ Here are the results for 10 tests using the production build:
 ### React
 
 We clearly see here that React is the worst and this is due to the usage of the virtual DOM.
-I intentionally put the counter state in the root page component, and in that case React needs to generate the virtual DOM for the entire page, then compare the whole generated tree to the real DOM to then only update the counter text.
+
+I intentionally put the counter state in the root page component, and in that case React needs to generate the virtual DOM for the entire page, then compare the whole generated tree to the real DOM to then only update the counter text.  
 We can improve the React performances by creating a component that only contains the DOM for the counter and the start button.
+
 This better React version is accessible on the route `/better-counter`, and here are the results:
 
 | Framework  | #1     | #2     | #3     | #4     | #5     | #6     | #7     | #8     | #9     | #10    |     Moy |
@@ -726,6 +745,8 @@ This better React version is accessible on the route `/better-counter`, and here
 ### Angular
 
 Angular is also quite slow (compared to the others).
-Trying to do the same optimization as for React does not improve the performance.
+
+Trying to do the same optimization as for React does not improve the performance.  
 I suspect this is more due to the usage of `NgZone` that is needed to tell Angular to update the template when the message from `MessageChannel` is received.
+
 If you know a way to improve the performance here I would be glad to hear about.
