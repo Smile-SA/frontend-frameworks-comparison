@@ -10,6 +10,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Layout = lazy(() => import("./pages/Layout"));
 const Dynamic = lazy(() => import("./pages/Dynamic"));
 const Async = lazy(() => import("./pages/Async"));
+const Counter = lazy(() => import("./pages/Counter"));
 
 const App: Component = () => {
   return (
@@ -19,6 +20,7 @@ const App: Component = () => {
         <Route path="/layout" component={Layout} />
         <Route path="/dynamic" component={Dynamic} />
         <Route path="/async" component={Async} />
+        <Route path="/counter" component={Counter} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,5 @@
-import DynamicMap from "../components/DynamicMap";
-import DynamicTabs from "../components/DynamicTabs";
+import DynamicMap from "./DynamicMap";
+import DynamicTabs from "./DynamicTabs";
 
 export default function DynamicHomepage() {
   return (

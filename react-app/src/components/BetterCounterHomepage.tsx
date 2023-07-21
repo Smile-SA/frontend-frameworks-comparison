@@ -1,9 +1,10 @@
-import AsyncCards from "../components/AsyncCards";
-import AsyncMap from "../components/AsyncMap";
-import AsyncOpenSource from "../components/AsyncOpenSource";
-import AsyncTabs from "../components/AsyncTabs";
+import AsyncCards from "./AsyncCards";
+import AsyncMap from "./AsyncMap";
+import AsyncOpenSource from "./AsyncOpenSource";
+import AsyncTabs from "./AsyncTabs";
+import DynamicMapKpi from "./DynamicMapKpi";
 
-export default function DynamicHomepage() {
+export default function BetterCounterHomepage() {
   return (
     <section className="col-sm-12">
       <a id="main-content"></a>
@@ -56,31 +57,7 @@ export default function DynamicHomepage() {
             <div className="field--item">
               <div className="block-content block-content-map">
                 <div className="map--kpi">
-                  <div className="field field--name-field-map-kpi field--type-entity-reference field--label-hidden field--items">
-                    <div className="field--item">
-                      <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> 17</div>
-                        <div className="subtitle"> Agences</div>
-                      </div>
-                    </div>
-                    <div className="field--item">
-                      <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> 9</div>
-                        <div className="subtitle"> PAYS</div>
-                      </div>
-                    </div>
-                    <div className="field--item">
-                      <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> 2000</div>
-                        <div className="subtitle"> SMILIENS</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="link-map">
-                    <div className="link-map-content">
-                      <a href="/fr/groupe/implantations">Découvrez smile</a>
-                    </div>
-                  </div>
+                  <DynamicMapKpi />
                 </div>
                 <AsyncMap />
               </div>

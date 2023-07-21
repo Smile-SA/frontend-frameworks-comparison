@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import Layout from '../views/Layout.vue'
 // import Dynamic from '../views/Dynamic.vue'
 // import Async from '../views/Async.vue'
+// import Counter from '../views/Counter.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/async',
       // component: Async
       component: () => import('../views/Async.vue')
+    },
+    {
+      path: '/counter',
+      // component: Counter
+      component: () => import('../views/Counter.vue')
     }
   ]
 })

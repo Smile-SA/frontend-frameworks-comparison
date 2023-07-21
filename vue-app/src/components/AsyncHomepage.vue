@@ -3,6 +3,14 @@ import AsyncCards from './AsyncCards.vue'
 import AsyncOpenSource from './AsyncOpenSource.vue'
 import AsyncMap from './DynamicMap.vue'
 import AsyncTabs from './AsyncTabs.vue'
+
+withDefaults(
+  defineProps<{
+    count?: number
+    onStart?: () => void
+  }>(),
+  { count: 2000 }
+)
 </script>
 <template>
   <section class="col-sm-12">
@@ -73,14 +81,20 @@ import AsyncTabs from './AsyncTabs.vue'
                   </div>
                   <div class="field--item">
                     <div class="block-content block-content-kpi singleblock-text">
-                      <div class="title">2000</div>
+                      <div class="title">{{ count }}</div>
                       <div class="subtitle">SMILIENS</div>
                     </div>
                   </div>
                 </div>
                 <div class="link-map">
                   <div class="link-map-content">
-                    <a href="/fr/groupe/implantations">Découvrez smile</a>
+                    <button
+                      type="button"
+                      @click.prevent="onStart"
+                      :style="{ border: 0, background: 'transparent' }"
+                    >
+                      Découvrez smile
+                    </button>
                   </div>
                 </div>
               </div>

@@ -1,3 +1,13 @@
+---
+import AsyncCards from "./AsyncCards.astro";
+import AsyncMap from "./AsyncMap.astro";
+import AsyncOpenSource from "./AsyncOpenSource.astro";
+import AsyncTabs from "./AsyncTabs.astro";
+
+const { data } = Astro.props;
+const { cards, openSources, solutions, technologies } = data;
+---
+
 <section class="col-sm-12">
   <a id="main-content"></a>
   <div class="region region-content-top">
@@ -17,7 +27,7 @@
           <div class="full-new-homepage">
             <div class="block-header-block homepage-yellow">
               <div class="logo-block-hp">
-                <a href="#" rel="external">
+                <a href="#">
                   <img
                     class="block-content-block_header_block__btn-logo-smile"
                     src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo_yellow.png"
@@ -36,11 +46,7 @@
                     </div>
                     <div class="link-single-part">
                       <div class="link-content">
-                        <a
-                          href="/fr/nos-references"
-                          class="btn blue"
-                          rel="external"
-                        >
+                        <a href="/fr/nos-references" class="btn blue">
                           Découvrez nos projets
                         </a>
                       </div>
@@ -52,8 +58,8 @@
             </div>
           </div>
         </div>
-        <app-async-open-sources />
-        <app-async-cards />
+        <AsyncOpenSource openSources={openSources} />
+        <AsyncCards cards={cards} />
         <div class="field--item">
           <div class="block-content block-content-map">
             <div class="map--kpi">
@@ -74,7 +80,7 @@
                 </div>
                 <div class="field--item">
                   <div class="block-content block-content-kpi singleblock-text">
-                    <div class="title">{{ count }}</div>
+                    <div class="title" id="count-render-el">0</div>
                     <div class="subtitle">SMILIENS</div>
                   </div>
                 </div>
@@ -82,20 +88,69 @@
               <div class="link-map">
                 <div class="link-map-content">
                   <button
+                    id="count-start-btn"
                     type="button"
-                    (click)="handleStart($event)"
-                    style="border: 0; background: transparent"
+                    style={{ border: 0, background: "transparent" }}
                   >
                     Découvrez smile
                   </button>
                 </div>
               </div>
             </div>
-            <app-async-map />
+            <AsyncMap />
           </div>
         </div>
-        <app-async-tabs />
+        <AsyncTabs solutions={solutions} technologies={technologies} />
       </div>
     </article>
   </div>
 </section>
+<script>
+  const btn = document.getElementById("count-start-btn");
+  const el = document.getElementById("count-render-el")?.childNodes[0];
+  // const el = document.getElementById("count-render-el");
+
+  btn?.addEventListener("click", startCount);
+
+  let count = 0;
+  let start = false;
+  let time = 0;
+
+  const channel = new MessageChannel();
+  const port = channel.port2;
+  channel.port1.onmessage = () => {
+      count = count + 1;
+      render();
+      increment();
+    };
+
+  function startCount(event: any) {
+    event.preventDefault();
+    if (count === 0) {
+      time = Date.now();
+      start = true;
+      increment();
+    } else {
+      count = 0;
+      render();
+    }
+  }
+
+  function increment() {
+    if (start) {
+      if (Date.now() - time < 1000) {
+        port.postMessage("");
+      } else {
+        start = false;
+      }
+    }
+  }
+
+  function render() {
+    if (el) {
+      // @ts-expect-error ignore
+      el.nodeValue = count;
+      // el.innerText = count;
+    }
+  }
+</script>

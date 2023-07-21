@@ -1,6 +1,12 @@
-# Frontend framework performance comparison
+# Loading performances
 
 ## Introduction
+
+The goal is to compare the loading performances of 11 different frameworks (13 if we take into account 2 different implementations for the same framework).
+
+To effectively compare them, I integrated the https://www.smile.eu/fr page into all those frameworks to base the comparison on a real use case (and not on a dummy blank page).
+The page itself is clearly not perfect and, as the time I am writing this, scores 75 in lighthouse.
+Because of the assets used...etc, the goal is not to try to achieve a 100 score, but only to compare the frameworks to each others.
 
 The tests were made using Lighthouse in Chrome 114.0.5735.198 with following configuration:
 
@@ -12,6 +18,27 @@ In the result when there is two numbers separated by a <key>/</key> it means tha
 - the first one in the size transferred over network (sometimes with gzip compression which makes it smaller)
 - the second one in the size of the resource
 
+## Structure
+
+In the root folder, you will find a folder for each framework project plus:
+
+- a `shared` folder that contains shared assets between the projects.
+- an `express-app` folder containing a little express app used to fetch some data.
+
+When installing and running a project you will always find the same routes:
+
+- `/`: this is the integration of the https://www.smile.eu/fr page, but without any JavaScript. The page is completely static.
+- `/layout`: same page, but with some interactivity added in the header and the footer.
+- `/dynamic`: same as previous, but now some interactivity has been added in the content (leaflet map and tabs).
+
+Then depending on the framework you can also find the following routes:
+
+- `/async`: for Client Side Rendering (`CSR`) frameworks. Same as `/dynamic` but some data are fetched in the client from the express app.
+- `/ssr`: for Server Side Rendering (`SSR`) frameworks. Same as `/dynamic` but some data are fetched on the fly in the server from the express app.
+- `/ssg`: for Static Site Generating (`SSG`) frameworks. Same as `/dynamic` but some data are fetched during the build step from the express app.
+
+For all those cases, the response time of the express app has been delayed by 1 second to simulate a long API call.
+
 ## Glossary
 
 - FCP: First Contentful Paint - First Contentful Paint marks the time at which the first text or image is painted.
@@ -20,10 +47,14 @@ In the result when there is two numbers separated by a <key>/</key> it means tha
 - CLS: Cumulative Layout Shift - Cumulative Layout Shift measures the movement of visible elements within the viewport.
 - SI: Speed Index - Speed Index shows how quickly the contents of a page are visibly populated.
 
-## Angular app
+## Results
 
-- npm run build
-- npm run serve
+### Angular app
+
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -40,10 +71,14 @@ Statistics per page:
 | dynamic | 65       | 1.0kB/1.2kB | 154kB/553kB | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
 | async   | 70       | 1.0kB/1.2kB | 154kB/553kB | 78          | 1.2s | 3.4s | 0ms | 0.014 | 1.2s |
 
-## Astro app (Without React Components)
+### Astro app (Without React Components)
 
-- npm run build
-- npm run preview
+#### Using vite preview
+
+Commands:
+
+- `npm run build`
+- `npm run preview`
 
 Common statistics:
 
@@ -61,10 +96,12 @@ Statistics per page:
 | ssr     | 67       | 69.7kB/67.6kB | 159kB/158kB | 66          | 2.0s | 4.7s | 0ms | 0.001 | 2.0s |
 | ssg     | 67       | 67.9kB/67.6kB | 159kB/158kB | 66          | 2.0s | 4.7s | 0ms | 0.001 | 2.0s |
 
-### Using `serve`
+#### Using `serve`
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -81,12 +118,14 @@ Statistics per page:
 | dynamic | 65       | 9.1kB/66.6kB  | 50.8kB/174kB | 78          | 1.2s | 3.5s | 0ms | 0.001 | 1.2s |
 | ssg     | 67       | 9.1kB/67.6kB  | 48.7kB/158kB | 80          | 1.0s | 3.3s | 0ms | 0.001 | 1.0s |
 
-## Astro app (With React Components)
+### Astro app (With React Components)
 
-### Using `client:load` directive
+#### Using vite preview + `client:load` directive
 
-- npm run build
-- npm run preview
+Commands:
+
+- `npm run build`
+- `npm run preview`
 
 Common statistics:
 
@@ -104,10 +143,12 @@ Statistics per page:
 | ssr     | 74       | 57.6kB/56.8kB | 338kB/335kB | 66          | 2.0s | 4.9s | 0ms | 0.001 | 2.1s |
 | ssg     | 74       | 57.1kB/56.8kB | 338kB/335kB | 67          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
 
-### Using `serve`
+#### Using `serve`
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -126,10 +167,12 @@ Statistics per page:
 
 No SSR here (because it needs a server).
 
-### Using `serve` + `client:visible` directive
+#### Using `serve` + `client:visible` directive
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -148,10 +191,12 @@ Statistics per page:
 
 No SSR again here.
 
-## Gatsby app
+### Gatsby app
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -169,10 +214,12 @@ Statistics per page:
 | ssr     | 73       | 8.6kB/52.3kB | 125kB/411kB  | 79          | 1.0s | 3.4s | 0ms | 0.001 | 1.4s |
 | ssg     | 74       | 8.1kB/46.4kB | 125kB/411kB  | 80          | 1.0s | 3.4s | 0ms | 0.001 | 1.0s |
 
-## Next app (Using App Router)
+### Next app (Using App Router)
 
-- npm run build
-- npm run start
+Commands:
+
+- `npm run build`
+- `npm run start`
 
 Common statistics:
 
@@ -190,10 +237,12 @@ Statistics per page:
 | ssr     | 74       | 13.5kB/70.9kB | 131kB/455kB  | 81          | 0.9s | 3.3s | 0ms | 0.001 | 0.9s |
 | ssg     | 74       | 11.6kB/70.1kB | 131kB/455kB  | 80          | 1.0s | 3.2s | 0ms | 0.001 | 1.0s |
 
-## Next app (Using Pages Router)
+### Next app (Using Pages Router)
 
-- npm run build
-- npm run start
+Commands:
+
+- `npm run build`
+- `npm run start`
 
 Common statistics:
 
@@ -211,12 +260,14 @@ Statistics per page:
 | ssr     | 76       | 8.1kB/51.3kB | 132kB/446kB  | 78          | 1.0s | 3.5s | 0ms | 0.001 | 1.6s |
 | ssg     | 76       | 8.1kB/51.3kB | 132kB/446kB  | 79          | 1.0s | 3.5s | 0ms | 0.001 | 1.0s |
 
-## Nuxt app
+### Nuxt app
 
-### Using generated server file
+#### Using generated server file
 
-- npm run build
-- node .output/server/index.mjs
+Commands:
+
+- `npm run build`
+- `node .output/server/index.mjs`
 
 Common statistics:
 
@@ -234,10 +285,12 @@ Statistics per page:
 | ssr     | 71       | 750kB/750kB | 355kB/353kB | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
 | ssg     | 71       | 751kB/750kB | 355kB/353kB | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
 
-### Using vite preview
+#### Using vite preview
 
-- npm run build
-- npm run preview
+Commands:
+
+- `npm run build`
+- `npm run preview`
 
 Common statistics:
 
@@ -254,10 +307,12 @@ Statistics per page:
 | dynamic | 70       | 744kB/744kB | 366kB/364kB | 64          | 2.3s | 5.0s | 0ms | 0.001 | 2.3s |
 | ssg     | 71       | 751kB/750kB | 355kB/353kB | 66          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
 
-### Using `serve`
+#### Using `serve`
 
-- npm run generate
-- npm run serve
+Commands:
+
+- `npm run generate`
+- `npm run serve`
 
 Common statistics:
 
@@ -274,11 +329,13 @@ Statistics per page:
 | dynamic | 70       | 88.6kB/744kB | 115kB/365kB  | 81          | 0.9s | 3.2s | 0ms | 0.001 | 0.9s |
 | ssg     | 71       | 89.4kB/750kB | 117kB/354kB  | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
 
-## Qwik app
+### Qwik app
 
-### Using vite preview
+#### Using vite preview
 
-- npm run preview
+Commands:
+
+- `npm run preview`
 
 Common statistics:
 
@@ -295,10 +352,12 @@ Statistics per page:
 | dynamic | 43       | 10.4kB/52.7kB | 0       | 74          | 1.5s | 3.6s | 0ms | 0.001 | 1.5s |
 | ssr     | 44       | 10.5kB/53.6kB | 0       | 74          | 1.5s | 3.6s | 0ms | 0.001 | 1.5s |
 
-### Using Node.js Express Server Adapter
+#### Using Node.js Express Server Adapter
 
-- npm run build.server
-- npm run serve
+Commands:
+
+- `npm run build.server`
+- `npm run serve`
 
 Common statistics:
 
@@ -315,10 +374,12 @@ Statistics per page:
 | dynamic | 43       | 52.9kB/52.7kB   | 0       | 67          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
 | ssr     | 44       | 53.8kB/53.6kB   | 0       | 67          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
 
-### Using Static site Adapter + `serve`
+#### Using Static site Adapter + `serve`
 
-- npm run build.server
-- npm run serve
+Commands:
+
+- `npm run build.server`
+- `npm run serve`
 
 Common statistics:
 
@@ -335,12 +396,14 @@ Statistics per page:
 | dynamic  | 43       | 10.5kB/52.7kB | 0       | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
 | ssr(ssg) | 44       | 10.6kB/53.6kB | 0       | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
 
-## React app (Vite)
+### React app (Vite)
 
-### Using vite preview
+#### Using vite preview
 
-- npm run build
-- npm run preview
+Commands:
+
+- `npm run build`
+- `npm run preview`
 
 Common statistics:
 
@@ -357,10 +420,12 @@ Statistics per page:
 | dynamic | 65       | 934B/1.2kB | 116kB/472kB  | 71          | 1.7s | 4.1s | 0ms | 0.004 | 1.7s |
 | async   | 71       | 934B/1.2kB | 116kB/472kB  | 72          | 1.4s | 4.6s | 0ms | 0.014 | 1.4s |
 
-### Using `serve`
+#### Using `serve`
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -377,10 +442,12 @@ Statistics per page:
 | dynamic | 65       | 949B/1.2kB | 116kB/472kB  | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
 | async   | 71       | 949B/1.2kB | 116kB/472kB  | 78          | 1.2s | 3.6s | 0ms | 0.014 | 1.2s |
 
-### Using `serve` + async components
+#### Using `serve` + async components
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -397,10 +464,12 @@ Statistics per page:
 | dynamic | 68       | 949B/1.2kB | 110kB/386kB  | 77          | 1.3s | 3.6s | 0ms | 0.004 | 1.3s |
 | async   | 74       | 949B/1.2kB | 107kB/361kB  | 79          | 1.1s | 3.3s | 0ms | 0.004 | 1.1s |
 
-## Remix app
+### Remix app
 
-- npm run build
-- npm run start
+Commands:
+
+- `npm run build`
+- `npm run start`
 
 Common statistics:
 
@@ -417,12 +486,14 @@ Statistics per page:
 | dynamic | 72       | 16.1kB/46.0kB | 144kB/490kB  | 75          | 1.4s | 3.7s | 0ms | 0.001 | 1.4s |
 | ssr     | 74       | 18.1kB/52.1kB | 140kB/464kB  | 77          | 1.2s | 3.4s | 0ms | 0.001 | 1.5s |
 
-## Solid app
+### Solid app
 
-### Using vite preview
+#### Using vite preview
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -439,10 +510,12 @@ Statistics per page:
 | dynamic | 63       | 1.0kB/706B | 77.7kB/324kB | 72          | 1.6s | 4.0s | 0ms | 0.004 | 1.6s |
 | async   | 69       | 1.0kB/706B | 77.7kB/324kB | 75          | 1.4s | 3.7s | 0ms | 0.004 | 1.4s |
 
-### Using `serve`
+#### Using `serve`
 
-- npm run build
-- npm run realserve
+Commands:
+
+- `npm run build`
+- `npm run realserve`
 
 Common statistics:
 
@@ -459,10 +532,12 @@ Statistics per page:
 | dynamic | 63       | 1.0kB/706B | 77.7kB/324kB | 79          | 1.1s | 3.5s | 0ms | 0.004 | 1.1s |
 | async   | 69       | 1.0kB/706B | 77.7kB/324kB | 80          | 1.0s | 3.2s | 0ms | 0.004 | 1.0s |
 
-### Using `serve` + async components
+#### Using `serve` + async components
 
-- npm run build
-- npm run realserve
+Commands:
+
+- `npm run build`
+- `npm run realserve`
 
 Common statistics:
 
@@ -472,19 +547,21 @@ Common statistics:
 
 Statistics per page:
 
-| Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
-| ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
+| Pages   | Requests | Doc size   | JS size       | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | -------- | ---------- | ------------- | ----------- | ---- | ---- | --- | ----- | ---- |
 | static  | 67       | 1.0kB/706B | 20.8kB/83.9kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
 | layout  | 68       | 1.0kB/706B | 22.7kB/88.3kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
-| dynamic | 66       | 1.0kB/706B | 69.7kB/249kB | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
-| async   | 72       | 1.0kB/706B | 67.1kB/227kB | 80          | 1.0s | 3.3s | 0ms | 0.004 | 1.1s |
+| dynamic | 66       | 1.0kB/706B | 69.7kB/249kB  | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
+| async   | 72       | 1.0kB/706B | 67.1kB/227kB  | 80          | 1.0s | 3.3s | 0ms | 0.004 | 1.1s |
 
-## Sveltekit app
+### Sveltekit app
 
-### Using vite preview
+#### Using vite preview
 
-- npm run build
-- npm run preview
+Commands:
+
+- `npm run build`
+- `npm run preview`
 
 Common statistics:
 
@@ -502,10 +579,12 @@ Statistics per page:
 | ssr     | 77       | 9.6kB/57.4kB  | 98.9kB/307kB | 71          | 1.6s | 3.9s | 0ms | 0.014 | 2.0s |
 | ssg     | 77       | 8.9kB/58.3kB  | 98.9kB/307kB | 72          | 1.6s | 3.9s | 0ms | 0.001 | 1.6s |
 
-### Using `@sveltejs/adapter-static` + `serve`
+#### Using `@sveltejs/adapter-static` + `serve`
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -522,12 +601,14 @@ Statistics per page:
 | dynamic | 75       | 8.6kB/51.7kB  | 100kB/322kB  | 74          | 1.5s | 3.7s | 0ms | 0.001 | 1.5s |
 | ssg     | 80       | 9.0kB/58.3kB  | 99.5kB/307kB | 78          | 1.2s | 3.4s | 0ms | 0.001 | 1.2s |
 
-## Vue app
+### Vue app
 
-### Using vite preview
+#### Using vite preview
 
-- npm run build
-- npm run preview
+Commands:
+
+- `npm run build`
+- `npm run preview`
 
 Common statistics:
 
@@ -544,10 +625,12 @@ Statistics per page:
 | dynamic | 63       | 878B/583B | 95.5kB/369kB | 72          | 1.6s | 4.1s | 0ms | 0.004 | 1.6s |
 | async   | 67       | 878B/583B | 95.5kB/369kB | 74          | 1.4s | 3.8s | 0ms | 0.004 | 1.4s |
 
-### Using `serve`
+#### Using `serve`
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -564,10 +647,12 @@ Statistics per page:
 | dynamic | 63       | 894B/583B | 95.6kB/369kB | 78          | 1.1s | 3.6s | 0ms | 0.004 | 1.1s |
 | async   | 67       | 894B/583B | 95.6kB/369kB | 80          | 1.0s | 3.3s | 0ms | 0.004 | 1.0s |
 
-### Using `serve` + async components
+#### Using `serve` + async components
 
-- npm run build
-- npm run serve
+Commands:
+
+- `npm run build`
+- `npm run serve`
 
 Common statistics:
 
@@ -583,3 +668,64 @@ Statistics per page:
 | layout  | 68       | 894B/583B | 43.3kB/138kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
 | dynamic | 67       | 894B/583B | 90.7kB/298kB | 77          | 1.2s | 3.7s | 0ms | 0.004 | 1.2s |
 | async   | 71       | 894B/583B | 89.9kB/291kB | 80          | 1.1s | 3.3s | 0ms | 0.004 | 1.1s |
+
+# Update performances
+
+## Introduction
+
+In this part the goal is to compare the ability of the framework to quickly update the DOM.
+
+The problem is that this is quite hard to measure and compare, because updating a little part of the DOM is basically really quick for all frameworks (less than 1ms).
+
+To have some way to measure and compare, the idea was to create a counter that increments in a loop during a fixed period of time (here 1 second).
+
+But the tricky part is that it should not be a basic `for` loop for example, because we want the framework to render the value between each increments.
+
+Also I wanted to use a solution that was almost the same for each frameworks so I ended up using `MessageChannel` to dispatch a message to increment the counter.
+This technique is quite similar to the node JS `setImmediate` function but for browsers, and has the following result:
+![Increment counter animation](framework-comparison.gif)
+
+To try it yourself you can go to the `/counter` page for the following frameworks:
+
+- Vanilla JS (`astro-app`)
+- Angular (`angular-app`)
+- Qwik (`qwik-app`)
+- React (`react-app`)
+- Solid (`solis-app`)
+- Svelte (`sveltekit-app`)
+- Vue (`vue-app`)
+
+The `/counter` was not implemented in Next, Nuxt, Remix or Gatsby because all those frameworks either use React or Vue in the frontend part.
+The result should be similar to the corresponding frontend technology used.
+
+## Results
+
+Here are the results for 10 tests using the production build:
+
+| Framework  | #1     | #2     | #3     | #4     | #5     | #6     | #7     | #8     | #9     | #10    |     Moy |
+| ---------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------: |
+| JS (astro) | 180263 | 184498 | 180515 | 183130 | 181785 | 187459 | 183429 | 184006 | 186710 | 180995 | ~183300 |
+| Angular    | 3312   | 3311   | 2960   | 3244   | 3134   | 3250   | 3364   | 3228   | 3306   | 3272   |   ~3200 |
+| Qwik       | 76107  | 79209  | 79447  | 79365  | 76764  | 79439  | 78580  | 79925  | 80502  | 80103  |  ~79000 |
+| React      | 1938   | 2122   | 2219   | 2364   | 2368   | 2299   | 2311   | 2417   | 2302   | 2309   |   ~2300 |
+| Solid      | 168062 | 171013 | 175605 | 174752 | 170880 | 172523 | 171351 | 172993 | 170332 | 169980 | ~171700 |
+| Svelte     | 126536 | 134018 | 136673 | 137853 | 135600 | 138685 | 136942 | 136943 | 134005 | 136293 | ~135400 |
+| Vue        | 78924  | 83854  | 84252  | 83616  | 83020  | 84608  | 83578  | 83658  | 85105  | 82963  |  ~83400 |
+
+### React
+
+We clearly see here that React is the worst and this is due to the usage of the virtual DOM.
+I intentionally put the counter state in the root page component, and in that case React needs to generate the virtual DOM for the entire page, then compare the whole generated tree to the real DOM to then only update the counter text.
+We can improve the React performances by creating a component that only contains the DOM for the counter and the start button.
+This better React version is accessible on the route `/better-counter`, and here are the results:
+
+| Framework  | #1     | #2     | #3     | #4     | #5     | #6     | #7     | #8     | #9     | #10    |     Moy |
+| ---------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------: |
+| React 2    | 33077  | 34264  | 34396  | 34648  | 34670  | 33541  | 34443  | 32920  | 34416  | 34235  |  ~34100 |
+
+### Angular
+
+Angular is also quite slow (compared to the others).
+Trying to do the same optimization as for React does not improve the performance.
+I suspect this is more due to the usage of `NgZone` that is needed to tell Angular to update the template when the message from `MessageChannel` is received.
+If you know a way to improve the performance here I would be glad to hear about.

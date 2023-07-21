@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+
 	import type { ICard } from '../types/cards';
 	import type { IOpenSource } from '../types/openSource';
 	import type { ISolution } from '../types/tabs';
@@ -8,10 +10,17 @@
 	import AsyncCards from './AsyncCards.svelte';
 	import AsyncOpenSource from './AsyncOpenSource.svelte';
 
+  const dispatch = createEventDispatcher();
 	export let cards: ICard[];
 	export let openSources: IOpenSource[];
 	export let solutions: ISolution[];
 	export let technologies: ISolution[];
+	export let count: number = 2000;
+
+  function handleStart(event: any) {
+    event.preventDefault();
+    dispatch('start');
+  }
 </script>
 
 <section class="col-sm-12">
@@ -84,14 +93,20 @@
 								</div>
 								<div class="field--item">
 									<div class="block-content block-content-kpi singleblock-text">
-										<div class="title">2000</div>
+										<div class="title">{count}</div>
 										<div class="subtitle">SMILIENS</div>
 									</div>
 								</div>
 							</div>
 							<div class="link-map">
 								<div class="link-map-content">
-									<a href="/fr/groupe/implantations" rel="external">Découvrez smile</a>
+                  <button
+                    type="button"
+                    on:click={handleStart}
+                    style="border: 0; background: transparent;"
+                  >
+                    Découvrez smile
+                  </button>
 								</div>
 							</div>
 						</div>

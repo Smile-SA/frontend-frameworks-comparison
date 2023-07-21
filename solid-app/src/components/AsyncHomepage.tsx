@@ -1,11 +1,23 @@
-import type { Component } from "solid-js";
+import type { Accessor, Component } from "solid-js";
 
 import AsyncTabs from "./AsyncTabs";
 import AsyncMap from "./AsyncMap";
 import AsyncOpenSources from "./AsyncOpenSources";
 import AsyncCards from "./AsyncCards";
 
-const AsyncHomepage: Component = () => {
+interface IAsyncHomepageProps {
+  count?: Accessor<number>;
+  onStart?: () => void;
+}
+
+const AsyncHomepage: Component<IAsyncHomepageProps> = (props) => {
+  const { count, onStart } = props;
+
+  function handleStart(event: any) {
+    event.preventDefault();
+    onStart?.();
+  }
+
   return (
     <section class="col-sm-12">
       <a id="main-content" />
@@ -58,7 +70,7 @@ const AsyncHomepage: Component = () => {
               </div>
             </div>
             <AsyncOpenSources />
-            <AsyncCards/>
+            <AsyncCards />
             <div class="field--item">
               <div class="block-content block-content-map">
                 <div class="map--kpi">
@@ -77,16 +89,20 @@ const AsyncHomepage: Component = () => {
                     </div>
                     <div class="field--item">
                       <div class="block-content block-content-kpi singleblock-text">
-                        <div class="title">2000</div>
+                        <div class="title">{count?.() ?? 2000}</div>
                         <div class="subtitle">SMILIENS</div>
                       </div>
                     </div>
                   </div>
                   <div class="link-map">
                     <div class="link-map-content">
-                      <a href="/fr/groupe/implantations" rel="external">
+                      <button
+                        type="button"
+                        onClick={handleStart}
+                        style="border: 0; background: transparent;"
+                      >
                         Découvrez smile
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

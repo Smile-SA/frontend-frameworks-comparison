@@ -24,6 +24,7 @@ import { AsyncOpenSourcesComponent } from './components/async-open-sources/async
 import { AsyncCardsComponent } from './components/async-cards/async-cards.component';
 import { AsyncMapComponent } from './components/async-map/async-map.component';
 import { AsyncTabsComponent } from './components/async-tabs/async-tabs.component';
+import { CounterComponent } from './pages/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AsyncTabsComponent } from './components/async-tabs/async-tabs.component
     AsyncCardsComponent,
     AsyncMapComponent,
     AsyncTabsComponent,
+    CounterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

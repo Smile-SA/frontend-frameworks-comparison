@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { Signal, component$ } from "@builder.io/qwik";
 
 import AsyncCards, { ICard } from "./AsyncCards";
 import AsyncMap from "./AsyncMap";
@@ -10,10 +10,12 @@ export interface IProps {
   openSources: IOpenSource[];
   solutions: ISolution[];
   technologies: ISolution[];
+  count?: Signal<number>;
+  onStart?: () => void;
 }
 
 export default component$<IProps>((props) => {
-  const { cards, openSources, solutions, technologies } = props;
+  const { cards, openSources, solutions, technologies, count, onStart } = props;
   return (
     <section class="col-sm-12">
       <a id="main-content"></a>
@@ -81,14 +83,21 @@ export default component$<IProps>((props) => {
                     </div>
                     <div class="field--item">
                       <div class="block-content block-content-kpi singleblock-text">
-                        <div class="title"> 2000</div>
+                        <div class="title"> {count?.value ?? 2000}</div>
                         <div class="subtitle"> SMILIENS</div>
                       </div>
                     </div>
                   </div>
                   <div class="link-map">
                     <div class="link-map-content">
-                      <a href="/fr/groupe/implantations">Découvrez smile</a>
+                      <button
+                        type="button"
+                        preventdefault:click
+                        onClick$={onStart}
+                        style="border: 0; background: transparent;"
+                      >
+                        Découvrez smile
+                      </button>
                     </div>
                   </div>
                 </div>
