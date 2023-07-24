@@ -38,7 +38,7 @@ For all those cases, the response time of the express app has been delayed by 1 
 
 - FCP: First Contentful Paint - First Contentful Paint marks the time at which the first text or image is painted.
 - LCP: Largest Contentful Paint - Largest Contentful Paint marks the time at which the largest text or image is painted.
-- TBT: Total Blocking Time - Sum of all time periods between FCP and Time to Interactive, when taskB length exceeded 50ms, expressed in milliseconds.
+- TBT: Total Blocking Time - Sum of all time periods between FCP and Time to Interactive, when a task length exceeded 50ms, expressed in milliseconds.
 - CLS: Cumulative Layout Shift - Cumulative Layout Shift measures the movement of visible elements within the viewport.
 - SI: Speed Index - Speed Index shows how quickly the contents of a page are visibly populated.
 
@@ -49,10 +49,10 @@ The tests were made using Lighthouse in Chrome 114.0.5735.198 with following con
 - Mode: "Navigation"
 - Device: "Desktop"
 
-In the result when there is two numbers separated by a <key>/</key> it means than:
+In the result when there is two numbers separated by a <key>/</key> it means that:
 
-- the first one in the size transferred over network (sometimes with gzip compression which makes it smaller)
-- the second one in the size of the resource
+- the first one is the size transferred over network (sometimes with gzip compression which makes it smaller)
+- the second one is the size of the resource
 
 ## Results
 
@@ -688,7 +688,7 @@ To have some way to measure and compare, the idea was to create a counter that i
 
 But the tricky part is that it should not be a basic `for` loop for example, because we want the framework to render the value between each increments.
 
-Also I wanted to use a solution that was almost the same for each frameworks so I ended up using `MessageChannel` to dispatch a message to increment the counter.  
+Also I wanted to use a solution that was almost the same for each framework so I ended up using `MessageChannel` to dispatch a message to increment the counter.  
 This technique is quite similar to the node JS `setImmediate` function but for browsers, and gives the following result:
 
 ![Increment counter animation](framework-comparison.gif)
@@ -703,7 +703,7 @@ To try it yourself you can go to the `/counter` page for the following framework
 - Svelte (`sveltekit-app`)
 - Vue (`vue-app`)
 
-The `/counter` was not implemented in Next, Nuxt, Remix or Gatsby because all those frameworks either use React or Vue in the frontend part.  
+The `/counter` was not implemented in Next, Nuxt, Remix or Gatsby because all those frameworks use either React or Vue in the frontend part.  
 The result should be similar to the corresponding frontend technology used.
 
 ## Tests
