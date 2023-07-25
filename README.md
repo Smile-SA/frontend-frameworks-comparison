@@ -17,8 +17,7 @@ Also for some frameworks you will notice multiple tests:
 
 In the root folder, you will find a folder for each framework project plus:
 
-- a `shared` folder that contains shared assets between the projects.
-- an `express-app` folder containing a little express app used to fetch some data.
+- an `express-app` folder containing a little express app used to fetch some data and deliver some assets.
 
 When installing and running a project you will always find the same routes:
 
@@ -363,7 +362,7 @@ Statistics per page:
 
 Commands:
 
-- `npm run build.server`
+- `npm run build`
 - `npm run serve`
 
 Common statistics:
@@ -385,7 +384,7 @@ Statistics per page:
 
 Commands:
 
-- `npm run build.server`
+- `npm run build`
 - `npm run serve`
 
 Common statistics:

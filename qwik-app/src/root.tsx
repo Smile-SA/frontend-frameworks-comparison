@@ -7,9 +7,6 @@ import {
 import { RouterHead } from "./components/RouterHead";
 
 import "./global.css";
-import "../public/css_OIzBRxciYG74p5zSuRGfzMOMmxX2w4G6eJ9zFXXGLgE.css";
-import "../public/css_uGznCPRfy4VyscOn7wc-83IOi6ex6Osgx7AS18BCoFI.css";
-import "../public/css_iZHYdEhagxtlMnc7tQBGAPpfu3YF-FwbR8QCKEILwYQ.css";
 
 export default component$(() => {
   /**

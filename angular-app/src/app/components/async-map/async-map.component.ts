@@ -94,7 +94,7 @@ export class AsyncMapComponent implements AfterViewInit {
     let zoomSnap = 1;
     const isFront = drupalSettings.smileeu.map.isFront;
     const mapUri =
-      'assets/smileeu_local_map/pictures_map_global/{z}/{x}/{y}.png';
+      'http://localhost:3333/smileeu_local_map/pictures_map_global/{z}/{x}/{y}.png';
 
     if (window.innerWidth < 1400 && window.innerWidth > 1200) {
       zoom = 4.8;
@@ -171,7 +171,7 @@ export class AsyncMapComponent implements AfterViewInit {
       map.zoomControl.setPosition('topright');
     }
 
-    L.Icon.Default.imagePath = 'assets/map/';
+    L.Icon.Default.imagePath = 'http://localhost:3333/map/';
     if (drupalSettings.smileeu.map.taxonomy[1]) {
       if ((window.innerWidth > 480 && isFront) || !isFront) {
         this.http
@@ -207,7 +207,7 @@ export class AsyncMapComponent implements AfterViewInit {
 
   addDataToMap(L: any, data: FeatureCollection<Point>, map: Map) {
     const myIcon = L.icon({
-      iconUrl: 'assets/map/pin.svg',
+      iconUrl: 'http://localhost:3333/map/pin.svg',
       iconSize: [21, 28],
       iconAnchor: [10, 28],
     });

@@ -10,7 +10,7 @@ import {
 export const links: LinksFunction = () => [
   {
     rel: "stylesheet",
-    href: "/css_OIzBRxciYG74p5zSuRGfzMOMmxX2w4G6eJ9zFXXGLgE.css",
+    href: "http://localhost:3333/css_OIzBRxciYG74p5zSuRGfzMOMmxX2w4G6eJ9zFXXGLgE.css",
   },
   {
     rel: "stylesheet",
@@ -18,7 +18,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "/css_uGznCPRfy4VyscOn7wc-83IOi6ex6Osgx7AS18BCoFI.css",
+    href: "http://localhost:3333/css_uGznCPRfy4VyscOn7wc-83IOi6ex6Osgx7AS18BCoFI.css",
   },
   {
     rel: "stylesheet",
@@ -26,7 +26,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "/css_iZHYdEhagxtlMnc7tQBGAPpfu3YF-FwbR8QCKEILwYQ.css",
+    href: "http://localhost:3333/css_iZHYdEhagxtlMnc7tQBGAPpfu3YF-FwbR8QCKEILwYQ.css",
   },
 ];
 
