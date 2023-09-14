@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts">
 interface IReference {
   type: "reference";
   image: string;
@@ -53,16 +53,35 @@ export type ICard =
   | IEvent
   | IWhitePaper;
 
-const { data: cards } = await useFetch<ICard[]>("http://localhost:3333/cards");
-const groupedCards = computed(() => {
-  const groupedCards = [];
-  if (cards.value instanceof Array) {
-    for (let i = 0; i < cards.value.length; i += 3) {
-      groupedCards.push(cards.value.slice(i, i + 3));
-    }
-  }
-  return groupedCards;
-});
+// const { data: cards } = await useFetch<ICard[]>("http://localhost:3333/cards");
+// const groupedCards = computed(() => {
+//   const groupedCards = [];
+//   if (cards.value instanceof Array) {
+//     for (let i = 0; i < cards.value.length; i += 3) {
+//       groupedCards.push(cards.value.slice(i, i + 3));
+//     }
+//   }
+//   return groupedCards;
+// });
+export default {
+  async setup() {
+    const { data: cards } = await useFetch<ICard[]>(
+      "http://localhost:3333/cards"
+    );
+    return { cards };
+  },
+  computed: {
+    groupedCards() {
+      const groupedCards = [];
+      if (this.cards instanceof Array) {
+        for (let i = 0; i < this.cards.length; i += 3) {
+          groupedCards.push(this.cards.slice(i, i + 3));
+        }
+      }
+      return groupedCards;
+    },
+  },
+};
 </script>
 <template>
   <div class="field--item">

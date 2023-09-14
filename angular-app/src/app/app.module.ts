@@ -8,6 +8,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { DynamicComponent } from './pages/dynamic/dynamic.component';
 import { AsyncComponent } from './pages/async/async.component';
+import { BusyComponent } from './pages/busy/busy.component';
 import { StaticLayoutComponent } from './layouts/static-layout/static-layout.component';
 import { DynamicLayoutComponent } from './layouts/dynamic-layout/dynamic-layout.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -24,6 +25,7 @@ import { AsyncOpenSourcesComponent } from './components/async-open-sources/async
 import { AsyncCardsComponent } from './components/async-cards/async-cards.component';
 import { AsyncMapComponent } from './components/async-map/async-map.component';
 import { AsyncTabsComponent } from './components/async-tabs/async-tabs.component';
+import { BusyHomepageComponent } from './components/busy-homepage/busy-homepage.component';
 import { CounterComponent } from './pages/counter/counter.component';
 
 @NgModule({
@@ -33,6 +35,7 @@ import { CounterComponent } from './pages/counter/counter.component';
     LayoutComponent,
     DynamicComponent,
     AsyncComponent,
+    BusyComponent,
     StaticLayoutComponent,
     DynamicLayoutComponent,
     HomepageComponent,
@@ -49,6 +52,7 @@ import { CounterComponent } from './pages/counter/counter.component';
     AsyncCardsComponent,
     AsyncMapComponent,
     AsyncTabsComponent,
+    BusyHomepageComponent,
     CounterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],

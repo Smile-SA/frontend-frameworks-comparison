@@ -8,7 +8,7 @@ To effectively compare them, I integrated the https://www.smile.eu/fr page into 
 The page itself is clearly not perfect and, at the time I am writing this, it scores 75 in lighthouse.  
 The goal is not to try to achieve a 100 score, nor to say that something is bad or good, but only to compare the frameworks to each others, with the same imperfect base scenario.
 
-Also for some frameworks you will notice multiple tests:  
+Also for some frameworks you will notice multiple tests:
 
 - to try different options for the same framework (using async components for example)
 - or to try to find the optimal way to serve the content for the comparison to be fair (using `serve` for example that use compression for CSS, JS, HTML and fonts)
@@ -30,6 +30,7 @@ Then depending on the framework you can also find the following routes:
 - `/async`: for Client Side Rendering (`CSR`) frameworks. Same as `/dynamic` but some data are fetched in the client from the express app.
 - `/ssr`: for Server Side Rendering (`SSR`) frameworks. Same as `/dynamic` but some data are fetched on the fly in the server from the express app.
 - `/ssg`: for Static Site Generating (`SSG`) frameworks. Same as `/dynamic` but some data are fetched during the build step from the express app.
+- `/busy`: Same as `/async` or `/ssg` (depending on the framework) with an additional long calculation that is either done on server side (for `SSR` frameworks) or client side (for `CSR` frameworks).
 
 For all those cases, the response time of the express app has been delayed by 1 second to simulate a long API call.
 
@@ -43,15 +44,29 @@ For all those cases, the response time of the express app has been delayed by 1 
 
 ## Tests
 
-The tests were made using Lighthouse in Chrome 114.0.5735.198 with following configuration:
+The tests were made using Lighthouse with following configuration:
 
 - Mode: "Navigation"
 - Device: "Desktop"
 
-In the result when there is two numbers separated by a <key>/</key> it means that:
+In the results I recorded:
 
-- the first one is the size transferred over network (sometimes with gzip compression which makes it smaller)
-- the second one is the size of the resource
+- the number of requests
+- the document size (\*)
+- the total JS files size (\*)
+- the total CSS files size (\*) (\*\*)
+- the total Image files size (\*\*)
+- the total Font files size (\*) (\*\*)
+- the performance score returned by Lighthouse (the higher the better)
+- the FCP metric from Lighthouse (the lower the better)
+- the LCP metric from Lighthouse (the lower the better)
+- the TBT metric from Lighthouse (the lower the better)
+- the CLS metric from Lighthouse (the lower the better)
+- the SI metric from Lighthouse (the lower the better)
+
+(\*) the two numbers separated by a <kbd>/</kbd> represent, for the first, the size transferred over network (sometimes with gzip compression which makes it smaller) and the size of the resource for the second.
+
+(\*\*) These metrics don't vary across different scenarios, so I've grouped them in a separated "Common statistics" table.
 
 ## Results
 
@@ -68,7 +83,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/884kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size    | JS size     | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ----------- | ----------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -76,6 +91,16 @@ Statistics per page:
 | layout  | 66       | 1.0kB/1.2kB | 111kB/404kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
 | dynamic | 65       | 1.0kB/1.2kB | 154kB/553kB | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
 | async   | 70       | 1.0kB/1.2kB | 154kB/553kB | 78          | 1.2s | 3.4s | 0ms | 0.014 | 1.2s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT    | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | ------ | ----- | ---- |
+| static  | 68          | 2.0s | 4.4s | 0ms    | 0.014 | 2.0s |
+| layout  | 67          | 2.0s | 4.2s | 0ms    | 0.004 | 2.0s |
+| dynamic | 66          | 2.1s | 4.5s | 0ms    | 0.004 | 2.1s |
+| async   | 67          | 2.0s | 4.5s | 0ms    | 0.004 | 2.0s |
+| busy    | 26          | 4.1s | 6.2s | 2050ms | 0.014 | 9.5s |
 
 ### Astro app (Without React Components)
 
@@ -92,7 +117,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 747kB/895kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size     | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ----------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -115,7 +140,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -123,6 +148,16 @@ Statistics per page:
 | layout  | 64       | 10.2kB/80.9kB | 1.0kB/2.0kB  | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
 | dynamic | 65       | 9.1kB/66.6kB  | 50.8kB/174kB | 78          | 1.2s | 3.5s | 0ms | 0.001 | 1.2s |
 | ssg     | 67       | 9.1kB/67.6kB  | 48.7kB/158kB | 80          | 1.0s | 3.3s | 0ms | 0.001 | 1.0s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| layout  | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| dynamic | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
+| ssg     | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
+| busy    | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
 
 ### Astro app (With React Components)
 
@@ -139,7 +174,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 747kB/895kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size     | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ----------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -162,7 +197,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -186,7 +221,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -194,6 +229,16 @@ Statistics per page:
 | layout  | 69       | 10.7kB/69.8kB | 53.1kB/165kB | 80          | 1.0s | 3.2s | 0ms | 0.001 | 1.0s |
 | dynamic | 48       | 8.9kB/51.9kB  | 53.1kB/165kB | 80          | 1.1s | 3.2s | 0ms | 0.001 | 1.1s |
 | ssg     | 49       | 9.7kB/57.0kB  | 53.1kB/165kB | 80          | 1.1s | 3.3s | 0ms | 0.001 | 1.1s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| layout  | 66          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
+| dynamic | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| ssg     | 67          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
+| busy    | 67          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
 
 No SSR again here.
 
@@ -210,7 +255,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 119kB/908kB | 3.5MB      | 439kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size     | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------ | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -219,6 +264,17 @@ Statistics per page:
 | dynamic | 71       | 8.2kB/46.1kB | 127kB/437kB  | 78          | 1.1s | 3.6s | 0ms | 0.001 | 1.1s |
 | ssr     | 73       | 8.6kB/52.3kB | 125kB/411kB  | 79          | 1.0s | 3.4s | 0ms | 0.001 | 1.4s |
 | ssg     | 74       | 8.1kB/46.4kB | 125kB/411kB  | 80          | 1.0s | 3.4s | 0ms | 0.001 | 1.0s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 68          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| layout  | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| dynamic | 67          | 2.0s | 4.7s | 0ms | 0.001 | 2.0s |
+| ssr     | 67          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
+| ssg     | 67          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
+| busy    | 64          | 1.9s | 4.8s | 0ms | 0.001 | 2.8s |
 
 ### Next app (Using App Router)
 
@@ -233,7 +289,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 119kB/909kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -242,6 +298,17 @@ Statistics per page:
 | dynamic | 73       | 10.8kB/65.1kB | 138kB/490kB  | 80          | 1.0s | 3.4s | 0ms | 0.001 | 1.0s |
 | ssr     | 74       | 13.5kB/70.9kB | 131kB/455kB  | 81          | 0.9s | 3.3s | 0ms | 0.001 | 0.9s |
 | ssg     | 74       | 11.6kB/70.1kB | 131kB/455kB  | 80          | 1.0s | 3.2s | 0ms | 0.001 | 1.0s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| layout  | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
+| dynamic | 66          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
+| ssr     | 67          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
+| ssg     | 68          | 1.9s | 4.6s | 0ms | 0.001 | 1.9s |
+| busy    | 66          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
 
 ### Next app (Using Pages Router)
 
@@ -256,7 +323,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 119kB/908kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size     | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------ | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -265,6 +332,17 @@ Statistics per page:
 | dynamic | 73       | 7.5kB/45.1kB | 135kB/472kB  | 80          | 1.0s | 3.4s | 0ms | 0.001 | 1.0s |
 | ssr     | 76       | 8.1kB/51.3kB | 132kB/446kB  | 78          | 1.0s | 3.5s | 0ms | 0.001 | 1.6s |
 | ssg     | 76       | 8.1kB/51.3kB | 132kB/446kB  | 79          | 1.0s | 3.5s | 0ms | 0.001 | 1.0s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 68          | 1.9s | 4.4s | 0ms | 0.001 | 1.9s |
+| layout  | 68          | 1.9s | 4.4s | 0ms | 0.001 | 1.9s |
+| dynamic | 66          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
+| ssr     | 67          | 2.0s | 4.7s | 0ms | 0.001 | 2.0s |
+| ssg     | 66          | 2.0s | 4.8s | 0ms | 0.001 | 2.0s |
+| busy    | 68          | 1.9s | 4.6s | 0ms | 0.001 | 1.9s |
 
 ### Nuxt app
 
@@ -281,7 +359,7 @@ Common statistics:
 | ------------ | ---------- | ----------- |
 | 32.6kB/181kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size    | JS size     | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ----------- | ----------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -304,7 +382,7 @@ Common statistics:
 | ------------ | ---------- | ----------- |
 | 32.6kB/181kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size    | JS size     | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ----------- | ----------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -326,7 +404,7 @@ Common statistics:
 | ------------ | ---------- | ----------- |
 | 32.6kB/181kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size     | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------ | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -334,6 +412,16 @@ Statistics per page:
 | layout  | 71       | 89.9kB/755kB | 67.8kB/206kB | 82          | 1.0s | 3.0s | 0ms | 0.004 | 1.0s |
 | dynamic | 70       | 88.6kB/744kB | 115kB/365kB  | 81          | 0.9s | 3.2s | 0ms | 0.001 | 0.9s |
 | ssg     | 71       | 89.4kB/750kB | 117kB/354kB  | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 68          | 1.9s | 4.4s | 0ms | 0.001 | 1.9s |
+| layout  | 67          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
+| dynamic | 66          | 2.0s | 4.7s | 0ms | 0.001 | 2.0s |
+| ssg     | 67          | 2.0s | 4.6s | 0ms | 0.001 | 2.0s |
+| busy    | 67          | 2.0s | 4.5s | 0ms | 0.001 | 2.0s |
 
 ### Qwik app
 
@@ -349,7 +437,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -371,7 +459,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 747kB/895kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size        | JS size | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | --------------- | ------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -384,7 +472,7 @@ Statistics per page:
 
 Commands:
 
-- `npm run build`
+- `npm run build.server`
 - `npm run serve`
 
 Common statistics:
@@ -393,7 +481,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages    | Requests | Doc size      | JS size | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | -------- | -------- | ------------- | ------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -401,6 +489,16 @@ Statistics per page:
 | layout   | 64       | 11.6kB/62.3kB | 0       | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
 | dynamic  | 43       | 10.5kB/52.7kB | 0       | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
 | ssr(ssg) | 44       | 10.6kB/53.6kB | 0       | 81          | 1.0s | 3.1s | 0ms | 0.001 | 1.0s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages    | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| -------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static   | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
+| layout   | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
+| dynamic  | 68          | 2.0s | 4.3s | 0ms | 0.001 | 2.0s |
+| ssr(ssg) | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
+| busy     | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
 
 ### React app (Vite)
 
@@ -417,7 +515,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 118kB/908kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -439,7 +537,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 119kB/908kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -461,7 +559,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 119kB/908kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -469,6 +567,16 @@ Statistics per page:
 | layout  | 69       | 949B/1.2kB | 62.9kB/228kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
 | dynamic | 68       | 949B/1.2kB | 110kB/386kB  | 77          | 1.3s | 3.6s | 0ms | 0.004 | 1.3s |
 | async   | 74       | 949B/1.2kB | 107kB/361kB  | 79          | 1.1s | 3.3s | 0ms | 0.004 | 1.1s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT    | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | ------ | ----- | ---- |
+| static  | 67          | 2.0s | 4.4s | 0ms    | 0.004 | 2.0s |
+| layout  | 67          | 2.0s | 4.4s | 0ms    | 0.004 | 2.0s |
+| dynamic | 68          | 1.9s | 4.5s | 0ms    | 0.004 | 1.9s |
+| async   | 67          | 2.0s | 4.3s | 0ms    | 0.004 | 2.0s |
+| busy    | 32          | 2.0s | 4.3s | 8490ms | 0.003 | 8.3s |
 
 ### Remix app
 
@@ -483,7 +591,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 118kB/909kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -491,6 +599,16 @@ Statistics per page:
 | layout  | 74       | 18.1kB/57.2kB | 97.1kB/332kB | 79          | 1.2s | 3.1s | 0ms | 0.001 | 1.2s |
 | dynamic | 72       | 16.1kB/46.0kB | 144kB/490kB  | 75          | 1.4s | 3.7s | 0ms | 0.001 | 1.4s |
 | ssr     | 74       | 18.1kB/52.1kB | 140kB/464kB  | 77          | 1.2s | 3.4s | 0ms | 0.001 | 1.5s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
+| layout  | 67          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
+| dynamic | 66          | 2.1s | 4.7s | 0ms | 0.001 | 2.1s |
+| ssr     | 66          | 2.1s | 4.7s | 0ms | 0.001 | 2.1s |
+| busy    | 64          | 2.0s | 4.6s | 0ms | 0.001 | 2.9s |
 
 ### Solid app
 
@@ -507,7 +625,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -529,7 +647,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size   | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ---------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -551,7 +669,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size   | JS size       | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ---------- | ------------- | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -559,6 +677,16 @@ Statistics per page:
 | layout  | 68       | 1.0kB/706B | 22.7kB/88.3kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
 | dynamic | 66       | 1.0kB/706B | 69.7kB/249kB  | 77          | 1.2s | 3.6s | 0ms | 0.004 | 1.2s |
 | async   | 72       | 1.0kB/706B | 67.1kB/227kB  | 80          | 1.0s | 3.3s | 0ms | 0.004 | 1.1s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT    | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | ------ | ----- | ---- |
+| static  | 67          | 2.0s | 4.5s | 0ms    | 0.004 | 2.0s |
+| layout  | 67          | 2.1s | 4.4s | 0ms    | 0.014 | 2.1s |
+| dynamic | 67          | 2.1s | 4.4s | 0ms    | 0.014 | 2.1s |
+| async   | 67          | 2.1s | 4.4s | 0ms    | 0.004 | 2.1s |
+| busy    | 26          | 4.1s | 6.0s | 2000ms | 0.004 | 9.3s |
 
 ### Sveltekit app
 
@@ -575,7 +703,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 118kB/908kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -598,7 +726,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 119kB/908kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -606,6 +734,16 @@ Statistics per page:
 | layout  | 77       | 10.1kB/63.1kB | 53.5kB/161kB | 76          | 1.5s | 3.3s | 0ms | 0.001 | 1.5s |
 | dynamic | 75       | 8.6kB/51.7kB  | 100kB/322kB  | 74          | 1.5s | 3.7s | 0ms | 0.001 | 1.5s |
 | ssg     | 80       | 9.0kB/58.3kB  | 99.5kB/307kB | 78          | 1.2s | 3.4s | 0ms | 0.001 | 1.2s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | --- | ----- | ---- |
+| static  | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
+| layout  | 66          | 2.1s | 4.5s | 0ms | 0.001 | 2.1s |
+| dynamic | 65          | 2.1s | 4.9s | 0ms | 0.001 | 2.1s |
+| ssg     | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
+| busy    | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
 
 ### Vue app
 
@@ -622,7 +760,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 979kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size  | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | --------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -644,7 +782,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size  | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | --------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -666,7 +804,7 @@ Common statistics:
 | ----------- | ---------- | ----------- |
 | 116kB/895kB | 3.5MB      | 438kB/977kB |
 
-Statistics per page:
+Statistics per page (with Chrome 114.0.5735.198):
 
 | Pages   | Requests | Doc size  | JS size      | Performance | FCP  | LCP  | TBT | CLS   | SI   |
 | ------- | -------- | --------- | ------------ | ----------- | ---- | ---- | --- | ----- | ---- |
@@ -674,6 +812,16 @@ Statistics per page:
 | layout  | 68       | 894B/583B | 43.3kB/138kB | 79          | 1.2s | 3.2s | 0ms | 0.004 | 1.2s |
 | dynamic | 67       | 894B/583B | 90.7kB/298kB | 77          | 1.2s | 3.7s | 0ms | 0.004 | 1.2s |
 | async   | 71       | 894B/583B | 89.9kB/291kB | 80          | 1.1s | 3.3s | 0ms | 0.004 | 1.1s |
+
+Statistics per page (with Chrome 116.0.5845.96):
+
+| Pages   | Performance | FCP  | LCP  | TBT    | CLS   | SI   |
+| ------- | ----------- | ---- | ---- | ------ | ----- | ---- |
+| static  | 67          | 2.1s | 4.5s | 0ms    | 0.004 | 2.1s |
+| layout  | 67          | 2.1s | 4.4s | 0ms    | 0.014 | 2.1s |
+| dynamic | 66          | 2.1s | 4.7s | 0ms    | 0.014 | 2.1s |
+| async   | 66          | 2.1s | 4.4s | 0ms    | 0.004 | 2.1s |
+| busy    | 26          | 3.9s | 6.0s | 2020ms | 0.003 | 9.3s |
 
 # Update performances
 
@@ -709,10 +857,17 @@ The result should be similar to the corresponding frontend technology used.
 
 The tests were made on my system which has the following characteristic:
 
-* OS: Linux 5.19 Ubuntu 22.04.2 LTS 22.04.2 LTS (Jammy Jellyfish)
-* CPU: (8) x64 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
-* Memory: 32 GB
-* Chrome: 114.0.5735.198
+- OS: Linux 5.19 Ubuntu 22.04.2 LTS 22.04.2 LTS (Jammy Jellyfish)
+- CPU: (8) x64 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
+- Memory: 32 GB
+- Chrome: 114.0.5735.198
+
+In the results I recorded:
+
+- the counter number (that represents the number of updates the framework can do within 1s) for 10 tests using the production build.
+- then I calculated a approximate average.
+
+The higher the numbers are, the better.
 
 ## Results
 
@@ -737,9 +892,11 @@ We can improve the React performances by creating a component that only contains
 
 This better React version is accessible on the route `/better-counter`, and here are the results:
 
-| Framework  | #1     | #2     | #3     | #4     | #5     | #6     | #7     | #8     | #9     | #10    |     Moy |
-| ---------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------: |
-| React 2    | 33077  | 34264  | 34396  | 34648  | 34670  | 33541  | 34443  | 32920  | 34416  | 34235  |  ~34100 |
+| Framework | #1    | #2    | #3    | #4    | #5    | #6    | #7    | #8    | #9    | #10   |    Moy |
+| --------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----: |
+| React 2   | 33077 | 34264 | 34396 | 34648 | 34670 | 33541 | 34443 | 32920 | 34416 | 34235 | ~34100 |
+
+It is more than 10 times faster than the previous implementation.
 
 ### Angular
 

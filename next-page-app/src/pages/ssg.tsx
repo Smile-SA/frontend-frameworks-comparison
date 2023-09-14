@@ -4,7 +4,7 @@ import Head from "next/head";
 import AsyncHomepage, { IData } from "@/components/AsyncHomepage";
 import DynamicLayout from "@/layouts/DynamicLayout";
 
-export default function Dynamic({
+export default function Ssg({
   data,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (

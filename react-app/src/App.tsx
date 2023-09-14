@@ -11,6 +11,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Layout = lazy(() => import("./pages/Layout"));
 const Dynamic = lazy(() => import("./pages/Dynamic"));
 const Async = lazy(() => import("./pages/Async"));
+const Busy = lazy(() => import("./pages/Busy"));
 const Counter = lazy(() => import("./pages/Counter"));
 const BetterCounter = lazy(() => import("./pages/BetterCounter"));
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/layout" element={<Layout />} />
         <Route path="/dynamic" element={<Dynamic />} />
         <Route path="/async" element={<Async />} />
+        <Route path="/busy" element={<Busy />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/better-counter" element={<BetterCounter />} />
       </Routes>

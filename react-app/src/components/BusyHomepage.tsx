@@ -1,17 +1,35 @@
-import AsyncCards, { ICard } from "../components/AsyncCards";
-import AsyncMap from "../components/AsyncMap";
-import AsyncOpenSource, { IOpenSource } from "../components/AsyncOpenSource";
-import AsyncTabs, { ISolution } from "../components/AsyncTabs";
+import { MouseEvent } from "react";
 
-export interface IData {
-  cards: ICard[];
-  openSources: IOpenSource[];
-  solutions: ISolution[];
-  technologies: ISolution[];
+import AsyncCards from "./AsyncCards";
+import AsyncMap from "./AsyncMap";
+import AsyncOpenSource from "./AsyncOpenSource";
+import AsyncTabs from "./AsyncTabs";
+
+interface IBusyHomepageProps {
+  count?: number;
+  onStart?: () => void;
 }
 
-export default function AsyncHomepage({ data }: { data: IData }) {
-  const { cards, openSources, solutions, technologies } = data;
+export default function BusyHomepage(props: IBusyHomepageProps) {
+  const { onStart } = props;
+
+  let start = performance.now();
+  for (let i = 0; i < 100_000; i++) {
+    for (let j = 0; j < 100_000; j++) {
+      if (i % 2 === 0) {
+        start += j;
+      } else {
+        start -= j;
+      }
+    }
+  }
+  const diff = Math.round(performance.now() - start);
+
+  function handleStart(event: MouseEvent) {
+    event.preventDefault();
+    onStart?.();
+  }
+
   return (
     <section className="col-sm-12">
       <a id="main-content"></a>
@@ -59,8 +77,8 @@ export default function AsyncHomepage({ data }: { data: IData }) {
                 </div>
               </div>
             </div>
-            <AsyncOpenSource openSources={openSources} />
-            <AsyncCards cards={cards} />
+            <AsyncOpenSource />
+            <AsyncCards />
             <div className="field--item">
               <div className="block-content block-content-map">
                 <div className="map--kpi">
@@ -79,21 +97,27 @@ export default function AsyncHomepage({ data }: { data: IData }) {
                     </div>
                     <div className="field--item">
                       <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> 2000</div>
+                        <div className="title"> {diff}</div>
                         <div className="subtitle"> SMILIENS</div>
                       </div>
                     </div>
                   </div>
                   <div className="link-map">
                     <div className="link-map-content">
-                      <a href="/fr/groupe/implantations">Découvrez smile</a>
+                      <button
+                        type="button"
+                        onClick={handleStart}
+                        style={{ border: 0, background: "transparent" }}
+                      >
+                        Découvrez smile
+                      </button>
                     </div>
                   </div>
                 </div>
                 <AsyncMap />
               </div>
             </div>
-            <AsyncTabs solutions={solutions} technologies={technologies} />
+            <AsyncTabs />
           </div>
         </article>
       </div>

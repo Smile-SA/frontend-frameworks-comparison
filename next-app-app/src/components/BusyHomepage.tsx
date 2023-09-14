@@ -1,17 +1,22 @@
-import AsyncCards, { ICard } from "../components/AsyncCards";
-import AsyncMap from "../components/AsyncMap";
-import AsyncOpenSource, { IOpenSource } from "../components/AsyncOpenSource";
-import AsyncTabs, { ISolution } from "../components/AsyncTabs";
+import { Suspense } from "react";
+import SsgCards from "./SsgCards";
+import AsyncMap from "./AsyncMap";
+import SsgOpenSource from "./SsgOpenSource";
+import SsgTabs from "./SsgTabs";
 
-export interface IData {
-  cards: ICard[];
-  openSources: IOpenSource[];
-  solutions: ISolution[];
-  technologies: ISolution[];
-}
+export default function BusyHomepage() {
+  let start = performance.now();
+  for (let i = 0; i < 100_000; i++) {
+    for (let j = 0; j < 100_000; j++) {
+      if (i % 2 === 0) {
+        start += j;
+      } else {
+        start -= j;
+      }
+    }
+  }
+  const diff = Math.round(performance.now() - start);
 
-export default function AsyncHomepage({ data }: { data: IData }) {
-  const { cards, openSources, solutions, technologies } = data;
   return (
     <section className="col-sm-12">
       <a id="main-content"></a>
@@ -59,8 +64,14 @@ export default function AsyncHomepage({ data }: { data: IData }) {
                 </div>
               </div>
             </div>
-            <AsyncOpenSource openSources={openSources} />
-            <AsyncCards cards={cards} />
+            <Suspense fallback={<div>Loading...</div>}>
+              {/* @ts-expect-error Server Component */}
+              <SsgOpenSource />
+            </Suspense>
+            <Suspense fallback={<div>Loading...</div>}>
+              {/* @ts-expect-error Server Component */}
+              <SsgCards />
+            </Suspense>
             <div className="field--item">
               <div className="block-content block-content-map">
                 <div className="map--kpi">
@@ -79,7 +90,7 @@ export default function AsyncHomepage({ data }: { data: IData }) {
                     </div>
                     <div className="field--item">
                       <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> 2000</div>
+                        <div className="title"> {diff}</div>
                         <div className="subtitle"> SMILIENS</div>
                       </div>
                     </div>
@@ -93,7 +104,10 @@ export default function AsyncHomepage({ data }: { data: IData }) {
                 <AsyncMap />
               </div>
             </div>
-            <AsyncTabs solutions={solutions} technologies={technologies} />
+            <Suspense fallback={<div>Loading...</div>}>
+              {/* @ts-expect-error Server Component */}
+              <SsgTabs />
+            </Suspense>
           </div>
         </article>
       </div>

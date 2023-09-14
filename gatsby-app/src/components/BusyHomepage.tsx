@@ -1,17 +1,20 @@
-import AsyncCards, { ICard } from "../components/AsyncCards";
-import AsyncMap from "../components/AsyncMap";
-import AsyncOpenSource, { IOpenSource } from "../components/AsyncOpenSource";
-import AsyncTabs, { ISolution } from "../components/AsyncTabs";
+import React from "react";
+
+import AsyncCards, { ICard } from "./AsyncCards";
+import AsyncMap from "./AsyncMap";
+import AsyncOpenSource, { IOpenSource } from "./AsyncOpenSource";
+import AsyncTabs, { ISolution } from "./AsyncTabs";
 
 export interface IData {
   cards: ICard[];
+  diff: number;
   openSources: IOpenSource[];
   solutions: ISolution[];
   technologies: ISolution[];
 }
 
-export default function AsyncHomepage({ data }: { data: IData }) {
-  const { cards, openSources, solutions, technologies } = data;
+export default function BusyHomepage({ data }: { data: IData }) {
+  const { cards, diff, openSources, solutions, technologies } = data;
   return (
     <section className="col-sm-12">
       <a id="main-content"></a>
@@ -79,7 +82,7 @@ export default function AsyncHomepage({ data }: { data: IData }) {
                     </div>
                     <div className="field--item">
                       <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> 2000</div>
+                        <div className="title"> {diff}</div>
                         <div className="subtitle"> SMILIENS</div>
                       </div>
                     </div>

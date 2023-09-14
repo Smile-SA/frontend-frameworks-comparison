@@ -29,6 +29,11 @@ const router = createRouter({
       component: () => import('../views/Async.vue')
     },
     {
+      path: '/busy',
+      // component: Async
+      component: () => import('../views/Busy.vue')
+    },
+    {
       path: '/counter',
       // component: Counter
       component: () => import('../views/Counter.vue')

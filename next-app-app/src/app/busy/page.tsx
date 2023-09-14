@@ -1,10 +1,10 @@
-import Homepage from "../../components/Homepage";
+import BusyHomepage from "../../components/BusyHomepage";
 import DynamicLayout from "../../layouts/DynamicLayout";
 
-export default function Layout() {
+export default function Busy() {
   return (
     <DynamicLayout>
-      <Homepage />
+      <BusyHomepage />
     </DynamicLayout>
   );
 }

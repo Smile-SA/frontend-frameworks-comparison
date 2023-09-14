@@ -12,7 +12,7 @@ export interface IData {
   technologies: ISolution[];
 }
 
-export default function DynamicHomepage({ data }: { data: IData }) {
+export default function AsyncHomepage({ data }: { data: IData }) {
   const { cards, openSources, solutions, technologies } = data;
   return (
     <section className="col-sm-12">

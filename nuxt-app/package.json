@@ -13,7 +13,8 @@
     "@nuxt/devtools": "latest",
     "@types/leaflet": "^1.9.3",
     "@types/node": "^18.16.19",
-    "nuxt": "^3.6.2"
+    "nuxt": "^3.6.2",
+    "serve": "^14.2.1"
   },
   "dependencies": {
     "leaflet": "^1.9.4"
