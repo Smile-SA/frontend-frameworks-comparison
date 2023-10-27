@@ -12,10 +12,22 @@
 
 	const dispatch = createEventDispatcher();
 	export let cards: ICard[];
-	export let diff: number;
 	export let openSources: IOpenSource[];
 	export let solutions: ISolution[];
 	export let technologies: ISolution[];
+
+	let start = performance.now();
+	for (let i = 0; i < 100_000; i++) {
+		for (let j = 0; j < 100_000; j++) {
+			if (i % 2 === 0) {
+				start += j;
+			} else {
+				start -= j;
+			}
+		}
+	}
+	const diff = Math.round(performance.now() - start);
+	console.log(diff);
 
 	function handleStart(event: any) {
 		event.preventDefault();
@@ -93,7 +105,7 @@
 								</div>
 								<div class="field--item">
 									<div class="block-content block-content-kpi singleblock-text">
-										<div class="title">{diff}</div>
+										<div class="title">2000</div>
 										<div class="subtitle">SMILIENS</div>
 									</div>
 								</div>

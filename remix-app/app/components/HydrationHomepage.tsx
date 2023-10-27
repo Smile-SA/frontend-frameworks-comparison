@@ -1,10 +1,17 @@
-import { Suspense } from "react";
-import SsrCards from "./SsrCards";
+import AsyncCards, { ICard } from "./AsyncCards";
 import AsyncMap from "./AsyncMap";
-import SsrOpenSource from "./SsrOpenSource";
-import SsrTabs from "./SsrTabs";
+import AsyncOpenSource, { IOpenSource } from "./AsyncOpenSource";
+import AsyncTabs, { ISolution } from "./AsyncTabs";
 
-export default function BusyHomepage() {
+export interface IData {
+  cards: ICard[];
+  openSources: IOpenSource[];
+  solutions: ISolution[];
+  technologies: ISolution[];
+}
+
+export default function HydrationHomepage({ data }: { data: IData }) {
+  const { cards, openSources, solutions, technologies } = data;
   let start = performance.now();
   for (let i = 0; i < 100_000; i++) {
     for (let j = 0; j < 100_000; j++) {
@@ -16,7 +23,7 @@ export default function BusyHomepage() {
     }
   }
   const diff = Math.round(performance.now() - start);
-
+  console.log(diff);
   return (
     <section className="col-sm-12">
       <a id="main-content"></a>
@@ -64,14 +71,8 @@ export default function BusyHomepage() {
                 </div>
               </div>
             </div>
-            <Suspense fallback={<div>Loading...</div>}>
-              {/* @ts-expect-error Server Component */}
-              <SsrOpenSource />
-            </Suspense>
-            <Suspense fallback={<div>Loading...</div>}>
-              {/* @ts-expect-error Server Component */}
-              <SsrCards />
-            </Suspense>
+            <AsyncOpenSource openSources={openSources} />
+            <AsyncCards cards={cards} />
             <div className="field--item">
               <div className="block-content block-content-map">
                 <div className="map--kpi">
@@ -90,7 +91,7 @@ export default function BusyHomepage() {
                     </div>
                     <div className="field--item">
                       <div className="block-content block-content-kpi singleblock-text">
-                        <div className="title"> {diff}</div>
+                        <div className="title"> 2000</div>
                         <div className="subtitle"> SMILIENS</div>
                       </div>
                     </div>
@@ -104,10 +105,7 @@ export default function BusyHomepage() {
                 <AsyncMap />
               </div>
             </div>
-            <Suspense fallback={<div>Loading...</div>}>
-              {/* @ts-expect-error Server Component */}
-              <SsrTabs />
-            </Suspense>
+            <AsyncTabs solutions={solutions} technologies={technologies} />
           </div>
         </article>
       </div>

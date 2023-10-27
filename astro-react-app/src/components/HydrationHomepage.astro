@@ -1,8 +1,9 @@
 ---
 import AsyncCards from "./AsyncCards.astro";
-import AsyncMap from "./AsyncMap.astro";
+import AsyncMap from "./AsyncMap";
 import AsyncOpenSource from "./AsyncOpenSource.astro";
-import AsyncTabs from "./AsyncTabs.astro";
+import AsyncTabs from "./AsyncTabs";
+import Calculation from "./Calculation";
 
 const { data } = Astro.props;
 const { cards, openSources, solutions, technologies } = data;
@@ -80,80 +81,26 @@ const { cards, openSources, solutions, technologies } = data;
                 </div>
                 <div class="field--item">
                   <div class="block-content block-content-kpi singleblock-text">
-                    <div class="title" id="count-render-el">0</div>
+                    <Calculation client:visible />
                     <div class="subtitle">SMILIENS</div>
                   </div>
                 </div>
               </div>
               <div class="link-map">
                 <div class="link-map-content">
-                  <button
-                    id="count-start-btn"
-                    type="button"
-                    style={{ border: 0, background: "transparent" }}
-                  >
-                    Découvrez smile
-                  </button>
+                  <a href="/fr/groupe/implantations">Découvrez smile</a>
                 </div>
               </div>
             </div>
-            <AsyncMap />
+            <AsyncMap client:visible />
           </div>
         </div>
-        <AsyncTabs solutions={solutions} technologies={technologies} />
+        <AsyncTabs
+          client:visible
+          solutions={solutions}
+          technologies={technologies}
+        />
       </div>
     </article>
   </div>
 </section>
-<script>
-  const btn = document.getElementById("count-start-btn");
-  const el = document.getElementById("count-render-el")?.childNodes[0];
-  // const el = document.getElementById("count-render-el");
-
-  btn?.addEventListener("click", startCount);
-
-  let count = 0;
-  let start = false;
-  let time = 0;
-
-  const channel = new MessageChannel();
-  const port = channel.port2;
-  channel.port1.onmessage = update;
-
-  function startCount(event: any) {
-    event.preventDefault();
-    if (count === 0) {
-      time = Date.now();
-      start = true;
-      increment();
-    } else {
-      count = 0;
-      render();
-    }
-  }
-
-  function increment() {
-    if (start) {
-      if (Date.now() - time < 1000) {
-        port.postMessage("");
-        // setTimeout(update, 0);
-      } else {
-        start = false;
-      }
-    }
-  }
-
-  function update() {
-    count = count + 1;
-    render();
-    increment();
-  }
-
-  function render() {
-    if (el) {
-      // @ts-expect-error ignore
-      el.nodeValue = count;
-      // el.innerText = count;
-    }
-  }
-</script>

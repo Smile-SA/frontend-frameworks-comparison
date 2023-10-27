@@ -1,7 +1,7 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 
-import BusyHomepage, { IData } from "@/components/BusyHomepage";
+import HydrationHomepage, { IData } from "@/components/HydrationHomepage";
 import DynamicLayout from "@/layouts/DynamicLayout";
 
 export default function Busy({
@@ -20,7 +20,7 @@ export default function Busy({
         />
       </Head>
       <DynamicLayout>
-        <BusyHomepage data={data} />
+        <HydrationHomepage data={data} />
       </DynamicLayout>
     </>
   );
@@ -35,20 +35,8 @@ export const getServerSideProps: GetServerSideProps<{
     fetch("http://localhost:3333/solutions").then((r) => r.json()),
     fetch("http://localhost:3333/technologies").then((r) => r.json()),
   ]);
-  let start = performance.now();
-  for (let i = 0; i < 100_000; i++) {
-    for (let j = 0; j < 100_000; j++) {
-      if (i % 2 === 0) {
-        start += j;
-      } else {
-        start -= j;
-      }
-    }
-  }
-  const diff = Math.round(performance.now() - start);
   const data: IData = {
     cards,
-    diff,
     openSources,
     solutions,
     technologies,

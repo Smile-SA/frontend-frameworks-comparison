@@ -47,7 +47,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: false,
-      routes: ["/dynamic", "/layout", "/ssg", "/busy"],
+      routes: ["/dynamic", "/layout", "/ssg", "/busy", "/hydration"],
     },
   },
 });

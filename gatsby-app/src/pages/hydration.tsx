@@ -3,14 +3,14 @@ import type { GetServerDataReturn, HeadFC, PageProps } from "gatsby";
 import type { WindowLocation } from "@reach/router";
 
 import DynamicLayout from "../layouts/DynamicLayout";
-import BusyHomepage, { IData } from "../components/BusyHomepage";
+import HydrationHomepage, { IData } from "../components/HydrationHomepage";
 
 const IndexPage: React.FC<
   PageProps<object, object, WindowLocation["state"], IData>
 > = ({ serverData }) => {
   return (
     <DynamicLayout>
-      <BusyHomepage data={serverData} />
+      <HydrationHomepage data={serverData} />
     </DynamicLayout>
   );
 };
@@ -61,22 +61,10 @@ export async function getServerData(): GetServerDataReturn<IData> {
     fetch("http://localhost:3333/solutions").then((r) => r.json()),
     fetch("http://localhost:3333/technologies").then((r) => r.json()),
   ]);
-  let start = performance.now();
-  for (let i = 0; i < 100_000; i++) {
-    for (let j = 0; j < 100_000; j++) {
-      if (i % 2 === 0) {
-        start += j;
-      } else {
-        start -= j;
-      }
-    }
-  }
-  const diff = Math.round(performance.now() - start);
   return {
     status: 200,
     props: {
       cards,
-      diff,
       openSources,
       solutions,
       technologies,

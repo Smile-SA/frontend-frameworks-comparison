@@ -14,7 +14,7 @@ export interface IProps {
 }
 
 export default component$<IProps>((props) => {
-  const { cards, openSources, solutions, technologies, count, onStart } = props;
+  const { cards, openSources, solutions, technologies, onStart } = props;
 
   let start = performance.now();
   for (let i = 0; i < 100_000; i++) {

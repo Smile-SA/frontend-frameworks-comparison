@@ -1,0 +1,23 @@
+---
+import type { IData } from "../types/data";
+
+import HydrationHomepage from "../components/HydrationHomepage.astro";
+import DynamicLayout from "../layouts/DynamicLayout.astro";
+
+const [cards, openSources, solutions, technologies] = await Promise.all([
+  fetch("http://localhost:3333/cards").then((r) => r.json()),
+  fetch("http://localhost:3333/opensource").then((r) => r.json()),
+  fetch("http://localhost:3333/solutions").then((r) => r.json()),
+  fetch("http://localhost:3333/technologies").then((r) => r.json()),
+]);
+const data: IData = {
+  cards,
+  openSources,
+  solutions,
+  technologies,
+};
+---
+
+<DynamicLayout title="Welcome to Astro.">
+  <HydrationHomepage data={data} />
+</DynamicLayout>
