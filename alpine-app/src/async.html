@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/vnd.microsoft.icon"
+      href="https://www.smile.eu/themes/custom/smileeu/favicon.ico"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <link
+      rel="stylesheet"
+      media="all"
+      href="http://localhost:3333/css_OIzBRxciYG74p5zSuRGfzMOMmxX2w4G6eJ9zFXXGLgE.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="http://localhost:3333/css_uGznCPRfy4VyscOn7wc-83IOi6ex6Osgx7AS18BCoFI.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="//cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="http://localhost:3333/css_iZHYdEhagxtlMnc7tQBGAPpfu3YF-FwbR8QCKEILwYQ.css"
+    />
+  </head>
+  <body class="path-frontpage page-node-type-page has-glyphicons">
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+      <header
+        class="container-fluid"
+        role="banner"
+        x-ref="header"
+        x-data="{ height: 0 }"
+        x-init="$nextTick(() => height = document.body.offsetHeight - $refs.header.offsetHeight)"
+      >
+        <div
+          class="container-fluid"
+          role="heading"
+          x-data="{ menuOpen: false }"
+        >
+          <div
+            class="region region-header-top container-fluid homepage"
+            x-data="{ searchOpen: false }"
+          >
+            <div
+              class="row block-header-top sticky-hp"
+              x-bind:class="menuOpen ? 'opened-menu' : ''"
+            >
+              <div class="col-xs-4 col-sm-3 col-lg-2 block-header-top__menu">
+                <a
+                  class="block-header-top__menu-btn"
+                  rel="external"
+                  x-bind:class="menuOpen ? 'menu-close' : ''"
+                  x-on:click.prevent="menuOpen = !menuOpen"
+                >
+                  <img
+                    class="menu-icon block-header-top__menu-burger"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_burger.svg"
+                  />
+                  <img
+                    class="menu-icon block-header-top__menu-close"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_close.png"
+                  />
+                  <span class="block-header-top__menu-txt">Menu</span>
+                </a>
+              </div>
+
+              <div class="col-xs-4 col-sm-6 col-lg-8 block-header-top__logo">
+                <a
+                  class="block-header-top__front-logo"
+                  href="/fr"
+                  title="Accueil"
+                  rel="external"
+                >
+                  <img
+                    class="block-header-top__site-logo-close"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                    alt="SMILE Open Source"
+                  />
+                  <img
+                    class="block-header-top__site-logo-open"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo-burger.png"
+                    alt="SMILE Open Source"
+                  />
+                </a>
+              </div>
+              <div class="col-xs-1 col-sm-1 block-header-top_contact">
+                <div class="menu menu-external-link-container contact-header">
+                  <ul
+                    itemtype="http://www.schema.org/SiteNavigationElement"
+                    class="level0 list-inline"
+                  >
+                    <li class="has-child">
+                      <a
+                        href="https://blog.smile.eu/fr"
+                        itemprop="url"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Blog
+                        </span>
+                      </a>
+
+                      <ul class="level1 list-inline">
+                        <li>
+                          <a
+                            href="https://blog.smile.eu/fr"
+                            itemprop="url"
+                            target="_blank"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Smile business blog
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://tech.smile.eu"
+                            itemprop="url"
+                            target="_blank"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Technical blog
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="http://jobs.smile.eu"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span class="hvr-icon-grow btn btn-orange">
+                          Nous rejoindre
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/fr/contact"
+                        itemprop="url"
+                        target="_blank"
+                        data-drupal-link-system-path="node/2204"
+                        rel="external"
+                      >
+                        <span
+                          itemprop="name"
+                          class="hvr-icon-grow btn btn-bleu"
+                        >
+                          Contact
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                class="col-xs-3 col-sm-2 col-lg-1 block-header-top__language"
+              >
+                <div class="block-switcher-language">
+                  <div data-drupal-link-system-path="" class="en">
+                    <a
+                      href="/en"
+                      class="language-link"
+                      data-drupal-link-system-path=""
+                      rel="external"
+                    >
+                      en
+                    </a>
+                  </div>
+                  <div data-drupal-link-system-path="" class="fr is-active">
+                    <a
+                      href="/fr"
+                      class="language-link is-active"
+                      data-drupal-link-system-path=""
+                      rel="external"
+                    >
+                      fr
+                    </a>
+                  </div>
+
+                  <div data-drupal-link-system-path="" class="nl">
+                    <a
+                      href="/en/benelux"
+                      class="language-link"
+                      data-drupal-link-system-path=""
+                      rel="external"
+                    >
+                      nl
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-1 col-sm-1 col-lg-1 block-header-top__search">
+                <a
+                  class="block-header-top__btn-search"
+                  href=""
+                  rel="external"
+                  x-on:click.prevent="searchOpen = !searchOpen"
+                >
+                  <img
+                    class="block-header-top__btn-search_picture-close"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+                  />
+                  <img
+                    class="block-header-top__btn-search_picture-open"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/search_white.svg"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <div class="menu menu-external-link-container contact-header">
+              <ul
+                itemtype="http://www.schema.org/SiteNavigationElement"
+                class="level0 list-inline"
+              >
+                <li class="has-child">
+                  <a
+                    href="https://blog.smile.eu/fr"
+                    itemprop="url"
+                    target="_blank"
+                    rel="external"
+                  >
+                    <span itemprop="name" class="hvr-icon-grow"> Blog </span>
+                  </a>
+
+                  <ul class="level1 list-inline">
+                    <li>
+                      <a
+                        href="https://blog.smile.eu/fr"
+                        itemprop="url"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Smile business blog
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://tech.smile.eu"
+                        itemprop="url"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Technical blog
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="http://jobs.smile.eu" target="_blank" rel="external">
+                    <span class="hvr-icon-grow btn btn-orange">
+                      Nous rejoindre
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/fr/contact"
+                    itemprop="url"
+                    target="_blank"
+                    data-drupal-link-system-path="node/2204"
+                    rel="external"
+                  >
+                    <span itemprop="name" class="hvr-icon-grow btn btn-bleu">
+                      Contact
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              id="block-smileeusearchblock"
+              class="block block-smileeu-search block-smileeu-search-block clearfix search-bar-block"
+              x-bind:class="searchOpen ? 'open' : ''"
+            >
+              <form
+                class="smileeu-search-block-form"
+                data-drupal-selector="smileeu-search-block-form"
+                action="/fr/search_results"
+                method="get"
+                id="smileeu-search-block-form"
+                data-hs-cf-bound="true"
+              >
+                <div
+                  class="form-item js-form-item form-type-search js-form-type-search form-item-search-api-fulltext js-form-item-search-api-fulltext form-no-label form-group"
+                >
+                  <label
+                    for="edit-search-api-fulltext"
+                    class="control-label sr-only"
+                  >
+                    Mots-clés, technologies, etc.
+                  </label>
+                  <input
+                    title=""
+                    data-drupal-selector="edit-search-api-fulltext"
+                    class="form-search form-control"
+                    placeholder="Mots-clés, technologies, etc."
+                    type="search"
+                    id="edit-search-api-fulltext"
+                    name="search_api_fulltext"
+                    size="{150}"
+                    maxlength="{128}"
+                    data-toggle="tooltip"
+                    data-original-title=""
+                  />
+                </div>
+                <div
+                  data-drupal-selector="edit-actions"
+                  class="form-actions form-group js-form-wrapper form-wrapper"
+                  id="edit-actions"
+                >
+                  <div class="col-lg-2 col-sm-4 centre">
+                    <button
+                      data-twig-suggestion="search_smileeu_block"
+                      data-drupal-selector="edit-submit"
+                      class="button js-form-submit form-submit btn"
+                      type="submit"
+                      id="edit-submit"
+                      value="Je recherche"
+                      name=""
+                    >
+                      Je recherche
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <a
+                class="close-search-bar-btn"
+                href=""
+                rel="external"
+                x-on:click.prevent="searchOpen = !searchOpen"
+              >
+                <img
+                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/close_search.png"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="region region-header container-fluid homepage"
+            x-data="{ menuChildrenOpen: undefined }"
+          >
+            <div
+              id="block-menusblock"
+              class="block block-smileeu-common block-smileeu-common-menus-block clearfix menu-header-homepage sticky-hp affix-top"
+              x-bind:class="menuChildrenOpen !== undefined ? 'opened' : ''"
+            >
+              <div class="menu-part-left">
+                <div class="menu menu-main menu-footer">
+                  <ul
+                    itemtype="http://www.schema.org/SiteNavigationElement"
+                    class="level0 list-inline"
+                  >
+                    <li
+                      class="has-child"
+                      x-on:click.prevent="menuChildrenOpen = menuChildrenOpen === 0 ? undefined : 0"
+                    >
+                      <a
+                        href="/fr"
+                        data-drupal-link-system-path=""
+                        class="is-active"
+                        rel="external"
+                        x-bind:class="menuChildrenOpen === 0 ? 'is-active' : ''"
+                      >
+                        <span class="hvr-icon-grow">Groupe</span>
+                      </a>
+
+                      <ul
+                        class="level1 list-inline"
+                        x-bind:class="menuChildrenOpen === 0 ? 'opened' : ''"
+                      >
+                        <li>
+                          <a
+                            href="/fr/groupe/qui-sommes-nous"
+                            data-drupal-link-system-path="node/174"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">
+                              Qui sommes-nous ?</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/groupe/lopen-source-quest-ce-que-cest"
+                            data-drupal-link-system-path="node/1718"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">
+                              L&apos;Open source</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/groupe/nos-valeurs"
+                            data-drupal-link-system-path="node/137"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">Nos valeurs</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/groupe/implantations"
+                            data-drupal-link-system-path="node/88"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">
+                              Nos implantations</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/groupe/actualites"
+                            data-drupal-link-system-path="node/89"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">Actualités</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/groupe/liste-devenements"
+                            itemprop="url"
+                            data-drupal-link-system-path="node/52"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Evènements
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/groupe/media"
+                            data-drupal-link-system-path="node/124"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">Médias</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li
+                      class="has-child"
+                      x-on:click.prevent="menuChildrenOpen = menuChildrenOpen === 1 ? undefined : 1"
+                    >
+                      <a
+                        href="/fr"
+                        data-drupal-link-system-path=""
+                        class="is-active"
+                        rel="external"
+                        x-bind:class="menuChildrenOpen === 1 ? 'is-active' : ''"
+                      >
+                        <span class="hvr-icon-grow">Offres</span>
+                      </a>
+
+                      <ul
+                        class="level1 list-inline"
+                        x-bind:class="menuChildrenOpen === 1 ? 'opened' : ''"
+                      >
+                        <li class="has-child">
+                          <a
+                            href="/fr/offres/digital"
+                            itemprop="url"
+                            data-drupal-link-system-path="node/148"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Digital
+                            </span>
+                          </a>
+
+                          <ul class="level2 list-inline">
+                            <li>
+                              <a
+                                href="/fr/offers/digital/e-commerce-starter-kit"
+                                itemprop="url"
+                                data-drupal-link-system-path="node/2112"
+                                rel="external"
+                              >
+                                <span itemprop="name" class="hvr-icon-grow">
+                                  E-commerce Starter Kit
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/offres/business-apps"
+                            data-drupal-link-system-path="node/169"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">Business Apps</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/offres/embarque-iot"
+                            data-drupal-link-system-path="node/168"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">
+                              Embedded &amp; IoT</span
+                            >
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="/fr/offres/infrastructure"
+                            data-drupal-link-system-path="node/171"
+                            rel="external"
+                          >
+                            <span class="hvr-icon-grow">Infrastructure</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="/fr/nos-references"
+                        data-drupal-link-system-path="node/28"
+                        rel="external"
+                      >
+                        <span class="hvr-icon-grow">Références</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/fr/technologies"
+                        data-drupal-link-system-path="list-technologies"
+                        rel="external"
+                      >
+                        <span class="hvr-icon-grow">Technologies</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/fr/publications/liste-livres-blancs"
+                        itemprop="url"
+                        data-drupal-link-system-path="list-white-papers"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Livres blancs
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      class="has-child"
+                      x-on:click.prevent="menuChildrenOpen = menuChildrenOpen === 2 ? undefined : 2"
+                    >
+                      <a
+                        href="/fr/innovation"
+                        itemprop="url"
+                        data-drupal-link-system-path="node/157"
+                        rel="external"
+                        x-bind:class="menuChildrenOpen === 2 ? 'is-active' : ''"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Innovation
+                        </span>
+                      </a>
+
+                      <ul
+                        class="level1 list-inline"
+                        x-bind:class="menuChildrenOpen === 2 ? 'opened' : ''"
+                      >
+                        <li>
+                          <a
+                            href="https://www.smile.eu/fr/innovation/recherche-developpement"
+                            itemprop="url"
+                            target="_blank"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Recherche et développement
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="/fr/conseil"
+                        itemprop="url"
+                        data-drupal-link-system-path="node/1918"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Conseil
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="col-xs-4 col-sm-6 col-lg-8 block-header-top__logo logo-header"
+                  style="display: none"
+                >
+                  <a
+                    class="block-header-top__front-logo"
+                    href="/fr"
+                    title="Accueil"
+                    rel="external"
+                  >
+                    <img
+                      class="block-header-top__site-logo-close"
+                      src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                      alt="SMILE Open Source"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-xs-1 col-sm-1 col-lg-1 block-header-top__search search_head"
+              >
+                <a
+                  class="block-header-top__btn-search"
+                  href=""
+                  rel="external"
+                  x-on:click.prevent="searchOpen = !searchOpen"
+                >
+                  <img
+                    class="block-header-top__btn-search_picture-close"
+                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+                  />
+                </a>
+              </div>
+              <div class="menu-part-right">
+                <div class="menu menu-external-link-container contact-header">
+                  <ul
+                    itemtype="http://www.schema.org/SiteNavigationElement"
+                    class="level0 list-inline"
+                  >
+                    <li class="has-child">
+                      <a
+                        href="https://blog.smile.eu/fr"
+                        itemprop="url"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Blog
+                        </span>
+                      </a>
+
+                      <ul class="level1 list-inline">
+                        <li>
+                          <a
+                            href="https://blog.smile.eu/fr"
+                            itemprop="url"
+                            target="_blank"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Smile business blog
+                            </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://tech.smile.eu"
+                            itemprop="url"
+                            target="_blank"
+                            rel="external"
+                          >
+                            <span itemprop="name" class="hvr-icon-grow">
+                              Technical blog
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="http://jobs.smile.eu"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span class="hvr-icon-grow btn btn-orange">
+                          Nous rejoindre
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/fr/contact"
+                        itemprop="url"
+                        target="_blank"
+                        data-drupal-link-system-path="node/2204"
+                        rel="external"
+                      >
+                        <span
+                          itemprop="name"
+                          class="hvr-icon-grow btn btn-bleu"
+                        >
+                          Contact
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="block-switcher-language">
+                  <div data-drupal-link-system-path="" class="en">
+                    <a
+                      href="/en"
+                      class="language-link"
+                      data-drupal-link-system-path=""
+                      rel="external"
+                    >
+                      en
+                    </a>
+                  </div>
+                  <div data-drupal-link-system-path="" class="fr is-active">
+                    <a
+                      href="/fr"
+                      class="language-link is-active"
+                      data-drupal-link-system-path=""
+                      rel="external"
+                    >
+                      fr
+                    </a>
+                  </div>
+
+                  <div data-drupal-link-system-path="" class="nl">
+                    <a
+                      href="/en/benelux"
+                      class="language-link"
+                      data-drupal-link-system-path=""
+                      rel="external"
+                    >
+                      nl
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="block-menusblock"
+              class="block block-smileeu-common block-smileeu-common-menus-block clearfix menu-header"
+            >
+              <div
+                class="menu-container"
+                x-bind:class="menuOpen ? 'opened' : ''"
+                x-bind:style="menuOpen ? `display: block; max-height: ${height}px; height: ${height}px` : ''"
+              >
+                <div class="menu-wrapper">
+                  <div class="menu menu-main menu-footer">
+                    <ul
+                      itemtype="http://www.schema.org/SiteNavigationElement"
+                      class="level0 list-inline"
+                    >
+                      <li
+                        class="has-child"
+                        x-bind:class="menuChildrenOpen === 0 ? 'opened' : ''"
+                        x-on:click.prevent="menuChildrenOpen = menuChildrenOpen === 0 ? undefined : 0"
+                      >
+                        <a
+                          href="/fr"
+                          data-drupal-link-system-path=""
+                          class="is-active"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Groupe</span>
+                        </a>
+
+                        <ul
+                          class="level1 list-inline"
+                          x-bind:style="`display: ${menuChildrenOpen === 0 ? 'block' : 'none'}`"
+                        >
+                          <li>
+                            <a
+                              href="/fr/groupe/qui-sommes-nous"
+                              data-drupal-link-system-path="node/174"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">
+                                Qui sommes-nous ?
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/groupe/lopen-source-quest-ce-que-cest"
+                              data-drupal-link-system-path="node/1718"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">
+                                L&apos;Open source
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/groupe/nos-valeurs"
+                              data-drupal-link-system-path="node/137"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">Nos valeurs</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/groupe/implantations"
+                              data-drupal-link-system-path="node/88"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">
+                                Nos implantations
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/groupe/actualites"
+                              data-drupal-link-system-path="node/89"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">Actualités</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/groupe/liste-devenements"
+                              itemprop="url"
+                              data-drupal-link-system-path="node/52"
+                              rel="external"
+                            >
+                              <span itemprop="name" class="hvr-icon-grow">
+                                Evènements
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/groupe/media"
+                              data-drupal-link-system-path="node/124"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">Médias</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li
+                        class="has-child"
+                        x-bind:class="menuChildrenOpen === 1 ? 'opened' : ''"
+                        x-on:click.prevent="menuChildrenOpen = menuChildrenOpen === 1 ? undefined : 1"
+                      >
+                        <a
+                          href="/fr"
+                          data-drupal-link-system-path=""
+                          class="is-active"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Offres</span>
+                        </a>
+
+                        <ul
+                          class="level1 list-inline"
+                          x-bind:style="`display: ${menuChildrenOpen === 1 ? 'block' : 'none'}`"
+                        >
+                          <li class="has-child">
+                            <a
+                              href="/fr/offres/digital"
+                              itemprop="url"
+                              data-drupal-link-system-path="node/148"
+                              rel="external"
+                            >
+                              <span itemprop="name" class="hvr-icon-grow">
+                                Digital
+                              </span>
+                            </a>
+
+                            <ul class="level2 list-inline">
+                              <li>
+                                <a
+                                  href="/fr/offers/digital/e-commerce-starter-kit"
+                                  itemprop="url"
+                                  data-drupal-link-system-path="node/2112"
+                                  rel="external"
+                                >
+                                  <span itemprop="name" class="hvr-icon-grow">
+                                    E-commerce Starter Kit
+                                  </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/offres/business-apps"
+                              data-drupal-link-system-path="node/169"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">Business Apps</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/offres/embarque-iot"
+                              data-drupal-link-system-path="node/168"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow">
+                                Embedded &amp; IoT
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="/fr/offres/infrastructure"
+                              data-drupal-link-system-path="node/171"
+                              rel="external"
+                            >
+                              <span class="hvr-icon-grow"> Infrastructure</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/nos-references"
+                          data-drupal-link-system-path="node/28"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Références</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/technologies"
+                          data-drupal-link-system-path="list-technologies"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Technologies</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/publications/liste-livres-blancs"
+                          itemprop="url"
+                          data-drupal-link-system-path="list-white-papers"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Livres blancs
+                          </span>
+                        </a>
+                      </li>
+                      <li
+                        class="has-child"
+                        x-bind:class="menuChildrenOpen === 2 ? 'opened' : ''"
+                        x-on:click.prevent="menuChildrenOpen = menuChildrenOpen === 1 ? undefined : 2"
+                      >
+                        <a
+                          href="/fr/innovation"
+                          itemprop="url"
+                          data-drupal-link-system-path="node/157"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Innovation
+                          </span>
+                        </a>
+
+                        <ul
+                          class="level1 list-inline"
+                          x-bind:style="`display: ${menuChildrenOpen === 2 ? 'block' : 'none'}`"
+                        >
+                          <li>
+                            <a
+                              href="https://www.smile.eu/fr/innovation/recherche-developpement"
+                              itemprop="url"
+                              target="_blank"
+                              rel="external"
+                            >
+                              <span itemprop="name" class="hvr-icon-grow">
+                                Recherche et développement
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/conseil"
+                          itemprop="url"
+                          data-drupal-link-system-path="node/1918"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Conseil
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="menu menu-external-link-container contact-header">
+                    <ul
+                      itemtype="http://www.schema.org/SiteNavigationElement"
+                      class="level0 list-inline"
+                    >
+                      <li class="has-child">
+                        <a
+                          href="https://blog.smile.eu/fr"
+                          itemprop="url"
+                          target="_blank"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Blog
+                          </span>
+                        </a>
+
+                        <ul class="level1 list-inline">
+                          <li>
+                            <a
+                              href="https://blog.smile.eu/fr"
+                              itemprop="url"
+                              target="_blank"
+                              rel="external"
+                            >
+                              <span itemprop="name" class="hvr-icon-grow">
+                                Smile business blog
+                              </span>
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="https://tech.smile.eu"
+                              itemprop="url"
+                              target="_blank"
+                              rel="external"
+                            >
+                              <span itemprop="name" class="hvr-icon-grow">
+                                Technical blog
+                              </span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a
+                          href="http://jobs.smile.eu"
+                          target="_blank"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow btn btn-orange">
+                            Nous rejoindre
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/contact"
+                          itemprop="url"
+                          target="_blank"
+                          data-drupal-link-system-path="node/2204"
+                          rel="external"
+                        >
+                          <span
+                            itemprop="name"
+                            class="hvr-icon-grow btn btn-bleu"
+                          >
+                            Contact
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div
+        role="main"
+        class="main-container container-fluid js-quickedit-main-content"
+      >
+        <div class="row">
+          <section class="col-sm-12">
+            <div class="region region-content-top">
+              <div data-drupal-messages-fallback="" class="hidden"></div>
+            </div>
+
+            <div class="region region-content">
+              <article
+                data-history-node-id="4"
+                role="article"
+                about="/fr/homepage"
+                typeof="schema:WebPage"
+                class="page full clearfix"
+              >
+                <div class="content">
+                  <div class="field--item">
+                    <div class="full-new-homepage">
+                      <div class="block-header-block homepage-yellow">
+                        <div class="logo-block-hp">
+                          <a href="#" rel="external">
+                            <img
+                              class="block-content-block_header_block__btn-logo-smile"
+                              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo_yellow.png"
+                            />
+                          </a>
+                        </div>
+                        <div class="container">
+                          <div
+                            class="field field--name-field-header-text-paragraph field--type-entity-reference-revisions field--label-hidden field--item"
+                          >
+                            <div
+                              class="block-content-block_header_block__paragraph new-header-homepage"
+                            >
+                              <div class="text-new-header">
+                                <p>
+                                  CRÉATEUR D&apos;EXPÉRIENCE DIGITALE OUVERTE
+                                </p>
+                              </div>
+                              <div class="link-single-part">
+                                <div class="link-content">
+                                  <a
+                                    href="/fr/nos-references"
+                                    class="btn blue"
+                                    rel="external"
+                                  >
+                                    Découvrez nos projets
+                                  </a>
+                                </div>
+                              </div>
+                              <h1 class="tag-new-header">#MadeWithSmile</h1>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field--item">
+                    <div
+                      class="block-content block-content-two_parts big onepartright margin block-twoparts"
+                      x-data="{ first: undefined, second: undefined }"
+                      x-init="[first, second] = await (await fetch('http://localhost:3333/opensource')).json()"
+                    >
+                      <div
+                        class="single-block white"
+                        style="
+                          background-color: #ffffff;
+                          background-image: url('https://www.smile.eu/sites/default/files/2017-09/background%20HP.jpg');
+                          background-size: cover;
+                          background-repeat: no-repeat;
+                          background-position: center center;
+                        "
+                        x-show="first"
+                      >
+                        <div class="singleblock-text">
+                          <h2 class="node-title" x-text="first?.title"></h2>
+                          <div class="field--name-field-description">
+                            <div
+                              class="field field--name-field-description field--type-string-long field--label-hidden field--item"
+                              x-text="first?.description"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="link-single-part">
+                          <div class="link-content">
+                            <a
+                              x-bind:href="first?.url"
+                              rel="external"
+                              x-text="first?.link"
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        class="single-block white_paper block_single_part_one_third_tall blue"
+                        style="
+                          background-color: #ffffff;
+                          background-image: url('https://www.smile.eu/sites/default/files/2017-09/bg_gris.png');
+                          background-size: cover;
+                          background-repeat: no-repeat;
+                          background-position: center center;
+                        "
+                        x-show="second"
+                      >
+                        <div
+                          class="singleblock-text white_paper block_single_part_one_third_tall"
+                        >
+                          <div
+                            data-history-node-id="178"
+                            role="article"
+                            about="/fr/livres-blancslivres-blancs/guide-lopen-source"
+                            class="white-paper is-promoted block-single-part-one-third-tall clearfix"
+                          >
+                            <div
+                              class="field field--name-field-preview field--type-entity-reference field--label-hidden field--item"
+                            >
+                              <img
+                                src="https://www.smile.eu/sites/default/files/styles/white_papers_preview_single_part/public/2017-09/LB_guide_OS_0.png?itok=wmfqmAeA"
+                                width="141"
+                                height="209"
+                                alt="Vignette"
+                                title="Guide de l’open source - couverture"
+                                typeof="foaf:Image"
+                                class="img-responsive"
+                              />
+                            </div>
+
+                            <div class="title-white-papers">
+                              <h2 x-text="second?.title"></h2>
+                            </div>
+
+                            <div
+                              class="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item"
+                              x-text="second?.description"
+                            ></div>
+                          </div>
+
+                          <div class="field--name-field-description"></div>
+                        </div>
+                        <div class="link-single-part">
+                          <div class="link-content">
+                            <a
+                              x-bind:href="second?.url"
+                              rel="external"
+                              x-text="second?.link"
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field--item">
+                    <section
+                      class="block-content block-content-preview_pages"
+                      x-data="cards"
+                    >
+                      <style>
+                        .alpine-nested-template-fix {
+                          display: table-cell;
+                          vertical-align: middle;
+                          width: 33.3%;
+                          position: relative;
+                        }
+                        .alpine-nested-template-fix > div {
+                          width: 100% !important;
+                          height: 100% !important;
+                          display: flex !important;
+                          align-items: center !important;
+                          padding: 0 12% !important;
+                        }
+                        .alpine-nested-template-fix
+                          > .block-content--preview-pages__col-picture
+                          .block-content--preview-pages__news-picture {
+                          position: relative;
+                          left: -16%;
+                        }
+                        .alpine-nested-template-fix
+                          > .block-content--preview-pages__col-event
+                          .block-single-part-one-third-small {
+                          width: 100%;
+                        }
+                      </style>
+                      <template x-for="group of cards">
+                        <div class="block-content--preview-pages__row">
+                          <template x-for="card of group">
+                            <div class="alpine-nested-template-fix">
+                              <template x-if="card.type === 'reference'">
+                                <div
+                                  class="block-content--preview-pages__col block-content--preview-pages__col-reference"
+                                >
+                                  <div
+                                    class="field field--name-field-references field--type-entity-reference field--label-hidden field--items"
+                                  >
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item">
+                                      <div
+                                        data-history-node-id="1691"
+                                        role="article"
+                                        about="/fr/references/eram"
+                                        class="highlighted-reference is-promoted block-single-part-one-third-small clearfix"
+                                      >
+                                        <div
+                                          class="field field--name-field-logo field--type-entity-reference field--label-hidden field--item"
+                                        >
+                                          <img
+                                            x-bind:src="card.image"
+                                            width="215"
+                                            height="75"
+                                            alt="Vignette"
+                                            title="ERAM - logo"
+                                            typeof="foaf:Image"
+                                            class="img-responsive"
+                                          />
+                                        </div>
+
+                                        <div
+                                          class="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item"
+                                          x-text="card.description"
+                                        ></div>
+                                      </div>
+                                    </div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                  </div>
+
+                                  <a
+                                    class="block-content--preview-pages__col-link"
+                                    x-bind:href="card.url"
+                                    rel="external"
+                                  >
+                                    <span x-text="card.link"></span>
+                                  </a>
+                                </div>
+                              </template>
+                              <template x-if="card.type === 'news'">
+                                <div
+                                  class="block-content--preview-pages__col block-content--preview-pages__col-news"
+                                >
+                                  <div
+                                    data-history-node-id="2241"
+                                    role="article"
+                                    about="/fr/groupeactualites/palindromejs"
+                                    class="news is-promoted block-single-part-one-third-small clearfix"
+                                  >
+                                    <h3 class="news-title">
+                                      <span x-text="card.title"></span>
+                                    </h3>
+
+                                    <div class="content">
+                                      <div
+                                        class="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item"
+                                        x-text="card.description"
+                                      ></div>
+                                    </div>
+                                  </div>
+
+                                  <a
+                                    class="block-content--preview-pages__col-link"
+                                    x-bind:href="card.url"
+                                    rel="external"
+                                  >
+                                    <span x-text="card.link"></span>
+                                  </a>
+                                </div>
+                              </template>
+                              <template x-if="card.type === 'image'">
+                                <div
+                                  x-bind:style="card.image ? `background-size: cover;background-repeat: no-repeat;background-image: url(${card.image});` : ''"
+                                  class="block-content--preview-pages__col-picture"
+                                >
+                                  <div
+                                    class="block-content--preview-pages__news-picture"
+                                  >
+                                    <div
+                                      class="block-content--preview-pages__news-triangle"
+                                    ></div>
+                                  </div>
+                                </div>
+                              </template>
+                              <template x-if="card.type === 'technology'">
+                                <div
+                                  style="
+                                    background-image: url(https://www.smile.eu/sites/default/files/styles/preview_pages_pictures/public/2017-09/Drupal%20Copy_0.png?itok=CV-sCDWo);
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                  "
+                                  class="block-content--preview-pages__col block-content--preview-pages__col-technology"
+                                >
+                                  <div
+                                    class="field field--name-field-technologies field--type-entity-reference field--label-hidden field--items"
+                                  >
+                                    <div class="field--item">
+                                      <div
+                                        data-history-node-id="42"
+                                        role="article"
+                                        about="/fr/technologies/drupal"
+                                        class="technology is-promoted block-single-part-one-third-small clearfix"
+                                      >
+                                        <h3 class="title-technology">
+                                          <span x-text="card.title"></span>
+                                        </h3>
+
+                                        <div class="content">
+                                          <div
+                                            class="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item"
+                                            x-text="card.description"
+                                          ></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                    <div class="field--item"></div>
+                                  </div>
+
+                                  <a
+                                    class="block-content--preview-pages__col-link"
+                                    x-bind:href="card.url"
+                                    rel="external"
+                                  >
+                                    <span x-text="card.link"></span>
+                                  </a>
+                                </div>
+                              </template>
+                              <template x-if="card.type === 'event'">
+                                <div
+                                  class="block-content--preview-pages__col block-content--preview-pages__col-event"
+                                >
+                                  <div
+                                    data-history-node-id="2097"
+                                    role="article"
+                                    about="/fr/groupeevenements/quick-talk-tech-smile"
+                                    class="event block-single-part-one-third-small clearfix"
+                                  >
+                                    <div
+                                      class="field field--name-field-date field--type-datetime field--label-hidden field--item"
+                                    >
+                                      <div
+                                        class="date-day"
+                                        x-text="card.day"
+                                      ></div>
+                                      <div
+                                        class="date-month"
+                                        x-text="card.month"
+                                      ></div>
+                                    </div>
+
+                                    <h3 class="title-event">
+                                      <span x-text="card.title"></span>
+                                    </h3>
+
+                                    <div
+                                      class="field field--name-field-place field--type-string field--label-hidden field--item"
+                                      x-text="card.description"
+                                    ></div>
+                                  </div>
+
+                                  <a
+                                    class="block-content--preview-pages__col-link"
+                                    x-bind:href="card.url"
+                                    rel="external"
+                                  >
+                                    <span x-text="card.link"></span>
+                                  </a>
+                                </div>
+                              </template>
+                              <template x-if="card.type === 'whitePaper'">
+                                <div
+                                  class="block-content--preview-pages__col block-content--preview-pages__col-white-paper"
+                                >
+                                  <div
+                                    data-history-node-id="2260"
+                                    role="article"
+                                    about="/fr/livres-blancslivres-blancs/linux-rt"
+                                    class="white-paper is-promoted block-single-part-one-third-small clearfix"
+                                  >
+                                    <h3 class="title-white-papers">
+                                      <span x-text="card.title"></span>
+                                    </h3>
+                                  </div>
+
+                                  <a
+                                    class="block-content--preview-pages__col-link"
+                                    x-bind:href="card.url"
+                                    rel="external"
+                                  >
+                                    <span x-text="card.link"></span>
+                                  </a>
+                                </div>
+                              </template>
+                            </div>
+                          </template>
+                        </div>
+                      </template>
+                    </section>
+                  </div>
+                  <div class="field--item">
+                    <div class="block-content block-content-map">
+                      <div class="map--kpi">
+                        <div
+                          class="field field--name-field-map-kpi field--type-entity-reference field--label-hidden field--items"
+                        >
+                          <div class="field--item">
+                            <div
+                              class="block-content block-content-kpi singleblock-text"
+                            >
+                              <div class="title">17</div>
+                              <div class="subtitle">Agences</div>
+                            </div>
+                          </div>
+                          <div class="field--item">
+                            <div
+                              class="block-content block-content-kpi singleblock-text"
+                            >
+                              <div class="title">9</div>
+                              <div class="subtitle">PAYS</div>
+                            </div>
+                          </div>
+                          <div class="field--item">
+                            <div
+                              class="block-content block-content-kpi singleblock-text"
+                            >
+                              <div class="title">2000</div>
+                              <div class="subtitle">SMILIENS</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="link-map">
+                          <div class="link-map-content">
+                            <a href="/fr/groupe/implantations" rel="external">
+                              Découvrez smile
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        id="map"
+                        class="map--front leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                        style="position: relative"
+                        tabindex="0"
+                        x-data="map"
+                      ></div>
+                      <div id="map-controller"></div>
+                    </div>
+                  </div>
+                  <div
+                    class="field--item"
+                    x-data="{ solutionsTabIndex: 0, solutions: [], technologies: [] }"
+                    x-init="[solutions, technologies] = await Promise.all([
+                      fetch('http://localhost:3333/solutions').then((r) => r.json()),
+                      fetch('http://localhost:3333/technologies').then((r) => r.json()),
+                    ])"
+                  >
+                    <div class="block-content block-content-expertises block">
+                      <h2 class="field--name-field-label">
+                        Découvrez nos solutions open source
+                      </h2>
+                      <div
+                        class="js-tabs ui-tabs ui-corner-all ui-widget ui-widget-content"
+                      >
+                        <ul
+                          role="tablist"
+                          class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header"
+                        >
+                          <li
+                            role="tab"
+                            tabindex="{0}"
+                            class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active"
+                            aria-controls="tab-expertise-1"
+                            aria-labelledby="ui-id-1"
+                            x-bind:class="solutionsTabIndex === 0 ? 'ui-tabs-active ui-state-active' : ''"
+                            x-bind:aria-selected="solutionsTabIndex === 0 ? 'true' : 'false'"
+                            x-bind:aria-expanded="solutionsTabIndex === 0 ? 'true' : 'false'"
+                            x-on:click.prevent="solutionsTabIndex = 0"
+                          >
+                            <h3>
+                              <a
+                                href="#tab-expertise-1"
+                                role="presentation"
+                                tabindex="{-1}"
+                                class="ui-tabs-anchor"
+                                id="ui-id-1"
+                                rel="external"
+                              >
+                                Offres
+                              </a>
+                            </h3>
+                          </li>
+                          <li
+                            role="tab"
+                            tabindex="{-1}"
+                            class="ui-tabs-tab ui-corner-top ui-state-default ui-tab"
+                            aria-controls="tab-expertise-2"
+                            aria-labelledby="ui-id-2"
+                            x-bind:class="solutionsTabIndex === 1 ? 'ui-tabs-active ui-state-active' : ''"
+                            x-bind:aria-selected="solutionsTabIndex === 1 ? 'true' : 'false'"
+                            x-bind:aria-expanded="solutionsTabIndex === 1 ? 'true' : 'false'"
+                            x-on:click.prevent="solutionsTabIndex = 1"
+                          >
+                            <h3>
+                              <a
+                                href="#tab-expertise-2"
+                                role="presentation"
+                                tabindex="{-1}"
+                                class="ui-tabs-anchor"
+                                id="ui-id-2"
+                                rel="external"
+                              >
+                                Technologies
+                              </a>
+                            </h3>
+                          </li>
+                        </ul>
+
+                        <div
+                          id="tab-expertise-1"
+                          class="js-tab ui-tabs-panel ui-corner-bottom ui-widget-content"
+                          aria-labelledby="ui-id-1"
+                          role="tabpanel"
+                          x-bind:aria-hidden="solutionsTabIndex === 0 ? 'false' : 'true'"
+                          x-bind:style="solutionsTabIndex === 0 ? '' : 'display: none'"
+                        >
+                          <div
+                            class="paragraph paragraph--type--expertise paragraph--view-mode--default"
+                          >
+                            <div class="row">
+                              <template x-for="(item, i) in solutions">
+                                <div
+                                  class="field__item col-xs-12 col-sm-6 col-md-3"
+                                >
+                                  <a
+                                    class="paragraph paragraph--type--expertise-item paragraph--view-mode--default"
+                                    x-bind:href="item.url"
+                                    rel="external"
+                                  >
+                                    <div class="expertise-item--header">
+                                      <div
+                                        class="field field--name-field-image field--type-entity-reference field--label-hidden field--item"
+                                      >
+                                        <div>
+                                          <picture>
+                                            <source
+                                              x-bind:srcset="item.mobileImage"
+                                              media="all and (max-width: 480px)"
+                                              type="image/png"
+                                            />
+                                            <img
+                                              x-bind:src="item.image"
+                                              alt="image introuvable "
+                                              typeof="foaf:Image"
+                                              class="img-responsive"
+                                            />
+                                          </picture>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="field field--name-field-label field--type-string field--label-hidden field--item"
+                                        x-text="item.title"
+                                      ></div>
+                                    </div>
+
+                                    <div class="expertise-item--link">
+                                      <div
+                                        class="field field--name-field-description field--type-string-long field--label-hidden field--item"
+                                        x-text="item.description"
+                                      ></div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </template>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          id="tab-expertise-2"
+                          class="js-tab ui-tabs-panel ui-corner-bottom ui-widget-content"
+                          aria-labelledby="ui-id-2"
+                          role="tabpanel"
+                          x-bind:aria-hidden="solutionsTabIndex === 1 ? 'false' : 'true'"
+                          x-bind:style="solutionsTabIndex === 1 ? '' : 'display: none'"
+                        >
+                          <div
+                            class="paragraph paragraph--type--expertise paragraph--view-mode--default"
+                          >
+                            <div class="row">
+                              <template x-for="(item, i) in technologies">
+                                <div
+                                  class="field__item col-xs-12 col-sm-6 col-md-3"
+                                >
+                                  <a
+                                    class="paragraph paragraph--type--expertise-item paragraph--view-mode--default"
+                                    x-bind:href="item.url"
+                                  >
+                                    <div class="expertise-item--header">
+                                      <div
+                                        class="field field--name-field-image field--type-entity-reference field--label-hidden field--item"
+                                      >
+                                        <div>
+                                          <picture>
+                                            <source
+                                              x-bind:srcset="item.mobileImage"
+                                              media="all and (max-width: 480px)"
+                                              type="image/png"
+                                            />
+                                            <img
+                                              x-bind:src="item.image"
+                                              alt="image introuvable "
+                                              typeof="foaf:Image"
+                                              class="img-responsive"
+                                            />
+                                          </picture>
+                                        </div>
+                                      </div>
+
+                                      <div
+                                        class="field field--name-field-label field--type-string field--label-hidden field--item"
+                                        x-text="item.title"
+                                      ></div>
+                                    </div>
+
+                                    <div class="expertise-item--link">
+                                      <div
+                                        class="field field--name-field-description field--type-string-long field--label-hidden field--item"
+                                        x-text="item.description"
+                                      ></div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </template>
+                            </div>
+
+                            <div class="link-expertise">
+                              <div class="link-content">
+                                <a href="/fr/technologies" rel="external">
+                                  Découvrez toutes les technologies maîtrisées
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer
+        class="footer container-fluid"
+        role="contentinfo"
+        x-data="{ footerChildrenOpen: undefined }"
+      >
+        <div class="region-footer-top">
+          <div class="region-footer-top">
+            <div id="block-socialmedialinks" class="block-social-media-links">
+              <h4 class="social-text">Follow us :</h4>
+
+              <span
+                itemtype="http://schema.org/Organization"
+                class="platforms inline horizontal"
+              >
+                <link itemprop="url" href="http://www.smile.eu/fr" />
+                <a
+                  itemprop="sameAs"
+                  href="https://www.twitter.com/GroupeSmile"
+                  target="_blank"
+                  rel="external"
+                >
+                  <span class="fab fa-twitter fa-2x"></span>
+                </a>
+
+                <a
+                  itemprop="sameAs"
+                  href="https://www.instagram.com/smile.for.it/"
+                  target="_blank"
+                  rel="external"
+                >
+                  <span class="fab fa-instagram fa-2x"></span>
+                </a>
+
+                <a
+                  itemprop="sameAs"
+                  href="https://www.linkedin.com/company/smile"
+                  target="_blank"
+                  rel="external"
+                >
+                  <span class="fab fa-linkedin fa-2x"></span>
+                </a>
+
+                <a
+                  itemprop="sameAs"
+                  href="https://github.com/Smile-SA"
+                  target="_blank"
+                  rel="external"
+                >
+                  <span class="fab fa-github fa-2x"></span>
+                </a>
+
+                <a
+                  itemprop="sameAs"
+                  href="https://www.slideshare.net/smileopensource"
+                  target="_blank"
+                  rel="external"
+                >
+                  <span class="fab fa-slideshare fa-2x"></span>
+                </a>
+
+                <a
+                  itemprop="sameAs"
+                  href="https://www.youtube.com/user/SmileOpenSource"
+                  target="_blank"
+                  rel="external"
+                >
+                  <span class="fab fa-youtube fa-2x"></span>
+                </a>
+              </span>
+
+              <div class="line-separator"></div>
+            </div>
+
+            <nav
+              role="navigation"
+              aria-labelledby="block-mainnavigation-menu"
+              id="block-mainnavigation"
+            >
+              <h2 class="sr-only" id="block-mainnavigation-menu">
+                Main navigation
+              </h2>
+
+              <div class="menu menu-main menu-footer">
+                <ul
+                  itemtype="http://www.schema.org/SiteNavigationElement"
+                  class="level0 list-inline"
+                >
+                  <li
+                    class="has-child"
+                    x-on:click="footerChildrenOpen = footerChildrenOpen === 0 ? undefined : 0"
+                  >
+                    <a
+                      data-drupal-link-system-path=""
+                      class="is-active"
+                      rel="external"
+                    >
+                      <span class="hvr-icon-grow">Groupe</span>
+                    </a>
+
+                    <ul
+                      class="level1 list-inline"
+                      x-bind:style="`display: ${footerChildrenOpen === 0 ? 'block' : 'none'}`"
+                    >
+                      <li>
+                        <a
+                          href="/fr/groupe/qui-sommes-nous"
+                          data-drupal-link-system-path="node/174"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Qui sommes-nous ?</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/groupe/lopen-source-quest-ce-que-cest"
+                          data-drupal-link-system-path="node/1718"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">L&apos;Open source</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/groupe/nos-valeurs"
+                          data-drupal-link-system-path="node/137"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Nos valeurs</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/groupe/implantations"
+                          data-drupal-link-system-path="node/88"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Nos implantations</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/groupe/actualites"
+                          data-drupal-link-system-path="node/89"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Actualités</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/groupe/liste-devenements"
+                          itemprop="url"
+                          data-drupal-link-system-path="node/52"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Evènements
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/groupe/media"
+                          data-drupal-link-system-path="node/124"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Médias</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="has-child"
+                    x-on:click="footerChildrenOpen = footerChildrenOpen === 1 ? undefined : 1"
+                  >
+                    <a
+                      data-drupal-link-system-path=""
+                      class="is-active"
+                      rel="external"
+                    >
+                      <span class="hvr-icon-grow">Offres</span>
+                    </a>
+
+                    <ul
+                      class="level1 list-inline"
+                      x-bind:style="`display: ${footerChildrenOpen === 1 ? 'block' : 'none'}`"
+                    >
+                      <li>
+                        <a
+                          href="/fr/offres/digital"
+                          itemprop="url"
+                          data-drupal-link-system-path="node/148"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Digital
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/offres/business-apps"
+                          data-drupal-link-system-path="node/169"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Business Apps</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/offres/embarque-iot"
+                          data-drupal-link-system-path="node/168"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow"> Embedded &amp; IoT</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/fr/offres/infrastructure"
+                          data-drupal-link-system-path="node/171"
+                          rel="external"
+                        >
+                          <span class="hvr-icon-grow">Infrastructure</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      href="/fr/nos-references"
+                      data-drupal-link-system-path="node/28"
+                      rel="external"
+                    >
+                      <span class="hvr-icon-grow">Références</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/fr/technologies"
+                      data-drupal-link-system-path="list-technologies"
+                      rel="external"
+                    >
+                      <span class="hvr-icon-grow">Technologies</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/fr/publications/liste-livres-blancs"
+                      itemprop="url"
+                      data-drupal-link-system-path="list-white-papers"
+                      rel="external"
+                    >
+                      <span itemprop="name" class="hvr-icon-grow">
+                        Livres blancs
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    class="has-child"
+                    x-on:click="footerChildrenOpen = footerChildrenOpen === 2 ? undefined : 2"
+                  >
+                    <a
+                      itemprop="url"
+                      data-drupal-link-system-path="node/157"
+                      rel="external"
+                    >
+                      <span itemprop="name" class="hvr-icon-grow">
+                        Innovation
+                      </span>
+                    </a>
+
+                    <ul
+                      class="level1 list-inline"
+                      x-bind:style="`display: ${footerChildrenOpen === 2 ? 'block' : 'none'}`"
+                    >
+                      <li>
+                        <a
+                          href="https://www.smile.eu/fr/innovation/recherche-developpement"
+                          itemprop="url"
+                          target="_blank"
+                          rel="external"
+                        >
+                          <span itemprop="name" class="hvr-icon-grow">
+                            Recherche et développement
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      href="/fr/conseil"
+                      itemprop="url"
+                      data-drupal-link-system-path="node/1918"
+                      rel="external"
+                    >
+                      <span itemprop="name" class="hvr-icon-grow">
+                        Conseil
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="footer-contact">
+              <div class="contact-button">
+                <a href="/fr/contact" rel="external"> Contactez-nous </a>
+              </div>
+            </div>
+
+            <nav
+              role="navigation"
+              aria-labelledby="block-menufooterexternalsites-menu"
+              id="block-menufooterexternalsites"
+            >
+              <h2
+                class="visually-hidden"
+                id="block-menufooterexternalsites-menu"
+              >
+                Menu footer external sites
+              </h2>
+
+              <ul
+                itemtype="http://www.schema.org/SiteNavigationElement"
+                class="menu nav"
+              >
+                <li>
+                  <a href="http://jobs.smile.eu" target="_blank" rel="external">
+                    <span class="hvr-icon-grow">Nous rejoindre</span>
+                  </a>
+                </li>
+
+                <li class="expanded dropdown">
+                  <a
+                    href="https://blog.smile.eu/fr"
+                    class="dropdown-toggle"
+                    target="_blank"
+                    data-target="#"
+                    data-toggle="dropdown"
+                    itemprop="url"
+                    rel="external"
+                  >
+                    <span itemprop="name" class="hvr-icon-grow"> Blog </span>
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="menu dropdown-menu">
+                    <li>
+                      <a
+                        href="https://blog.smile.eu/fr"
+                        itemprop="url"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Smile business blog
+                        </span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="https://tech.smile.eu"
+                        itemprop="url"
+                        target="_blank"
+                        rel="external"
+                      >
+                        <span itemprop="name" class="hvr-icon-grow">
+                          Technical blog
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a
+                    href="http://formations.opensourceschool.fr/"
+                    target="_blank"
+                    rel="external"
+                  >
+                    <span class="hvr-icon-grow">Open Source School</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://open-source-guide.com"
+                    target="_blank"
+                    rel="external"
+                  >
+                    <span class="hvr-icon-grow">Open Source Guide</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="region-footer">
+            <div class="footer-content">
+              <div class="logo-footer"></div>
+              <section class="block-content block-content-basic">
+                <div
+                  class="field field--name-body field--type-text-with-summary field--label-hidden field--item"
+                >
+                  <p>
+                    Any time we start something new it is exciting and we are
+                    very motivated and committed.
+                  </p>
+                </div>
+              </section>
+            </div>
+
+            <div class="footer-menu-footer">
+              <span class="copiright">©Smile 2023</span>
+              <nav
+                role="navigation"
+                aria-labelledby="block-smileeu-footer-menu"
+                id="block-smileeu-footer"
+              >
+                <h2 class="visually-hidden" id="block-smileeu-footer-menu">
+                  Footer menu
+                </h2>
+
+                <ul class="menu nav">
+                  <li>
+                    <a
+                      href="/fr/contact"
+                      data-drupal-link-system-path="contact"
+                      rel="external"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/fr/mentions-legales"
+                      data-drupal-link-system-path="node/69"
+                      rel="external"
+                    >
+                      Mentions légales
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/fr/politique-protection-donnees-personnelles"
+                      data-drupal-link-system-path="node/68"
+                      rel="external"
+                    >
+                      Politique de confidentialité
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./scripts/async-map.js"></script>
+    <script type="module" src="./scripts/cards.js"></script>
+    <script type="module" src="./scripts/init.js"></script>
+  </body>
+</html>

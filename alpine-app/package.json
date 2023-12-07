@@ -1,0 +1,19 @@
+{
+  "name": "alpine-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve -s ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alpinejs": "^3.13.3",
+    "geojson": "^0.5.0",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

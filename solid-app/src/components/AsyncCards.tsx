@@ -130,7 +130,7 @@ const AsyncCards: Component = () => {
                             <div class="field--item"></div>
                             <div class="field--item"></div>
                             <div class="field--item"></div>
-                            getGroup <div class="field--item"></div>
+                            <div class="field--item"></div>
                             <div class="field--item"></div>
                           </div>
                           <a
