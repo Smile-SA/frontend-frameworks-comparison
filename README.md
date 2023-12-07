@@ -71,6 +71,28 @@ In the results I recorded:
 
 ## Results
 
+### Alpine app
+
+Commands:
+
+- `npm run serve`
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 761kB/908kB | 3.5MB      | 979kB/977kB |
+
+Statistics per page (with Chrome 120.0.6099.62):
+
+| Pages   | Requests | Doc size      | JS size       | Performance | FCP  | LCP  | TBT    | CLS   | SI   |
+| ------- | -------- | ------------- | ------------- | ----------- | ---- | ---- | ------ | ----- | ---- |
+| static  | 67       | 12.1kB/135kB  | 24.2kB/99.6kB | 69          | 1.9s | 4.1s | 0ms    | 0.001 | 1.9s |
+| layout  | 67       | 12.8kB/140kB  | 111kB/404kB   | 69          | 1.9s | 4.2s | 0ms    | 0.001 | 1.9s |
+| dynamic | 67       | 11.4kB/112kB  | 139kB/556kB   | 68          | 1.9s | 4.3s | 0ms    | 0.001 | 1.9s |
+| async   | 73       | 10.3kB/96.1kB | 138kB/531kB   | 68          | 1.9s | 4.2s | 0ms    | 0.001 | 1.9s |
+| busy    | 74       | 10.3kB/96.2kB | 139kB/531kB   | 29          | 2.0s | 5.8s | 3750ms | 0.001 | 6.2s |
+
 ### Angular app
 
 Commands:
@@ -428,6 +450,28 @@ Statistics per page (with Chrome 116.0.5845.96):
 | ssg            | 71       | 8.7kB/52.5kB | 117kB/354kB  | 67          | 2.0s | 4.6s | 0ms    | 0.001 | 2.0s |
 | busy(ssg)      | 73       | 8.7kB/52.4kB | 118kB/355kB  | 67          | 2.0s | 4.5s | 0ms    | 0.001 | 2.0s |
 | hydration(ssg) | 73       | 8.7kB/52.4kB | 118kB/355kB  | 36          | 1.9s | 4.4s | 8520ms | 0.001 | 2.4s |
+
+### Preact app
+
+Commands:
+
+- `npm run serve`
+
+Common statistics:
+
+| CSS size    | Image size | font size   |
+| ----------- | ---------- | ----------- |
+| 761kB/908kB | 3.5MB      | 979kB/977kB |
+
+Statistics per page (with Chrome 120.0.6099.62):
+
+| Pages   | Requests | Doc size   | JS size       | Performance | FCP  | LCP  | TBT    | CLS   | SI    |
+| ------- | -------- | ---------- | ------------- | ----------- | ---- | ---- | ------ | ----- | ----- |
+| static  | 68       | 933B/1.2kB | 17.7kB/85.0kB | 69          | 1.8s | 4.3s | 0ms    | 0.004 | 1.8s  |
+| layout  | 69       | 933B/1.2kB | 19.3kB/87.3kB | 69          | 1.9s | 4.0s | 0ms    | 0.014 | 1.9s  |
+| dynamic | 67       | 933B/1.2kB | 66.0kB/247kB  | 69          | 1.9s | 4.3s | 0ms    | 0.014 | 1.9s  |
+| async   | 75       | 933B/1.2kB | 64.0kB/222kB  | 70          | 1.9s | 4.0s | 0ms    | 0.004 | 1.9s  |
+| busy    | 74       | 933B/1.2kB | 63.5kB/222kB  | 32          | 1.9s | 4.2s | 8170ms | 0.014 | 10.0s |
 
 ### Qwik app
 
@@ -902,6 +946,13 @@ Second batch with Chrome 116.0.5845.96:
 | Svelte     | 123196 | 124066 | 125866 | 125257 | 123423 | 118916 | 126096 | 123017 | 125038 | 123117 | ~123800 |
 | Vue        | 74406  | 77208  | 78163  | 78539  | 77928  | 77157  | 77175  | 77820  | 77880  | 77361  |  ~77400 |
 
+Third batch for new frameworks with Chrome 120.0.6099.62:
+
+| Framework | #1    | #2    | #3    | #4    | #5    | #6    | #7    | #8    | #9    | #10   |    Moy |
+| --------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----: |
+| Alpine.js | 70176 | 71307 | 71481 | 71865 | 74393 | 73988 | 73112 | 74112 | 73708 | 73683 | ~72800 |
+| Preact    | 1535  | 1607  | 1692  | 1583  | 1649  | 1713  | 1616  | 1688  | 1685  | 1666  |  ~1600 |
+
 ### React
 
 We clearly see here that React is the worst and this is due to the usage of the virtual DOM.
@@ -922,6 +973,16 @@ Second batch with Chrome 116.0.5845.96:
 | React 2   | 32804 | 34820 | 35459 | 35419 | 35090 | 35283 | 34795 | 35476 | 34775 | 34513 | ~34800 |
 
 It is more than 10 times faster than the previous implementation.
+
+### Preact
+
+This is exactly the same problem as with React.
+
+Here are the results of the `/better-counter` page with Chrome 120.0.6099.62:
+
+| Framework | #1    | #2    | #3    | #4    | #5    | #6    | #7    | #8    | #9    | #10   |    Moy |
+| --------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | -----: |
+| Preact 2  | 65360 | 70167 | 70675 | 69853 | 70717 | 69172 | 70469 | 69436 | 70471 | 68423 | ~69500 |
 
 ### Angular
 
