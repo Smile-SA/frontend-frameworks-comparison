@@ -1,0 +1,362 @@
+import DynamicMap from "./DynamicMap";
+import DynamicTabs from "./DynamicTabs";
+
+export default function DynamicHomepage() {
+  return (
+    <section className="col-sm-12">
+      <a id="main-content"></a>
+      <div className="region region-content-top">
+        <div data-drupal-messages-fallback="" className="hidden"></div>
+      </div>
+
+      <div className="region region-content">
+        <article
+          data-history-node-id="4"
+          role="article"
+          about="/fr/homepage"
+          typeof="schema:WebPage"
+          className="page full clearfix"
+        >
+          <div className="content">
+            <div className="field--item">
+              <div className="full-new-homepage">
+                <div className="block-header-block homepage-yellow">
+                  <div className="logo-block-hp">
+                    <a href="#">
+                      <img
+                        className="block-content-block_header_block__btn-logo-smile"
+                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo_yellow.png"
+                      />
+                    </a>
+                  </div>
+                  <div className="container">
+                    <div className="field field--name-field-header-text-paragraph field--type-entity-reference-revisions field--label-hidden field--item">
+                      <div className="block-content-block_header_block__paragraph new-header-homepage">
+                        <div className="text-new-header">
+                          <p>CRÉATEUR D&apos;EXPÉRIENCE DIGITALE OUVERTE</p>
+                        </div>
+                        <div className="link-single-part">
+                          <div className="link-content">
+                            <a href="/fr/nos-references" className="btn blue">
+                              Découvrez nos projets
+                            </a>
+                          </div>
+                        </div>
+                        <h1 className="tag-new-header"> #MadeWithSmile</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="field--item">
+              <div className="block-content block-content-two_parts big onepartright margin block-twoparts">
+                <div
+                  className="single-block   white"
+                  style={{
+                    backgroundColor: "#ffffff",
+                    backgroundImage:
+                      "url('https://www.smile.eu/sites/default/files/2017-09/background%20HP.jpg')",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center center",
+                  }}
+                >
+                  <div className="singleblock-text  ">
+                    <h2 className="node-title">Préférez l&apos;Open Source</h2>
+                    <div className="field--name-field-description">
+                      <div className="field field--name-field-description field--type-string-long field--label-hidden field--item">
+                        Au menu de l&apos;open source : des bénéfices
+                        économiques, une source inépuisée d’innovations, une
+                        liberté retrouvée... Et plein d&apos;autres avantages
+                        qui se comptent par centaines !{" "}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="link-single-part">
+                    <div className="link-content">
+                      <a href="/fr/groupe/lopen-source-quest-ce-que-cest">
+                        Découvrez l&apos;open source
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className="single-block white_paper block_single_part_one_third_tall blue"
+                  style={{
+                    backgroundColor: "#FFFFFF",
+                    backgroundImage:
+                      "url('https://www.smile.eu/sites/default/files/2017-09/bg_gris.png')",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center center",
+                  }}
+                >
+                  <div className="singleblock-text white_paper block_single_part_one_third_tall">
+                    <div
+                      data-history-node-id="178"
+                      role="article"
+                      about="/fr/livres-blancslivres-blancs/guide-lopen-source"
+                      className="white-paper is-promoted block-single-part-one-third-tall clearfix"
+                    >
+                      <div className="field field--name-field-preview field--type-entity-reference field--label-hidden field--item">
+                        {" "}
+                        <img
+                          src="https://www.smile.eu/sites/default/files/styles/white_papers_preview_single_part/public/2017-09/LB_guide_OS_0.png?itok=wmfqmAeA"
+                          width="141"
+                          height="209"
+                          alt="Vignette"
+                          title="Guide de l’open source - couverture"
+                          typeof="foaf:Image"
+                          className="img-responsive"
+                        />
+                      </div>
+
+                      <div className="title-white-papers">
+                        <h2>Guide de l’open source</h2>
+                      </div>
+
+                      <div className="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item">
+                        Vous avez besoin d&apos;y voir plus clair dans
+                        l&apos;éventail de solutions open source du marché ?
+                        Notre livre blanc qui…
+                      </div>
+                    </div>
+
+                    <div className="field--name-field-description"></div>
+                  </div>
+                  <div className="link-single-part">
+                    <div className="link-content">
+                      <a href="/fr/livres-blancslivres-blancs/guide-lopen-source">
+                        Voir le livre blanc
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="field--item">
+              <section className="block-content block-content-preview_pages">
+                <div className="block-content--preview-pages__row">
+                  <div className="block-content--preview-pages__col block-content--preview-pages__col-reference">
+                    <div className="field field--name-field-references field--type-entity-reference field--label-hidden field--items">
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item">
+                        <div
+                          data-history-node-id="1691"
+                          role="article"
+                          about="/fr/references/eram"
+                          className="highlighted-reference is-promoted block-single-part-one-third-small clearfix"
+                        >
+                          <div className="field field--name-field-logo field--type-entity-reference field--label-hidden field--item">
+                            {" "}
+                            <img
+                              src="https://www.smile.eu/sites/default/files/styles/reference_picture_preview_pages/public/2017-09/Eram_logo_2006.png?itok=MNFYZ3bU"
+                              width="215"
+                              height="75"
+                              alt="Vignette"
+                              title="ERAM - logo"
+                              typeof="foaf:Image"
+                              className="img-responsive"
+                            />
+                          </div>
+
+                          <div className="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item">
+                            Découvrez comment Smile a réussi le challenge de
+                            concevoir et développer un nouveau site e-commerce
+                            pour Eram…
+                          </div>
+                        </div>
+                      </div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                    </div>
+
+                    <a
+                      className="block-content--preview-pages__col-link"
+                      href="http://www.smile.eu/fr/references/eram"
+                    >
+                      <span>Voir la référence</span>
+                    </a>
+                  </div>
+                  <div className="block-content--preview-pages__col block-content--preview-pages__col-news">
+                    <div
+                      data-history-node-id="2241"
+                      role="article"
+                      about="/fr/groupeactualites/palindromejs"
+                      className="news is-promoted block-single-part-one-third-small clearfix"
+                    >
+                      <h3 className="news-title">
+                        <span>Palindrome.js</span>
+                      </h3>
+
+                      <div className="content">
+                        <div className="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item">
+                          Le suivi d&apos;informations multidimensionnelles est
+                          complexe dans un monde en 2D : soit les dimensions ou
+                          les…
+                        </div>
+                      </div>
+                    </div>
+
+                    <a
+                      className="block-content--preview-pages__col-link"
+                      href="http://www.smile.eu/fr/groupeactualites/palindromejs"
+                    >
+                      <span>Voir l&apos;actualité</span>
+                    </a>
+                  </div>
+
+                  <div
+                    style={{
+                      backgroundImage:
+                        "url(http://www.smile.eu/sites/default/files/styles/preview_pages_pictures/public/2023-05/Palindrome%20-%20logo%20only%20-%20hd%20%282%29.jpg?itok=g-naVpLx)",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                    className="block-content--preview-pages__col-picture"
+                  >
+                    <div className="block-content--preview-pages__news-picture">
+                      <div className="block-content--preview-pages__news-triangle"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="block-content--preview-pages__row">
+                  <div
+                    style={{
+                      backgroundImage:
+                        "url(https://www.smile.eu/sites/default/files/styles/preview_pages_pictures/public/2017-09/Drupal%20Copy_0.png?itok=CV-sCDWo)",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                    className="block-content--preview-pages__col block-content--preview-pages__col-technology"
+                  >
+                    <div className="field field--name-field-technologies field--type-entity-reference field--label-hidden field--items">
+                      <div className="field--item">
+                        <div
+                          data-history-node-id="42"
+                          role="article"
+                          about="/fr/technologies/drupal"
+                          className="technology is-promoted block-single-part-one-third-small clearfix"
+                        >
+                          <h3 className="title-technology">
+                            <span>Drupal</span>
+                          </h3>
+
+                          <div className="content">
+                            <div className="field field--name-field-description-preview-pages field--type-string-long field--label-hidden field--item">
+                              Devinez qui est le 1er expert Français de Drupal ?
+                              Smile ! Construire une expérience digitale riche
+                              avec…
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                      <div className="field--item"></div>
+                    </div>
+
+                    <a
+                      className="block-content--preview-pages__col-link"
+                      href="http://www.smile.eu/fr/technologies/drupal"
+                    >
+                      <span>Voir la technologie</span>
+                    </a>
+                  </div>
+                  <div className="block-content--preview-pages__col block-content--preview-pages__col-event">
+                    <div
+                      data-history-node-id="2097"
+                      role="article"
+                      about="/fr/groupeevenements/quick-talk-tech-smile"
+                      className="event block-single-part-one-third-small clearfix"
+                    >
+                      <div className="field field--name-field-date field--type-datetime field--label-hidden field--item">
+                        <div className="date-day">24</div>
+                        <div className="date-month">03</div>
+                      </div>
+
+                      <h3 className="title-event">
+                        <span>Quick Talk Tech a Smile </span>
+                      </h3>
+
+                      <div className="field field--name-field-place field--type-string field--label-hidden field--item">
+                        en ligne - tous les jours
+                      </div>
+                    </div>
+
+                    <a
+                      className="block-content--preview-pages__col-link"
+                      href="http://www.smile.eu/fr/groupeevenements/quick-talk-tech-smile"
+                    >
+                      <span>Voir l&apos;événement</span>
+                    </a>
+                  </div>
+                  <div className="block-content--preview-pages__col block-content--preview-pages__col-white-paper">
+                    <div
+                      data-history-node-id="2260"
+                      role="article"
+                      about="/fr/livres-blancslivres-blancs/linux-rt"
+                      className="white-paper is-promoted block-single-part-one-third-small clearfix"
+                    >
+                      <h3 className="title-white-papers">
+                        <span>Linux RT</span>
+                      </h3>
+                    </div>
+
+                    <a
+                      className="block-content--preview-pages__col-link"
+                      href="http://www.smile.eu/fr/livres-blancslivres-blancs/linux-rt"
+                    >
+                      <span>Voir le livre blanc</span>
+                    </a>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div className="field--item">
+              <div className="block-content block-content-map">
+                <div className="map--kpi">
+                  <div className="field field--name-field-map-kpi field--type-entity-reference field--label-hidden field--items">
+                    <div className="field--item">
+                      <div className="block-content block-content-kpi singleblock-text">
+                        <div className="title"> 17</div>
+                        <div className="subtitle"> Agences</div>
+                      </div>
+                    </div>
+                    <div className="field--item">
+                      <div className="block-content block-content-kpi singleblock-text">
+                        <div className="title"> 9</div>
+                        <div className="subtitle"> PAYS</div>
+                      </div>
+                    </div>
+                    <div className="field--item">
+                      <div className="block-content block-content-kpi singleblock-text">
+                        <div className="title"> 2000</div>
+                        <div className="subtitle"> SMILIENS</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="link-map">
+                    <div className="link-map-content">
+                      <a href="/fr/groupe/implantations">Découvrez smile</a>
+                    </div>
+                  </div>
+                </div>
+                <DynamicMap />
+              </div>
+            </div>
+            <DynamicTabs />
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
