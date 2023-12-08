@@ -72,7 +72,7 @@ In the results I recorded:
 
 ## Results
 
-### Alpine app
+### Alpine app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/alpinejs?filename=alpine-app%2Fpackage.json)
 
 Commands:
 
@@ -94,7 +94,7 @@ Statistics per page (with Chrome 120.0.6099.62):
 | async   | 73       | 10.3kB/96.1kB | 138kB/531kB   | 68          | 1.9s | 4.2s | 0ms    | 0.001 | 1.9s |
 | busy    | 74       | 10.3kB/96.2kB | 139kB/531kB   | 29          | 2.0s | 5.8s | 3750ms | 0.001 | 6.2s |
 
-### Angular app
+### Angular app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/@angular/common?filename=angular-app%2Fpackage.json)
 
 Commands:
 
@@ -126,7 +126,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | async   | 70       | 1.0kB/1.2kB | 154kB/553kB | 67          | 2.0s | 4.5s | 0ms    | 0.004 | 2.0s |
 | busy    | 74       | 1.0kB/1.2kB | 155kB/557kB | 26          | 4.1s | 6.2s | 2050ms | 0.014 | 9.5s |
 
-### Astro app (Without React Components)
+### Astro app (Without React Components) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/astro?filename=astro-app%2Fpackage.json)
 
 #### Using vite preview
 
@@ -183,7 +183,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | ssg       | 67       | 9.1kB/67.6kB  | 48.7kB/158kB | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
 | busy(ssg) | 70       | 9.1kB/67.6kB  | 48.7kB/158kB | 66          | 2.1s | 4.6s | 0ms | 0.001 | 2.1s |
 
-### Astro app (With React Components)
+### Astro app (With React Components) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/astro?filename=astro-react-app%2Fpackage.json) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/react?filename=astro-react-app%2Fpackage.json)
 
 #### Using vite preview + `client:load` directive
 
@@ -268,7 +268,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 
 No SSR again here.
 
-### Gatsby app
+### Gatsby app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/gatsby?filename=gatsby-app%2Fpackage.json)
 
 Commands:
 
@@ -303,7 +303,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | busy(ssr)      | 73       | 8.7kB/52.6kB | 125kB/412kB  | 62          | 1.9s | 4.5s | 0ms    | 0.001 | 7.2s  |
 | hydration(ssr) | 73       | 8.7kB/52.6kB | 125kB/412kB  | 32          | 1.9s | 4.5s | 8190ms | 0.004 | 12.1s |
 
-### Next app (Using App Router)
+### Next app (Using App Router) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/next?filename=next-app-app%2Fpackage.json) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/react?filename=next-app-app%2Fpackage.json)
 
 Commands:
 
@@ -337,7 +337,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | ssg       | 74       | 11.6kB/70.1kB | 131kB/455kB  | 68          | 1.9s | 4.6s | 0ms | 0.001 | 1.9s |
 | busy(ssr) | 74       | 13.5kB/70.9kB | 131kB/455kB  | 62          | 1.9s | 4.3s | 0ms | 0.001 | 9.8s |
 
-### Next app (Using Pages Router)
+### Next app (Using Pages Router) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/next?filename=next-page-app%2Fpackage.json) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/react?filename=next-page-app%2Fpackage.json)
 
 Commands:
 
@@ -452,7 +452,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | busy(ssg)      | 73       | 8.7kB/52.4kB | 118kB/355kB  | 67          | 2.0s | 4.5s | 0ms    | 0.001 | 2.0s |
 | hydration(ssg) | 73       | 8.7kB/52.4kB | 118kB/355kB  | 36          | 1.9s | 4.4s | 8520ms | 0.001 | 2.4s |
 
-### Preact app
+### Preact app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/preact?filename=preact-app%2Fpackage.json)
 
 Commands:
 
@@ -551,7 +551,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | ssr(ssg)  | 44       | 10.6kB/53.6kB | 0       | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
 | busy(ssg) | 46       | 10.9kB/54.1kB | 0       | 68          | 2.0s | 4.4s | 0ms | 0.001 | 2.0s |
 
-### React app (Vite)
+### React app (Vite) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/react?filename=react-app%2Fpackage.json)
 
 #### Using vite preview
 
@@ -629,7 +629,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | async   | 74       | 949B/1.2kB | 107kB/361kB  | 67          | 2.0s | 4.3s | 0ms    | 0.004 | 2.0s |
 | busy    | 74       | 949B/1.2kB | 107kB/362kB  | 32          | 2.0s | 4.3s | 8490ms | 0.003 | 8.3s |
 
-### Remix app
+### Remix app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/@remix-run/react?filename=remix-app%2Fpackage.json) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/react?filename=remix-app%2Fpackage.json)
 
 Commands:
 
@@ -662,7 +662,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | busy(ssr)      | 75       | 18.1kB/52.3kB | 141kB/465kB  | 60          | 2.1s | 4.6s | 0ms    | 0.001 | 7.6s |
 | hydration(ssr) | 75       | 18.1kB/52.3kB | 141kB/466kB  | 31          | 2.0s | 4.5s | 8460ms | 0.001 | 8.5s |
 
-### Solid app
+### Solid app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/solid-js?filename=solid-app%2Fpackage.json)
 
 #### Using vite preview
 
@@ -798,7 +798,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | busy(ssg)      | 77       | 9.1kB/58.4kB  | 101kB/310kB  | 30          | 2.2s | 4.6s | 8020ms | 0.001 | 5.7s |
 | hydration(ssg) | 77       | 9.1kB/58.4kB  | 100kB/310kB  | 33          | 2.1s | 5.1s | 3760ms | 0.001 | 2.6s |
 
-### Vue app
+### Vue app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/vue?filename=vue-app%2Fpackage.json)
 
 #### Using vite preview
 
