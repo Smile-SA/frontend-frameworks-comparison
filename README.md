@@ -37,6 +37,7 @@ For all those cases, the response time of the express app has been delayed by 1 
 
 ## Glossary
 
+- Performance: Lighthouse peformance score is calculated from the metrics described below. Calculator: https://googlechrome.github.io/lighthouse/scorecalc/
 - FCP: First Contentful Paint - First Contentful Paint marks the time at which the first text or image is painted.
 - LCP: Largest Contentful Paint - Largest Contentful Paint marks the time at which the largest text or image is painted.
 - TBT: Total Blocking Time - Sum of all time periods between FCP and Time to Interactive, when a task length exceeded 50ms, expressed in milliseconds.
