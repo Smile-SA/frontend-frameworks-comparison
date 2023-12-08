@@ -474,7 +474,7 @@ Statistics per page (with Chrome 120.0.6099.62):
 | async   | 75       | 933B/1.2kB | 64.0kB/222kB  | 70          | 1.9s | 4.0s | 0ms    | 0.004 | 1.9s  |
 | busy    | 74       | 933B/1.2kB | 63.5kB/222kB  | 32          | 1.9s | 4.2s | 8170ms | 0.014 | 10.0s |
 
-### Qwik app
+### Qwik app ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/dev/@builder.io/qwik?filename=qwik-app%2Fpackage.json)
 
 #### Using vite preview
 
@@ -740,7 +740,7 @@ Statistics per page (with Chrome 116.0.5845.96):
 | async   | 72       | 1.0kB/706B | 67.1kB/227kB  | 67          | 2.1s | 4.4s | 0ms    | 0.004 | 2.1s |
 | busy    | 76       | 1.0kB/706B | 68.2kB/228kB  | 26          | 4.1s | 6.0s | 2000ms | 0.004 | 9.3s |
 
-### Sveltekit app
+### Sveltekit app  ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/dev/@sveltejs/kit?filename=sveltekit-app%2Fpackage.json) ![Version](https://img.shields.io/github/package-json/dependency-version/Smile-SA/frontend-frameworks-comparison/dev/svelte?filename=sveltekit-app%2Fpackage.json)
 
 #### Using vite preview
 
