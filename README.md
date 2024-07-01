@@ -320,14 +320,15 @@ Statistics per page (with Chrome 116.0.5845.96):
 
 Statistics per page (with Chrome 125.0.6422.76 and some missing images):
 
-| Pages                             | Requests | Doc size      | JS size      | Performance | FCP  | LCP  | TBT | CLS | SI   |
-| --------------------------------- | -------- | ------------- | ------------ | ----------- | ---- | ---- | --- | --- | ---- |
-| static                            | 80       | 10.0kB/79.1kB | 0            | 82          | 0.6s | 3.2s | 0ms | 0   | 0.6s |
-| layout                            | 86       | 10.7kB/68.5kB | 53.1kB/165kB | 80          | 0.9s | 3.4s | 0ms | 0   | 0.9s |
-| dynamic                           | 65       | 8.9kB/51.5kB  | 53.1kB/165kB | 81          | 0.9s | 3.2s | 0ms | 0   | 0.9s |
-| ssg                               | 66       | 9.7kB/56.6kB  | 53.1kB/165kB | 82          | 0.6s | 3.2s | 0ms | 0   | 0.6s |
-| busy(ssg)                         | 66       | 9.7kB/56.6kB  | 53.1kB/165kB | 81          | 1.0s | 3.2s | 0ms | 0   | 1.0s |
-| hydration(using `client:visible`) | 66       | 9.8kB/56.9kB  | 53.1kB/165kB | 82          | 0.6s | 3.3s | 0ms | 0   | 0.6s |
+| Pages                             | Requests | Doc size      | JS size      | Performance | FCP  | LCP   | TBT     | CLS | SI   |
+| --------------------------------- | -------- | ------------- | ------------ | ----------- | ---- | ----- | ------- | --- | ---- |
+| static                            | 80       | 10.0kB/79.1kB | 0            | 82          | 0.6s | 3.2s  | 0ms     | 0   | 0.6s |
+| layout                            | 86       | 10.7kB/68.5kB | 53.1kB/165kB | 80          | 0.9s | 3.4s  | 0ms     | 0   | 0.9s |
+| dynamic                           | 65       | 8.9kB/51.5kB  | 53.1kB/165kB | 81          | 0.9s | 3.2s  | 0ms     | 0   | 0.9s |
+| ssg                               | 66       | 9.7kB/56.6kB  | 53.1kB/165kB | 82          | 0.6s | 3.2s  | 0ms     | 0   | 0.6s |
+| busy(ssg)                         | 66       | 9.7kB/56.6kB  | 53.1kB/165kB | 81          | 1.0s | 3.2s  | 0ms     | 0   | 1.0s |
+| hydration(using `client:load`)    | 80       | 9.8kB/56.9kB  | 103kB/326kB  | 40          | 0.7s | 10.9s | 19520ms | 0   | 2.3s |
+| hydration(using `client:visible`) | 66       | 9.8kB/56.9kB  | 53.1kB/165kB | 82          | 0.6s | 3.3s  | 0ms     | 0   | 0.6s |
 
 No SSR again here.
 
