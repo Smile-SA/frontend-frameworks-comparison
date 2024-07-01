@@ -22,7 +22,7 @@ export default function Homepage() {
                     <a href="#">
                       <img
                         className="block-content-block_header_block__btn-logo-smile"
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo_yellow.png"
+                        src="http://localhost:3333/icons/logo_yellow.png"
                       />
                     </a>
                   </div>
@@ -380,7 +380,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/16/11.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/16/11.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -392,7 +392,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/16/10.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/16/10.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -404,7 +404,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/15/11.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/15/11.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -416,7 +416,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/17/11.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/17/11.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -428,7 +428,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/16/12.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/16/12.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -440,7 +440,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/15/10.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/15/10.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -452,7 +452,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/17/10.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/17/10.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -464,7 +464,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/15/12.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/15/12.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -476,7 +476,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/17/12.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/17/12.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -488,7 +488,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/16/13.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/16/13.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -500,7 +500,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/15/13.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/15/13.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -512,7 +512,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/17/13.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/17/13.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -524,7 +524,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/14/11.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/14/11.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -536,7 +536,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/18/11.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/18/11.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -548,7 +548,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/14/12.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/14/12.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -560,7 +560,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/18/12.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/18/12.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -572,7 +572,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/14/10.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/14/10.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -584,7 +584,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/18/10.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/18/10.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -596,7 +596,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/14/13.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/14/13.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -608,7 +608,7 @@ export default function Homepage() {
                           <img
                             alt=""
                             role="presentation"
-                            src="https://www.smile.eu/themes/custom/smileeu/smileeu_local_map/pictures_map_global/5/18/13.png"
+                            src="http://localhost:3333/smileeu_local_map/pictures_map_global/5/18/13.png"
                             className="leaflet-tile leaflet-tile-loaded"
                             style={{
                               width: "256px",
@@ -624,7 +624,7 @@ export default function Homepage() {
                     <div className="leaflet-pane leaflet-overlay-pane"></div>
                     <div className="leaflet-pane leaflet-marker-pane">
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -637,7 +637,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -650,7 +650,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -663,7 +663,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -676,7 +676,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -689,7 +689,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -702,7 +702,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -715,7 +715,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -728,7 +728,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -741,7 +741,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -754,7 +754,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -767,7 +767,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -780,7 +780,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -793,7 +793,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -806,7 +806,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{
@@ -819,7 +819,7 @@ export default function Homepage() {
                         }}
                       />
                       <img
-                        src="https://www.smile.eu/themes/custom/smileeu/assets/images/map/pin.svg"
+                        src="http://localhost:3333/map/pin.svg"
                         className="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
                         tabIndex={0}
                         style={{

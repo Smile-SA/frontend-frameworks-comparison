@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="70px"
+   height="65px"
+   viewBox="0 0 70 65"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Reply.svg">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Chat</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="692"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="3.6307692"
+     inkscape:cx="-18.432204"
+     inkscape:cy="32.5"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">Chat</title>
+  <desc
+     id="desc6">Created with Sketch.</desc>
+  <defs
+     id="defs8" />
+  <g
+     id="Lot1"
+     transform="matrix(-0.86537705,0,0,0.8546989,65.090905,4.2546141)"
+     style="fill:none;stroke:#1bba96;stroke-width:8.88941765;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
+    <g
+       id="UI"
+       transform="translate(-1218,-311)"
+       style="fill:none;stroke:#1bba96;stroke-width:8.88941765;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
+      <g
+         id="PICTOGRAMMES"
+         transform="translate(1080,201)"
+         style="fill:none;stroke:#1bba96;stroke-width:8.88941765;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none">
+        <path
+           d="M 172.67192,110 C 153.523,110 138,123.44672 138,140.03334 c 0,7.57306 3.24339,14.48554 8.58145,19.77061 l -6.54558,14.44538 19.14724,-6.53981 c 4.14678,1.51863 8.70522,2.35828 13.48881,2.35828 19.14948,0 34.6736,-13.44727 34.6736,-30.03446 C 207.34552,123.44672 191.8214,110 172.67192,110"
+           id="Chat"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#1bba96;stroke-width:8.88941765;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
+    </g>
+  </g>
+</svg>

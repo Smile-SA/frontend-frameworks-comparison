@@ -1,16 +1,24 @@
 <header class="container-fluid" role="banner" #rootRef>
   <div class="container-fluid" role="heading">
     <div class="region region-header-top container-fluid homepage">
-      <div class="row block-header-top sticky-hp" [class.opened-menu]="menuOpen">
+      <div
+        class="row block-header-top sticky-hp"
+        [class.opened-menu]="menuOpen"
+      >
         <div class="col-xs-4 col-sm-3 col-lg-2 block-header-top__menu">
-          <a class="block-header-top__menu-btn" rel="external" (click)="handleToggleMenu($event)" [class.menu-close]="menuOpen">
+          <a
+            class="block-header-top__menu-btn"
+            rel="external"
+            (click)="handleToggleMenu($event)"
+            [class.menu-close]="menuOpen"
+          >
             <img
               class="menu-icon block-header-top__menu-burger"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_burger.svg"
+              src="http://localhost:3333/icons/menu_burger.svg"
             />
             <img
               class="menu-icon block-header-top__menu-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_close.png"
+              src="http://localhost:3333/icons/menu_close.png"
             />
             <span class="block-header-top__menu-txt">Menu</span>
           </a>
@@ -25,12 +33,12 @@
           >
             <img
               class="block-header-top__site-logo-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+              src="http://localhost:3333/icons/bg_smile_uk_btn.png"
               alt="SMILE Open Source"
             />
             <img
               class="block-header-top__site-logo-open"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo-burger.png"
+              src="http://localhost:3333/icons/logo-burger.png"
               alt="SMILE Open Source"
             />
           </a>
@@ -138,14 +146,19 @@
         </div>
 
         <div class="col-xs-1 col-sm-1 col-lg-1 block-header-top__search">
-          <a class="block-header-top__btn-search" href="" rel="external" (click)="handleToggleSearch($event)">
+          <a
+            class="block-header-top__btn-search"
+            href=""
+            rel="external"
+            (click)="handleToggleSearch($event)"
+          >
             <img
               class="block-header-top__btn-search_picture-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+              src="http://localhost:3333/icons/research.svg"
             />
             <img
               class="block-header-top__btn-search_picture-open"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/search_white.svg"
+              src="http://localhost:3333/icons/search_white.svg"
             />
           </a>
         </div>
@@ -256,11 +269,13 @@
           </div>
         </form>
 
-        <a class="close-search-bar-btn" href="" rel="external" (click)="handleToggleSearch($event)">
-          <img
-            src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/close_search.png"
-            alt=""
-          />
+        <a
+          class="close-search-bar-btn"
+          href=""
+          rel="external"
+          (click)="handleToggleSearch($event)"
+        >
+          <img src="http://localhost:3333/icons/close_search.png" alt="" />
         </a>
       </div>
     </div>
@@ -277,7 +292,10 @@
               itemtype="http://www.schema.org/SiteNavigationElement"
               class="level0 list-inline"
             >
-              <li class="has-child" (click)="handleToggleMenuChildren($event, 0)">
+              <li
+                class="has-child"
+                (click)="handleToggleMenuChildren($event, 0)"
+              >
                 <a
                   href="/fr"
                   data-drupal-link-system-path="<front>"
@@ -288,7 +306,10 @@
                   <span class="hvr-icon-grow">Groupe</span>
                 </a>
 
-                <ul class="level1 list-inline" [class.opened]="menuChildrenOpen === 0">
+                <ul
+                  class="level1 list-inline"
+                  [class.opened]="menuChildrenOpen === 0"
+                >
                   <li>
                     <a
                       href="/fr/groupe/qui-sommes-nous"
@@ -357,7 +378,10 @@
                   </li>
                 </ul>
               </li>
-              <li class="has-child" (click)="handleToggleMenuChildren($event, 1)">
+              <li
+                class="has-child"
+                (click)="handleToggleMenuChildren($event, 1)"
+              >
                 <a
                   href="/fr"
                   data-drupal-link-system-path="<front>"
@@ -368,7 +392,10 @@
                   <span class="hvr-icon-grow">Offres</span>
                 </a>
 
-                <ul class="level1 list-inline" [class.opened]="menuChildrenOpen === 1">
+                <ul
+                  class="level1 list-inline"
+                  [class.opened]="menuChildrenOpen === 1"
+                >
                   <li class="has-child">
                     <a
                       href="/fr/offres/digital"
@@ -455,7 +482,10 @@
                   </span>
                 </a>
               </li>
-              <li class="has-child" (click)="handleToggleMenuChildren($event, 2)">
+              <li
+                class="has-child"
+                (click)="handleToggleMenuChildren($event, 2)"
+              >
                 <a
                   href="/fr/innovation"
                   itemprop="url"
@@ -466,7 +496,10 @@
                   <span itemprop="name" class="hvr-icon-grow"> Innovation</span>
                 </a>
 
-                <ul class="level1 list-inline" [class.opened]="menuChildrenOpen === 2">
+                <ul
+                  class="level1 list-inline"
+                  [class.opened]="menuChildrenOpen === 2"
+                >
                   <li>
                     <a
                       href="https://www.smile.eu/fr/innovation/recherche-developpement"
@@ -507,7 +540,7 @@
             >
               <img
                 class="block-header-top__site-logo-close"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                src="http://localhost:3333/icons/bg_smile_uk_btn.png"
                 alt="SMILE Open Source"
               />
             </a>
@@ -516,10 +549,15 @@
         <div
           class="col-xs-1 col-sm-1 col-lg-1 block-header-top__search search_head"
         >
-          <a class="block-header-top__btn-search" href="" rel="external" (click)="handleToggleSearch($event)">
+          <a
+            class="block-header-top__btn-search"
+            href=""
+            rel="external"
+            (click)="handleToggleSearch($event)"
+          >
             <img
               class="block-header-top__btn-search_picture-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+              src="http://localhost:3333/icons/research.svg"
             />
           </a>
         </div>
@@ -629,9 +667,10 @@
         id="block-menusblock"
         class="block block-smileeu-common block-smileeu-common-menus-block clearfix menu-header"
       >
-        <div class="menu-container"
+        <div
+          class="menu-container"
           [class.opened]="menuOpen"
-					[style]="menuStyle"
+          [style]="menuStyle"
         >
           <div class="menu-wrapper">
             <div class="menu menu-main menu-footer">
@@ -639,7 +678,11 @@
                 itemtype="http://www.schema.org/SiteNavigationElement"
                 class="level0 list-inline"
               >
-                <li class="has-child" (click)="handleToggleMenuChildren($event, 0)" [class.opened]="menuChildrenOpen === 0">
+                <li
+                  class="has-child"
+                  (click)="handleToggleMenuChildren($event, 0)"
+                  [class.opened]="menuChildrenOpen === 0"
+                >
                   <a
                     href="/fr"
                     data-drupal-link-system-path="<front>"
@@ -649,7 +692,14 @@
                     <span class="hvr-icon-grow">Groupe</span>
                   </a>
 
-                  <ul class="level1 list-inline" [style]="menuChildrenOpen === 0 ? 'display:block;' : 'display:none;'">
+                  <ul
+                    class="level1 list-inline"
+                    [style]="
+                      menuChildrenOpen === 0
+                        ? 'display:block;'
+                        : 'display:none;'
+                    "
+                  >
                     <li>
                       <a
                         href="/fr/groupe/qui-sommes-nous"
@@ -718,7 +768,11 @@
                     </li>
                   </ul>
                 </li>
-                <li class="has-child" (click)="handleToggleMenuChildren($event, 1)" [class.opened]="menuChildrenOpen === 1">
+                <li
+                  class="has-child"
+                  (click)="handleToggleMenuChildren($event, 1)"
+                  [class.opened]="menuChildrenOpen === 1"
+                >
                   <a
                     href="/fr"
                     data-drupal-link-system-path="<front>"
@@ -728,7 +782,14 @@
                     <span class="hvr-icon-grow">Offres</span>
                   </a>
 
-                  <ul class="level1 list-inline" [style]="menuChildrenOpen === 1 ? 'display:block;' : 'display:none;'">
+                  <ul
+                    class="level1 list-inline"
+                    [style]="
+                      menuChildrenOpen === 1
+                        ? 'display:block;'
+                        : 'display:none;'
+                    "
+                  >
                     <li class="has-child">
                       <a
                         href="/fr/offres/digital"
@@ -815,7 +876,11 @@
                     </span>
                   </a>
                 </li>
-                <li class="has-child" (click)="handleToggleMenuChildren($event, 2)" [class.opened]="menuChildrenOpen === 2">
+                <li
+                  class="has-child"
+                  (click)="handleToggleMenuChildren($event, 2)"
+                  [class.opened]="menuChildrenOpen === 2"
+                >
                   <a
                     href="/fr/innovation"
                     itemprop="url"
@@ -827,7 +892,14 @@
                     </span>
                   </a>
 
-                  <ul class="level1 list-inline" [style]="menuChildrenOpen === 2 ? 'display:block;' : 'display:none;'">
+                  <ul
+                    class="level1 list-inline"
+                    [style]="
+                      menuChildrenOpen === 2
+                        ? 'display:block;'
+                        : 'display:none;'
+                    "
+                  >
                     <li>
                       <a
                         href="https://www.smile.eu/fr/innovation/recherche-developpement"
@@ -860,7 +932,11 @@
                 itemtype="http://www.schema.org/SiteNavigationElement"
                 class="level0 list-inline"
               >
-                <li class="has-child" (click)="handleToggleMenuChildren($event, 3)" [class.opened]="menuChildrenOpen === 3">
+                <li
+                  class="has-child"
+                  (click)="handleToggleMenuChildren($event, 3)"
+                  [class.opened]="menuChildrenOpen === 3"
+                >
                   <a
                     href="https://blog.smile.eu/fr"
                     itemprop="url"
@@ -870,7 +946,14 @@
                     <span itemprop="name" class="hvr-icon-grow"> Blog</span>
                   </a>
 
-                  <ul class="level1 list-inline" [style]="menuChildrenOpen === 3 ? 'display:block;' : 'display:none;'">
+                  <ul
+                    class="level1 list-inline"
+                    [style]="
+                      menuChildrenOpen === 3
+                        ? 'display:block;'
+                        : 'display:none;'
+                    "
+                  >
                     <li>
                       <a
                         href="https://blog.smile.eu/fr"

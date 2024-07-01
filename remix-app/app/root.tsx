@@ -39,7 +39,7 @@ export default function App() {
         <link
           rel="icon"
           type="image/vnd.microsoft.icon"
-          href="https://www.smile.eu/themes/custom/smileeu/favicon.ico"
+          href="http://localhost:3333/favicon.ico"
         />
         <Meta />
         <Links />

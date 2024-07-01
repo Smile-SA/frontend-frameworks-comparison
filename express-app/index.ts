@@ -1,9 +1,11 @@
 import express, { Response } from "express";
+import compression from "compression";
 import cors from "cors";
 
 const app = express();
+app.use(compression());
 app.use(cors());
-app.use('/', express.static('./public'))
+app.use("/", express.static("./public"));
 
 const timeout = 1000;
 function send(res: Response, content: unknown) {

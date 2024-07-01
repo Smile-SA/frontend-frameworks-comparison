@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Lot1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-Page-404" transform="translate(-100.000000, -372.000000)">
+            <g id="Mini-planete-1" transform="translate(111.500000, 383.500000) rotate(-180.000000) translate(-111.500000, -383.500000) translate(100.000000, 372.000000)">
+                <circle id="Oval-19" fill="#FBFBFB" cx="11.5" cy="11.5" r="11.5"></circle>
+                <path d="M11.5,23 C7.36,18.86 5.14872538,6.44 11.5,0 C5.14872538,0 0,5.14872538 0,11.5 C0,17.8512746 5.14872538,23 11.5,23 Z" id="Oval-19-Copy" fill="#DDDDDD"></path>
+            </g>
+        </g>
+    </g>
+</svg>

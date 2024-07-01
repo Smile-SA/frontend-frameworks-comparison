@@ -10,11 +10,11 @@ import Search from "./Search.astro";
           <a class="block-header-top__menu-btn" data-toggle-menu>
             <img
               class="menu-icon block-header-top__menu-burger"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_burger.svg"
+              src="http://localhost:3333/icons/menu_burger.svg"
             />
             <img
               class="menu-icon block-header-top__menu-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_close.png"
+              src="http://localhost:3333/icons/menu_close.png"
             />
             <span class="block-header-top__menu-txt">Menu</span>
           </a>
@@ -29,12 +29,12 @@ import Search from "./Search.astro";
           >
             <img
               class="block-header-top__site-logo-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+              src="http://localhost:3333/icons/bg_smile_uk_btn.png"
               alt="SMILE Open Source"
             />
             <img
               class="block-header-top__site-logo-open"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo-burger.png"
+              src="http://localhost:3333/icons/logo-burger.png"
               alt="SMILE Open Source"
             />
           </a>
@@ -142,11 +142,11 @@ import Search from "./Search.astro";
           <a class="block-header-top__btn-search" href="" data-toggle-search>
             <img
               class="block-header-top__btn-search_picture-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+              src="http://localhost:3333/icons/research.svg"
             />
             <img
               class="block-header-top__btn-search_picture-open"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/search_white.svg"
+              src="http://localhost:3333/icons/search_white.svg"
             />
           </a>
         </div>
@@ -251,10 +251,7 @@ import Search from "./Search.astro";
         </form>
 
         <a class="close-search-bar-btn" href="" data-toggle-search>
-          <img
-            src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/close_search.png"
-            alt=""
-          />
+          <img src="http://localhost:3333/icons/close_search.png" alt="" />
         </a>
       </div>
     </div>
@@ -500,7 +497,7 @@ import Search from "./Search.astro";
             >
               <img
                 class="block-header-top__site-logo-close"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                src="http://localhost:3333/icons/bg_smile_uk_btn.png"
                 alt="SMILE Open Source"
               />
             </a>
@@ -512,7 +509,7 @@ import Search from "./Search.astro";
           <a class="block-header-top__btn-search" href="">
             <img
               class="block-header-top__btn-search_picture-close"
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+              src="http://localhost:3333/icons/research.svg"
             />
           </a>
         </div>
@@ -922,7 +919,7 @@ import Search from "./Search.astro";
     e.preventDefault();
     searchOpen = !searchOpen;
     const classList = document.getElementById(
-      "block-smileeusearchblock"
+      "block-smileeusearchblock",
     )?.classList;
     if (classList) {
       if (searchOpen) {
@@ -941,7 +938,7 @@ import Search from "./Search.astro";
     if (menuOpen) {
       item.classList.add("menu-close");
       (item.parentNode?.parentNode as HTMLElement)?.classList.add(
-        "opened-menu"
+        "opened-menu",
       );
       if (menuContainer) {
         const height =
@@ -956,7 +953,7 @@ import Search from "./Search.astro";
     } else {
       item.classList.remove("menu-close");
       (item.parentNode?.parentNode as HTMLElement)?.classList.remove(
-        "opened-menu"
+        "opened-menu",
       );
       if (menuContainer) {
         menuContainer?.classList.remove("opened");
@@ -968,16 +965,16 @@ import Search from "./Search.astro";
   const menuBlock = document.getElementById("block-menusblock");
   const children = document.querySelectorAll("[data-menu-children]");
   const childrenHeader = document.querySelectorAll(
-    "[data-menu-children-header]"
+    "[data-menu-children-header]",
   );
   const lists = document.querySelectorAll("[data-menu-children-ul]");
   const headerLists = document.querySelectorAll(
-    "[data-menu-children-header-ul]"
+    "[data-menu-children-header-ul]",
   );
   function handleToggleMenuChildren(
     e: MouseEvent,
     index: number,
-    item: HTMLElement
+    item: HTMLElement,
   ) {
     e.preventDefault();
     menuChildrenOpen = menuChildrenOpen === index ? undefined : index;
@@ -1005,26 +1002,26 @@ import Search from "./Search.astro";
   document
     .querySelectorAll("[data-toggle-search]")
     .forEach((item) =>
-      (item as HTMLElement).addEventListener("click", handleToggleSearch)
+      (item as HTMLElement).addEventListener("click", handleToggleSearch),
     );
 
   document
     .querySelectorAll("[data-toggle-menu]")
     .forEach((item) =>
       (item as HTMLElement).addEventListener("click", (e) =>
-        handleToggleMenu(e, item as HTMLElement)
-      )
+        handleToggleMenu(e, item as HTMLElement),
+      ),
     );
 
   children.forEach((item, i) =>
     (item as HTMLElement).addEventListener("click", (e) =>
-      handleToggleMenuChildren(e, i, item as HTMLElement)
-    )
+      handleToggleMenuChildren(e, i, item as HTMLElement),
+    ),
   );
 
   childrenHeader.forEach((item, i) =>
     (item as HTMLElement).addEventListener("click", (e) =>
-      handleToggleMenuChildren(e, i, item as HTMLElement)
-    )
+      handleToggleMenuChildren(e, i, item as HTMLElement),
+    ),
   );
 </script>

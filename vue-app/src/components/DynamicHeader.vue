@@ -40,11 +40,11 @@ function handleToggleMenuChildren(index: number) {
             >
               <img
                 class="menu-icon block-header-top__menu-burger"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_burger.svg"
+                src="http://localhost:3333/icons/menu_burger.svg"
               />
               <img
                 class="menu-icon block-header-top__menu-close"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_close.png"
+                src="http://localhost:3333/icons/menu_close.png"
               />
               <span class="block-header-top__menu-txt">Menu</span>
             </a>
@@ -54,12 +54,12 @@ function handleToggleMenuChildren(index: number) {
             <a class="block-header-top__front-logo" href="/fr" title="Accueil" rel="home">
               <img
                 class="block-header-top__site-logo-close"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                src="http://localhost:3333/icons/bg_smile_uk_btn.png"
                 alt="SMILE Open Source"
               />
               <img
                 class="block-header-top__site-logo-open"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo-burger.png"
+                src="http://localhost:3333/icons/logo-burger.png"
                 alt="SMILE Open Source"
               />
             </a>
@@ -133,11 +133,11 @@ function handleToggleMenuChildren(index: number) {
             <a class="block-header-top__btn-search" href="" @click.prevent="handleToggleSearch">
               <img
                 class="block-header-top__btn-search_picture-close"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+                src="http://localhost:3333/icons/research.svg"
               />
               <img
                 class="block-header-top__btn-search_picture-open"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/search_white.svg"
+                src="http://localhost:3333/icons/search_white.svg"
               />
             </a>
           </div>
@@ -225,10 +225,7 @@ function handleToggleMenuChildren(index: number) {
           </form>
 
           <a class="close-search-bar-btn" href="" @click.prevent="handleToggleSearch">
-            <img
-              src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/close_search.png"
-              alt=""
-            />
+            <img src="http://localhost:3333/icons/close_search.png" alt="" />
           </a>
         </div>
       </div>
@@ -410,7 +407,7 @@ function handleToggleMenuChildren(index: number) {
               <a class="block-header-top__front-logo" href="/fr" title="Accueil" rel="home">
                 <img
                   class="block-header-top__site-logo-close"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                  src="http://localhost:3333/icons/bg_smile_uk_btn.png"
                   alt="SMILE Open Source"
                 />
               </a>
@@ -420,7 +417,7 @@ function handleToggleMenuChildren(index: number) {
             <a class="block-header-top__btn-search" href="" @click.prevent="handleToggleSearch">
               <img
                 class="block-header-top__btn-search_picture-close"
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+                src="http://localhost:3333/icons/research.svg"
               />
             </a>
           </div>

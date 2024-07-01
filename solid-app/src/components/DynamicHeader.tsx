@@ -15,7 +15,7 @@ const DynamicHeader: Component = () => {
     setHeight(
       typeof document !== "undefined"
         ? document.body.offsetHeight - (rootRef?.offsetHeight ?? 0)
-        : 0
+        : 0,
     );
   });
 
@@ -51,11 +51,11 @@ const DynamicHeader: Component = () => {
               >
                 <img
                   class="menu-icon block-header-top__menu-burger"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_burger.svg"
+                  src="http://localhost:3333/icons/menu_burger.svg"
                 />
                 <img
                   class="menu-icon block-header-top__menu-close"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/menu_close.png"
+                  src="http://localhost:3333/icons/menu_close.png"
                 />
                 <span class="block-header-top__menu-txt">Menu</span>
               </a>
@@ -70,12 +70,12 @@ const DynamicHeader: Component = () => {
               >
                 <img
                   class="block-header-top__site-logo-close"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                  src="http://localhost:3333/icons/bg_smile_uk_btn.png"
                   alt="SMILE Open Source"
                 />
                 <img
                   class="block-header-top__site-logo-open"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo-burger.png"
+                  src="http://localhost:3333/icons/logo-burger.png"
                   alt="SMILE Open Source"
                 />
               </a>
@@ -209,11 +209,11 @@ const DynamicHeader: Component = () => {
               >
                 <img
                   class="block-header-top__btn-search_picture-close"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+                  src="http://localhost:3333/icons/research.svg"
                 />
                 <img
                   class="block-header-top__btn-search_picture-open"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/search_white.svg"
+                  src="http://localhost:3333/icons/search_white.svg"
                 />
               </a>
             </div>
@@ -345,10 +345,7 @@ const DynamicHeader: Component = () => {
               rel="external"
               onClick={handleToggleSearch}
             >
-              <img
-                src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/close_search.png"
-                alt=""
-              />
+              <img src="http://localhost:3333/icons/close_search.png" alt="" />
             </a>
           </div>
         </div>
@@ -365,10 +362,7 @@ const DynamicHeader: Component = () => {
                   itemtype="http://www.schema.org/SiteNavigationElement"
                   class="level0 list-inline"
                 >
-                  <li
-                    class="has-child"
-                    onClick={[handleToggleMenuChildren, 0]}
-                  >
+                  <li class="has-child" onClick={[handleToggleMenuChildren, 0]}>
                     <a
                       href="/fr"
                       data-drupal-link-system-path="<front>"
@@ -459,10 +453,7 @@ const DynamicHeader: Component = () => {
                       </li>
                     </ul>
                   </li>
-                  <li
-                    class="has-child"
-                    onClick={[handleToggleMenuChildren, 1]}
-                  >
+                  <li class="has-child" onClick={[handleToggleMenuChildren, 1]}>
                     <a
                       href="/fr"
                       data-drupal-link-system-path="<front>"
@@ -573,10 +564,7 @@ const DynamicHeader: Component = () => {
                       </span>
                     </a>
                   </li>
-                  <li
-                    class="has-child"
-                    onClick={[handleToggleMenuChildren, 2]}
-                  >
+                  <li class="has-child" onClick={[handleToggleMenuChildren, 2]}>
                     <a
                       href="/fr/innovation"
                       itemprop="url"
@@ -640,7 +628,7 @@ const DynamicHeader: Component = () => {
                 >
                   <img
                     class="block-header-top__site-logo-close"
-                    src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/bg_smile_uk_btn.png"
+                    src="http://localhost:3333/icons/bg_smile_uk_btn.png"
                     alt="SMILE Open Source"
                   />
                 </a>
@@ -655,7 +643,7 @@ const DynamicHeader: Component = () => {
               >
                 <img
                   class="block-header-top__btn-search_picture-close"
-                  src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/research.svg"
+                  src="http://localhost:3333/icons/research.svg"
                 />
               </a>
             </div>
@@ -788,7 +776,11 @@ const DynamicHeader: Component = () => {
               classList={{ opened: menuOpen() }}
               style={
                 menuOpen()
-                  ? { display: "block", "max-height": `${height()}px`, height: `${height()}px` }
+                  ? {
+                      display: "block",
+                      "max-height": `${height()}px`,
+                      height: `${height()}px`,
+                    }
                   : undefined
               }
             >

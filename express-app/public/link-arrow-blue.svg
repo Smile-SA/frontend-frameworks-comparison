@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="25px"
+   height="18px"
+   viewBox="0 0 25 18"
+   version="1.1"
+   id="svg3039"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="link-arrow-blue.svg">
+  <metadata
+     id="metadata3053">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Link-arrow</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     id="namedview3051"
+     showgrid="false"
+     inkscape:zoom="13.111111"
+     inkscape:cx="-2.2976695"
+     inkscape:cy="8.9992373"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3039" />
+  <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title3041">Link-arrow</title>
+  <desc
+     id="desc3043">Created with Sketch.</desc>
+  <defs
+     id="defs3045" />
+  <g
+     id="Lot1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#3b80ff;fill-opacity:1">
+    <g
+       id="UI"
+       transform="translate(-262.000000, -324.000000)"
+       fill="#000000"
+       style="fill:#3b80ff;fill-opacity:1">
+      <g
+         id="TRANSVERSE"
+         transform="translate(189.000000, 201.000000)"
+         style="fill:#3b80ff;fill-opacity:1">
+        <path
+           d="M94.6735568,132.592094 L74.0006946,132.592094 C73.4480262,132.592094 73,132.148229 73,131.592094 C73,131.039809 73.4474692,130.592094 74.0006946,130.592094 L94.4665591,130.592094 L87.7496931,124.753211 C87.3356491,124.393288 87.2912015,123.766524 87.656059,123.346804 C88.0183904,122.929989 88.6439807,122.880578 89.0618112,123.243792 L97.5367185,130.610917 C97.8503161,130.883523 97.9518921,131.309205 97.8241934,131.682064 C97.9518921,132.054923 97.8503161,132.480605 97.5367185,132.753211 L89.0618112,140.120336 C88.6439807,140.483551 88.0183904,140.434139 87.656059,140.017325 C87.2912015,139.597604 87.3356491,138.97084 87.7496931,138.610917 L94.6735568,132.592094 Z"
+           id="Link-arrow"
+           style="fill:#3b80ff;fill-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>

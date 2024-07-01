@@ -35,7 +35,7 @@ withDefaults(
                   <a href="#">
                     <img
                       class="block-content-block_header_block__btn-logo-smile"
-                      src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo_yellow.png"
+                      src="http://localhost:3333/icons/logo_yellow.png"
                     />
                   </a>
                 </div>

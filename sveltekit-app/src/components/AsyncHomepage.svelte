@@ -10,17 +10,17 @@
 	import AsyncCards from './AsyncCards.svelte';
 	import AsyncOpenSource from './AsyncOpenSource.svelte';
 
-  const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher();
 	export let cards: ICard[];
 	export let openSources: IOpenSource[];
 	export let solutions: ISolution[];
 	export let technologies: ISolution[];
 	export let count: number = 2000;
 
-  function handleStart(event: any) {
-    event.preventDefault();
-    dispatch('start');
-  }
+	function handleStart(event: any) {
+		event.preventDefault();
+		dispatch('start');
+	}
 </script>
 
 <section class="col-sm-12">
@@ -45,7 +45,7 @@
 								<a href="#" rel="external">
 									<img
 										class="block-content-block_header_block__btn-logo-smile"
-										src="https://www.smile.eu/themes/custom/smileeu/assets/images/icons/logo_yellow.png"
+										src="http://localhost:3333/icons/logo_yellow.png"
 									/>
 								</a>
 							</div>
@@ -100,13 +100,13 @@
 							</div>
 							<div class="link-map">
 								<div class="link-map-content">
-                  <button
-                    type="button"
-                    on:click={handleStart}
-                    style="border: 0; background: transparent;"
-                  >
-                    Découvrez smile
-                  </button>
+									<button
+										type="button"
+										on:click={handleStart}
+										style="border: 0; background: transparent;"
+									>
+										Découvrez smile
+									</button>
 								</div>
 							</div>
 						</div>
